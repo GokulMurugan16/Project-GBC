@@ -21,8 +21,17 @@ class ViewController: UIViewController {
         Displayname()
     }
     
+    @IBAction func signUp(_ sender: UIButton) {
+        
+        print("SignUp Button Selected")
+    }
+    
+    
     func Displayname(){
         print("User Name : \(userName.text!) \nPassword : \(passWord.text!)")
+        
+        userName.text = ""
+        passWord.text = ""
     }
     
     

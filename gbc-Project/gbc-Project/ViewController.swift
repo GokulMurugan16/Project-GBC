@@ -9,12 +9,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var testDisplay: UILabel!
+    @IBOutlet weak var passWord: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        name.text = "My First Git"
+        
     }
 
-
+    @IBAction func loginButton(_ sender: UIButton) {
+        
+        Displayname()
+        
+        
+    }
+    
+    func Displayname(){
+        testDisplay.text = "User Name : \(userName.text!) \nPassword : \(passWord.text!)"
+    }
+    
+    
 }
 

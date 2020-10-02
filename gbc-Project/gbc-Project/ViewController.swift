@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -14,6 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        FirebaseApp.configure()
         
     }
 
@@ -29,7 +31,11 @@ class ViewController: UIViewController {
     
     func Displayname(){
         print("User Name : \(userName.text!) \nPassword : \(passWord.text!)")
-        
+        Auth.auth().signIn(withEmail: userName.text!.lowercased(), password: passWord.text!) {authResult, error in
+//          guard let strongSelf = self else { return }
+            print(error)
+            print(authResult)
+        }
         userName.text = ""
         passWord.text = ""
     }

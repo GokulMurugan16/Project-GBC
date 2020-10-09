@@ -12,8 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var passWord: UITextField!
-    @IBOutlet weak var errorDisplay: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         if FirebaseApp.app() == nil {
@@ -34,9 +33,7 @@ class ViewController: UIViewController {
             Auth.auth().signIn(withEmail: userName.text!.lowercased(), password: passWord.text!) {authResult, error in
                 if(authResult != nil)
                 {
-                    print("User Found")
-                    
-                    self.errorDisplay.text = "User Found"
+                    self.performSegue(withIdentifier: "sucessLogin", sender: self)
                     self.userName.text = ""
                     self.passWord.text = ""
                 }

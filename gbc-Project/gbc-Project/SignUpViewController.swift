@@ -45,12 +45,13 @@ class SignUpViewController: UIViewController {
                     self.performSegue(withIdentifier: "login", sender: self)
                 }))
                 self.present(alert, animated: true, completion: nil)
-                
+                var uId = Auth.auth().currentUser!.uid
                 var ref: DocumentReference? = nil
                 ref = self.db.collection("users").addDocument(data: [
                     "userName": self.userName.text!,
                     "eMail": self.eMail.text!,
-                    "phone": self.pNumber.text!
+                    "phone": self.pNumber.text!,
+                    "userId": uId
                 ]) { err in
                     if let err = err {
                         print("Error adding document: \(err)")

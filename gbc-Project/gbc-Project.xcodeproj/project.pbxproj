@@ -15,6 +15,7 @@
 		92604FD72527CCFA00408A95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD62527CCFA00408A95 /* Assets.xcassets */; };
 		92604FDA2527CCFA00408A95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD82527CCFA00408A95 /* LaunchScreen.storyboard */; };
 		92604FE62527DB8700408A95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92604FE52527DB8700408A95 /* GoogleService-Info.plist */; };
+		927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		92604FD92527CCFA00408A95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92604FDB2527CCFA00408A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		92604FE52527DB8700408A95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D49EC2CC9DED88129E361248 /* Pods_gbc_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gbc_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 				92604FCF2527CCF700408A95 /* SceneDelegate.swift */,
 				92604FD12527CCF700408A95 /* ViewController.swift */,
 				92604FD32527CCF700408A95 /* Main.storyboard */,
+				927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */,
 				92604FD62527CCFA00408A95 /* Assets.xcassets */,
 				92604FD82527CCFA00408A95 /* LaunchScreen.storyboard */,
 				92604FDB2527CCFA00408A95 /* Info.plist */,
@@ -211,6 +214,7 @@
 			files = (
 				92604FD22527CCF700408A95 /* ViewController.swift in Sources */,
 				92604FCE2527CCF700408A95 /* AppDelegate.swift in Sources */,
+				927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */,
 				92604FD02527CCF700408A95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

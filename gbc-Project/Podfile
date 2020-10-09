@@ -9,5 +9,6 @@ target 'gbc-Project' do
 
 pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
+pod 'Firebase/Database'
 
 end

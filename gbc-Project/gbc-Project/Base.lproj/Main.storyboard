@@ -150,7 +150,7 @@
             </objects>
             <point key="canvasLocation" x="635" y="779"/>
         </scene>
-        <!--Profile-->
+        <!--Information-->
         <scene sceneID="KZg-h4-TWp">
             <objects>
                 <viewController id="rkl-EP-ScW" sceneMemberID="viewController">
@@ -160,7 +160,7 @@
                         <viewLayoutGuide key="safeArea" id="gMb-cK-69K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="hBa-ts-jaQ"/>
+                    <tabBarItem key="tabBarItem" title="Information" image="info" catalog="system" id="hBa-ts-jaQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-fY-TEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -205,7 +205,7 @@
     </scenes>
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="info" catalog="system" width="93" height="128"/>
         <image name="shift.fill" catalog="system" width="128" height="106"/>
         <image name="square.grid.3x1.folder.fill.badge.plus" catalog="system" width="128" height="91"/>
         <systemColor name="linkColor">

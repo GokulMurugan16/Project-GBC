@@ -16,15 +16,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseApp.configure()
-        
+        if FirebaseApp.app() == nil {
+                FirebaseApp.configure()
+        }
     }
 
     @IBAction func loginButton(_ sender: UIButton) {
         
         if(userName.text == "" || passWord.text == "")
         {
-            errorDisplay.text = "Please enter valid credentials"
+            var alert = UIAlertController(title: "Invalid Details", message: "Please enter valid credentials", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         else{
@@ -32,38 +35,21 @@ class ViewController: UIViewController {
                 if(authResult != nil)
                 {
                     print("User Found")
+                    
                     self.errorDisplay.text = "User Found"
                     self.userName.text = ""
                     self.passWord.text = ""
                 }
                 else{
                     print("User Not Found")
-                    self.errorDisplay.text = "User Not Found"
-                    self.userName.text = ""
-                    self.passWord.text = ""
+                    var alert = UIAlertController(title: "User Not Found", message: "Please check your E-mail id or Password and try again! ", preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
                 }
             }
-            
-            
-            
-            
         }
-        
-        
-        
-        
     }
-    
-    @IBAction func signUp(_ sender: UIButton) {
         
-        print("SignUp Button Selected")
-    }
-    
-    
-    
-        
-    
-    
-    
 }
 

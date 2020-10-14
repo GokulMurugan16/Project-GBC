@@ -7,12 +7,13 @@
 
 import UIKit
 import Firebase
+import Photos
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let db = Firestore.firestore()
 
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var eMail: UITextField!
     @IBOutlet weak var passWord: UITextField!
@@ -21,6 +22,9 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.imageTapped))
+        imageView.addGestureRecognizer(tap)
+        imageView.isUserInteractionEnabled = true
         
         // Do any additional setup after loading the view.
     }
@@ -74,4 +78,35 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    
+    @objc func imageTapped(){
+        
+        
+        let photosAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
+        if photosAuthorizationStatus == .authorized{
+            
+        
+        }
+        
+        else if photosAuthorizationStatus == .notDetermined {
+        PHPhotoLibrary.requestAuthorization({status in
+        if status == .authorized {
+            
+        }})}
+        else {
+            print("Error In Opening Photo Library 2")
+        }
+        
+        
+        
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            picker.dismiss(animated: true, completion: nil)
+        }
+    
+    
 }
+
+

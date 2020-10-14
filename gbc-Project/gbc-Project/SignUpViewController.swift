@@ -82,29 +82,33 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     @objc func imageTapped(){
         
         
-        let photosAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
-        if photosAuthorizationStatus == .authorized{
-            
         
-        }
-        
-        else if photosAuthorizationStatus == .notDetermined {
-        PHPhotoLibrary.requestAuthorization({status in
-        if status == .authorized {
-            
-        }})}
-        else {
-            print("Error In Opening Photo Library 2")
-        }
-        
+        if UIImagePickerController.isSourceTypeAvailable( .photoLibrary) {
+
+                    let imagePickerController = UIImagePickerController()
+                    imagePickerController.delegate = self
+                    imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
+                    self.present(imagePickerController, animated: true, completion: nil)
+                }
+    
         
         
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+            self.dismiss(animated: true) { [weak self] in
+
+                guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+                
+                self?.imageView.image = image
+            }
+        }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             picker.dismiss(animated: true, completion: nil)
         }
+    
     
     
 }

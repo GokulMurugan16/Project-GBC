@@ -32,17 +32,28 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
     // MARK: - TableView Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 20
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = newsTableViewOutlet.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath)
         //let article = articles[indexPath.row]
-        cell.textLabel?.text = "article.title"
+        cell.textLabel?.text = "article.title goes here..."
         //print(article.title)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, -400, 10, 0)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0.5
+        
+        UIView.animate(withDuration: 1.0) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
+        }
     }
     
     

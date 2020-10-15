@@ -7,12 +7,13 @@
 
 import UIKit
 import Firebase
+import Photos
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     let db = Firestore.firestore()
 
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var eMail: UITextField!
     @IBOutlet weak var passWord: UITextField!
@@ -21,6 +22,9 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.imageTapped))
+        imageView.addGestureRecognizer(tap)
+        imageView.isUserInteractionEnabled = true
         
         // Do any additional setup after loading the view.
     }
@@ -45,12 +49,13 @@ class SignUpViewController: UIViewController {
                     self.performSegue(withIdentifier: "login", sender: self)
                 }))
                 self.present(alert, animated: true, completion: nil)
-                
+                var uId = Auth.auth().currentUser!.uid
                 var ref: DocumentReference? = nil
                 ref = self.db.collection("users").addDocument(data: [
                     "userName": self.userName.text!,
                     "eMail": self.eMail.text!,
-                    "phone": self.pNumber.text!
+                    "phone": self.pNumber.text!,
+                    "userId": uId
                 ]) { err in
                     if let err = err {
                         print("Error adding document: \(err)")
@@ -73,4 +78,39 @@ class SignUpViewController: UIViewController {
         }
     }
     
+    
+    @objc func imageTapped(){
+        
+        
+        
+        if UIImagePickerController.isSourceTypeAvailable( .photoLibrary) {
+
+                    let imagePickerController = UIImagePickerController()
+                    imagePickerController.delegate = self
+                    imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
+                    self.present(imagePickerController, animated: true, completion: nil)
+                }
+    
+        
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+            self.dismiss(animated: true) { [weak self] in
+
+                guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+                
+                self?.imageView.image = image
+            }
+        }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            picker.dismiss(animated: true, completion: nil)
+        }
+    
+    
+    
 }
+
+

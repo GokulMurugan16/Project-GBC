@@ -15,6 +15,7 @@
 		92604FD52527CCF700408A95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD32527CCF700408A95 /* Main.storyboard */; };
 		92604FD72527CCFA00408A95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD62527CCFA00408A95 /* Assets.xcassets */; };
 		92604FDA2527CCFA00408A95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD82527CCFA00408A95 /* LaunchScreen.storyboard */; };
+		926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */; };
 		927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */; };
 		FAC51AAE25380A2900F63029 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC51AAD25380A2900F63029 /* InformationViewController.swift */; };
 /* End PBXBuildFile section */
@@ -31,6 +32,7 @@
 		92604FD62527CCFA00408A95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92604FD92527CCFA00408A95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92604FDB2527CCFA00408A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceViewController.swift; sourceTree = "<group>"; };
 		927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D49EC2CC9DED88129E361248 /* Pods_gbc_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gbc_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC51AAD25380A2900F63029 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				92604FCF2527CCF700408A95 /* SceneDelegate.swift */,
 				92604FD12527CCF700408A95 /* ViewController.swift */,
 				92604FD32527CCF700408A95 /* Main.storyboard */,
+				926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */,
 				927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */,
 				92604FD62527CCFA00408A95 /* Assets.xcassets */,
 				92604FD82527CCFA00408A95 /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 			files = (
 				92604FD22527CCF700408A95 /* ViewController.swift in Sources */,
 				92604FCE2527CCF700408A95 /* AppDelegate.swift in Sources */,
+				926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */,
 				927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */,
 				92604FD02527CCF700408A95 /* SceneDelegate.swift in Sources */,
 				FAC51AAE25380A2900F63029 /* InformationViewController.swift in Sources */,

@@ -156,7 +156,7 @@
         <!--Market Place-->
         <scene sceneID="ACl-ZS-5Ix">
             <objects>
-                <viewController id="cC5-5i-p6N" sceneMemberID="viewController">
+                <viewController id="cC5-5i-p6N" customClass="MarketPlaceViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YlR-Kq-CGs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

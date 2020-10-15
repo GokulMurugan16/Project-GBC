@@ -89,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="672.46376811594212" y="-788.16964285714278"/>
+            <point key="canvasLocation" x="709" y="13"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="pHQ-t4-EKg">
@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8IY-Rf-4ia" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="13"/>
+            <point key="canvasLocation" x="-84" y="13"/>
         </scene>
         <!--Market Place-->
         <scene sceneID="ACl-ZS-5Ix">
@@ -164,6 +164,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type here to search" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dm1-Jq-Rba">
                                 <rect key="frame" x="20" y="70" width="297" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -181,10 +182,15 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cC5-5i-p6N" id="D9o-C3-VXa"/>
+                                    <outlet property="delegate" destination="cC5-5i-p6N" id="jKu-vY-ioH"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keI-IB-CUN">
                                 <rect key="frame" x="316" y="70" width="78" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="keyWordSearchButton:" destination="cC5-5i-p6N" eventType="touchUpInside" id="au3-b8-M7Q"/>
@@ -193,7 +199,11 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS4-Cl-cw6">
                                 <rect key="frame" x="20" y="32" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Click here to Post Items"/>
+                                <connections>
+                                    <segue destination="R1z-Cq-b4e" kind="show" id="3F6-m2-PTf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cUJ-pv-agK"/>
@@ -202,11 +212,28 @@
                     <tabBarItem key="tabBarItem" title="Market Place" image="shift.fill" catalog="system" id="2XY-wZ-wuY"/>
                     <connections>
                         <outlet property="keyWord" destination="dm1-Jq-Rba" id="c3U-d4-2My"/>
+                        <outlet property="tableView" destination="7bZ-o9-0Nh" id="dGW-xv-ohO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfF-1d-uYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="634.78260869565224" y="778.79464285714278"/>
+            <point key="canvasLocation" x="710" y="779"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rhW-oP-ubh">
+            <objects>
+                <viewController id="R1z-Cq-b4e" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hL4-qR-Qdq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6gq-VP-iFm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ltn-P5-hR7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FNw-jv-Mtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709" y="1460"/>
         </scene>
         <!--Information-->
         <scene sceneID="KZg-h4-TWp">
@@ -295,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-fY-TEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="692"/>
+            <point key="canvasLocation" x="1480" y="779"/>
         </scene>
         <!--Home-->
         <scene sceneID="7e5-hh-9HY">

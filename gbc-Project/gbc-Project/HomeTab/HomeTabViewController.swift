@@ -7,6 +7,7 @@
 // API KEY - 5f96277317af4c929a9e43ae1c5b8cd2
 
 import UIKit
+import FirebaseAuth
 
 class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -68,6 +69,25 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
             newsTableViewOutlet.reloadData()
         }
     }
+    
+    // MARK: Segue Functions
+    
+    @IBAction func unwindToRootViewController(segue: UIStoryboardSegue) {
+        print("Unwind to Root View Controller")
+    }
+    
+    @IBAction func logOutPressed(_ sender: UIButton) {
+        print("Log out Button Pressed")
+        
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+      
+    }
+    
     
 
    

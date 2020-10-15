@@ -221,6 +221,9 @@
                                 <state key="normal" title="Currency Converter">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="NA1-CX-AGY" kind="show" id="2zU-Rq-9Ae"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cyr-Tj-BQR"/>
@@ -235,6 +238,40 @@
                 <exit id="ocM-0D-CYS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-84.057971014492765" y="778.79464285714278"/>
+        </scene>
+        <!--Currency Converter View Controller-->
+        <scene sceneID="847-we-C0e">
+            <objects>
+                <viewController id="NA1-CX-AGY" customClass="CurrencyConverterViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sd6-xV-n4T">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUc-6S-ahb">
+                                <rect key="frame" x="20" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="egT-1Z-Gw9" kind="unwind" unwindAction="unwindToRootViewControllerWithSegue:" id="04X-8c-SG2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Currency Converter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZg-Mm-aVg">
+                                <rect key="frame" x="81" y="78" width="253" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5DW-Ic-BA6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mCI-Q4-lae"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIZ-sl-b0c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="egT-1Z-Gw9" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-84" y="1509"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ku9-Yx-t8l">

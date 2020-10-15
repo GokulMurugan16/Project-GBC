@@ -7,8 +7,12 @@
 
 import UIKit
 
-class MarketPlaceViewController: UIViewController {
+class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
+    @IBOutlet weak var keyWord: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +21,21 @@ class MarketPlaceViewController: UIViewController {
     }
     
 
-   
+    @IBAction func keyWordSearchButton(_ sender: Any) {
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
 
 }

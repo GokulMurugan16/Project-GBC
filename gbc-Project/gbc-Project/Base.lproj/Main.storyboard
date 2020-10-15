@@ -186,6 +186,9 @@
                                 <rect key="frame" x="316" y="70" width="78" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="keyWordSearchButton:" destination="cC5-5i-p6N" eventType="touchUpInside" id="au3-b8-M7Q"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS4-Cl-cw6">
                                 <rect key="frame" x="20" y="32" width="374" height="30"/>
@@ -197,6 +200,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Market Place" image="shift.fill" catalog="system" id="2XY-wZ-wuY"/>
+                    <connections>
+                        <outlet property="keyWord" destination="dm1-Jq-Rba" id="c3U-d4-2My"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfF-1d-uYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

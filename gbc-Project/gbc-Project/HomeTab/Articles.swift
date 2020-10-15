@@ -7,5 +7,5 @@
 
 import Foundation
 struct Articles: Codable {
-    var articles: [article]
+    public var articles: [Article]
 }

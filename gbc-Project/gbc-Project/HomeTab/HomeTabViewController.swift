@@ -12,7 +12,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     //MARK: - Global Variables
     
-    var articles = [article]()
+    var articles = [Article]()
     
     // MARK: - Outlets
     
@@ -31,14 +31,15 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
     // MARK: - TableView Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = newsTableViewOutlet.dequeueReusableCell(withIdentifier: "customTableCell", for: indexPath)
-        let article = articles[indexPath.row]
-        cell.textLabel?.text = article.author
+        let cell = newsTableViewOutlet.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath)
+        //let article = articles[indexPath.row]
+        cell.textLabel?.text = "article.title"
+        //print(article.title)
         
         return cell
     }
@@ -49,7 +50,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
     // Function to download data from NewsAPI
     func downloadData() {
         
-        let urlString = "http://newsapi.org/v2/everything?q=student&sortBy=publishedAt&country=ca&apiKey=5f96277317af4c929a9e43ae1c5b8cd2"
+        let urlString = "http://newsapi.org/v2/top-headlines?country=ca&sortBy=publishedAt&apiKey=5f96277317af4c929a9e43ae1c5b8cd2"
         
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url){

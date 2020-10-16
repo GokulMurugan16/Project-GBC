@@ -60,7 +60,7 @@ class UploadMarketPlaceViewController: UIViewController {
             
             var ref: DocumentReference? = nil
             ref = self.db.collection("Upload").addDocument(data: [
-                "Poster Name ": self.posterName.text!,
+                "Poster-Name": self.posterName.text!,
                 "Title": self.uploadTitle,
                 "Location": self.location.text!,
                 "Amount" : self.amount.text!,

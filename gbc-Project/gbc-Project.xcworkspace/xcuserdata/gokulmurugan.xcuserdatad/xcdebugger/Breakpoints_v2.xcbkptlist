@@ -3,4 +3,70 @@
    uuid = "17C17DC9-3EA4-4A0E-BD76-A44AE2177383"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0F5A0379-216A-491B-A7B7-87358E8E0B76"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gbc-Project/Login and Signup/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0F5A0379-216A-491B-A7B7-87358E8E0B76 - af6da530acac2b99"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "gbc_Project.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "gbc-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gokulmurugan/Desktop/Project-GBC/gbc-Project/gbc-Project/Login%20and%20Signup/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1311">
+               </Location>
+               <Location
+                  uuid = "0F5A0379-216A-491B-A7B7-87358E8E0B76 - af6da530acac2b99"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "gbc_Project.ViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "gbc-Project"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gokulmurugan/Desktop/Project-GBC/gbc-Project/gbc-Project/Login%20and%20Signup/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "1325">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8049BD1F-7C9F-4D83-8048-9FFAA1CE558F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "gbc-Project/Market Place/UploadMarketPlaceViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "uploadButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

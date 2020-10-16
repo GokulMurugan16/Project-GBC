@@ -18,9 +18,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        // Hello Gokul i commited this
-        
         if FirebaseApp.app() == nil {
                 FirebaseApp.configure()
         }

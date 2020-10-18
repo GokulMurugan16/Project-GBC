@@ -10,5 +10,5 @@ import Foundation
 struct Article: Codable{
     
     public var title: String
-    public var author:String
+    public var description: String
 }

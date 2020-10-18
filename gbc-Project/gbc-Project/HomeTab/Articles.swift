@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct Articles: Codable {
     public var articles: [Article]
 }

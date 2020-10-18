@@ -26,21 +26,24 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         self.newsTableViewOutlet.dataSource = self
         self.newsTableViewOutlet.delegate = self
 
-        downloadData()
+        //downloadData()
+        if let localData = self.readLocalFile(forName: "data") {
+            self.parse(json: localData)
+        }
     }
     
     // MARK: - TableView Functions
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = newsTableViewOutlet.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath)
-        //let article = articles[indexPath.row]
-        cell.textLabel?.text = "article.title goes here..."
-        //print(article.title)
+        let article = self.articles[indexPath.row]
+        cell.textLabel?.text = article.title
+        print(article.title)
         
         return cell
     }
@@ -62,7 +65,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
     // Function to download data from NewsAPI
     func downloadData() {
         
-        let urlString = "http://newsapi.org/v2/top-headlines?country=ca&sortBy=publishedAt&apiKey=5f96277317af4c929a9e43ae1c5b8cd2"
+        let urlString = "https://newsapi.org/v2/top-headlines?country=ca&sortBy=publishedAt&apiKey=5f96277317af4c929a9e43ae1c5b8cd2"
         
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url){
@@ -76,9 +79,24 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let decoder = JSONDecoder()
         
         if let newsArticles = try? decoder.decode(Articles.self, from: json){
-            articles = newsArticles.articles
+            self.articles = newsArticles.articles
+            print(self.articles)
             newsTableViewOutlet.reloadData()
         }
+    }
+    
+    func readLocalFile(forName name: String) -> Data? {
+        do {
+            if let bundlePath = Bundle.main.path(forResource: name,
+                                                 ofType: "json"),
+                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
+                return jsonData
+            }
+        } catch {
+            print(error)
+        }
+        
+        return nil
     }
     
     // MARK: Segue Functions

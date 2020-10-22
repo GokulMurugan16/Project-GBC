@@ -28,6 +28,8 @@ class CurrencyConverterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        exchangeRateLabel.text = ""
+        outputAmountLabel.text = ""
         loadData()
 
         // Do any additional setup after loading the view.

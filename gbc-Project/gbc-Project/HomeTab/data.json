@@ -3,6 +3,71 @@
     "totalResults": 38,
     "articles": [
         {
+        "source": {
+        "id": null,
+        "name": "Toronto Star"
+        },
+        "author": null,
+        "title": "Today’s coronavirus news: Ontario reporting 841 cases of COVID-19, 9 deaths; Outbreak declared at uni at Scarborough hospital - Toronto Star",
+        "description": "Meanwhile, a new bill in Ontario could make it harder for consumers to sue a business that was involved in the transmission of COVID-19, lawyers say.",
+        "url": "https://www.thestar.com/news/canada/2020/10/22/covid-19-coronavirus-updates-toronto-canada-october-22.html",
+        "urlToImage": "https://images.thestar.com/lZRIn6v6JpvX2GMk0JHiCvljUs4=/1200x800/smart/filters:cb(1603385123214)/https://www.thestar.com/content/dam/thestar/news/canada/2020/10/22/covid-19-coronavirus-updates-toronto-canada-october-22/hospital.jpg",
+        "publishedAt": "2020-10-22T15:22:30Z",
+        "content": "The latest coronavirus news from Canada and around the world Thursday. This file will be updated throughout the day. Web links to longer stories if available.\r\n12:45 p.m. Dr. Theresa Tam says the num… [+24780 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+        },
+        "author": "Alicja Siekierska",
+        "title": "WestJet, Air Canada in Twitter fight over flight refunds - Yahoo Canada Finance",
+        "description": "WestJet Airlines and Air Canada bickered on Twitter over flight refund policies.",
+        "url": "https://ca.finance.yahoo.com/news/west-jet-air-canada-in-twitter-fight-over-flight-refunds-144018824.html",
+        "urlToImage": "https://s.yimg.com/ny/api/res/1.2/uugrihcg88vrmFmVLGyd_g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyODA7aD04ODcuNDY2NjY2NjY2NjY2Nw--/https://s.yimg.com/os/creatr-uploaded-images/2020-10/2e1cc4a0-1418-11eb-bfb9-03ea2320c99e",
+        "publishedAt": "2020-10-22T14:40:00Z",
+        "content": "* Strategic focus of immuno-oncology (I-O) portfolio on modulation of tumor microenvironment to enhance T cell influx and activity in immune excluded solid tumors, aspects that immune checkpoint inhi… [+7144 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Ctvnews.ca"
+        },
+        "author": "Kelvin Chan",
+        "title": "New Huawei phone comes at crucial time for Chinese company - CTV News",
+        "description": "Huawei's new smartphone has an upgraded camera, its latest advanced chipset and a better battery. What it may not have outside the Chinese tech giant's home market is very many buyers.",
+        "url": "https://www.ctvnews.ca/business/new-huawei-phone-comes-at-crucial-time-for-chinese-company-1.5156086",
+        "urlToImage": "https://www.ctvnews.ca/polopoly_fs/1.5156091.1603377146!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
+        "publishedAt": "2020-10-22T14:33:00Z",
+        "content": "LONDON -- \r\nHuawei's new smartphone has an upgraded camera, its latest advanced chipset and a better battery. What it may not have outside the Chinese tech giant's home market is very many buyers.\r\nH… [+4229 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Ctvnews.ca"
+            },
+            "author": "Rachel Aiello",
+            "title": "Feds face new Conservative push for COVID-19 disclosures - CTV News",
+            "description": "A day after dodging a confidence vote, the Liberals are facing a new Conservative challenge in proposing another committee deep dive into the federal government's COVID-19 response.",
+            "url": "https://www.ctvnews.ca/politics/feds-face-new-conservative-push-for-covid-19-study-1.5155730",
+            "urlToImage": "https://www.ctvnews.ca/polopoly_fs/1.5156056.1603375572!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
+            "publishedAt": "2020-10-22T15:56:00Z",
+            "content": "OTTAWA -- \r\nA day after dodging a confidence vote, the Liberals are facing a new Conservative challenge in proposing another committee deep dive into the federal governments COVID-19 response.\r\nThe s… [+4858 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "renfrewtoday.ca"
+            },
+            "author": "myFM News/Oldies 107.7 staff",
+            "title": "Credit card fraud resulting in loss for businesses - renfrewtoday.ca",
+            "description": "Business owners need to be savvy when it comes to credit card fraud. OPP say they're experiencing a high volum...",
+            "url": "https://www.renfrewtoday.ca/2020/10/22/credit-card-fraud-resulting-in-loss-for-businesses/",
+            "urlToImage": "https://media.socastsrm.com/wordpress/wp-content/blogs.dir/773/files/2020/02/fraud-alert-1.jpg",
+            "publishedAt": "2020-10-22T15:58:07Z",
+            "content": "Business owners need to be savvy when it comes to credit card fraud. OPP say they’re experiencing a high volume of calls from business owners who are out product and profit after officials inform the… [+1422 chars]"
+        },
+        {
             "source": {},
             "author": null,
             "title": "Blair approves request to boost RCMP presence as Nova Scotia lobster fishery dispute escalates - CBC.ca",

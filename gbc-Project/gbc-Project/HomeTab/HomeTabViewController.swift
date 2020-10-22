@@ -43,7 +43,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let cell = newsTableViewOutlet.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath)
         let article = self.articles[indexPath.row]
         cell.textLabel?.text = article.title
-        print(article.title)
+        cell.textLabel?.numberOfLines = 0
         
         return cell
     }

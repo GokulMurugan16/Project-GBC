@@ -78,8 +78,8 @@
             filePath = "gbc-Project/Market Place/MarketPlaceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "loadFireBaseData()"
             landmarkType = "7">
          </BreakpointContent>

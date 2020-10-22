@@ -53,7 +53,13 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TableViewCell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! TableViewCell
         cell.jobTitle.text = postingArray[indexPath.row].title
+        if(postingArray[indexPath.row].title == "Job")
+        {
         cell.salary.text = "\(postingArray[indexPath.row].amount) $/hr"
+        }
+        else{
+            cell.salary.text = "\(postingArray[indexPath.row].amount) $/month"
+        }
         cell.location.text = "Location : \(postingArray[indexPath.row].loc)"
         return cell
     }

@@ -23,7 +23,7 @@ class UploadMarketPlaceViewController: UIViewController {
     
     @IBOutlet weak var uploadDesc: UITextField!
     
-    var uploadTitle:String = "Job"
+    var uploadTitle:String = ""
     var db = Firestore.firestore()
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class UploadMarketPlaceViewController: UIViewController {
 
     @IBAction func uploadButton(_ sender: Any) {
         
-        if (segment.selectedSegmentIndex == -1 || posterName.text == "" || location.text == "" || amount.text == "" )
+        if (segment.selectedSegmentIndex == -1 || posterName.text == "" || location.text == "" || amount.text == "" || uploadDesc.text == "")
         {
             
             var alert = UIAlertController(title: "Invalid Details", message: "Please enter all the details and try again! ", preferredStyle: UIAlertController.Style.alert)
@@ -52,10 +52,10 @@ class UploadMarketPlaceViewController: UIViewController {
             
             if(segment.selectedSegmentIndex == 0)
             {
-                title = "Job"
+                uploadTitle = "Job"
             }
-            else {
-                title = "Rental"
+            else if(segment.selectedSegmentIndex == 1) {
+                uploadTitle = "Rental"
             }
             
             var ref: DocumentReference? = nil
@@ -71,19 +71,14 @@ class UploadMarketPlaceViewController: UIViewController {
                     print("Error adding document: \(err)")
                 } else {
                     print("Document added with ID: \(ref!.documentID)")
+                    var alert = UIAlertController(title: "Upload Sucessfull", message:nil, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
                 }
             }
         }
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

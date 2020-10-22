@@ -9,7 +9,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var posterName: UILabel!
+    @IBOutlet weak var jobTitle: UILabel!
     @IBOutlet weak var salary: UILabel!
     @IBOutlet weak var location: UILabel!
     @IBOutlet weak var imagePosting: UIImageView!

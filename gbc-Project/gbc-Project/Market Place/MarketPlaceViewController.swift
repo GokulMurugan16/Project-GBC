@@ -16,7 +16,7 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var tableView: UITableView!
     
-    var postingArray:[[String:String]] = []
+    var postingArray:[Upload] = [Upload]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,15 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         
         loadFireBaseData()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "marketplace.jpg")!)
+        
+        self.tableView.rowHeight = 150
+        
+        loadFireBaseData()
+    }
+    
     
 
     @IBAction func keyWordSearchButton(_ sender: Any) {
@@ -43,9 +52,9 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TableViewCell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! TableViewCell
-        cell.posterName?.text = "Hello"
-        cell.salary.text = "1"
-        cell.location.text = "w"
+        cell.jobTitle.text = postingArray[indexPath.row].title
+        cell.salary.text = "\(postingArray[indexPath.row].amount) $/hr"
+        cell.location.text = "Location : \(postingArray[indexPath.row].loc)"
         return cell
     }
     
@@ -58,6 +67,8 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                     if let error = error {
                         print(error.localizedDescription)
                     } else {
+                        
+                        self.postingArray = [Upload]()
                         if let snapshot = snapshot {
 
                             for document in snapshot.documents {
@@ -66,8 +77,10 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                                 let pName = data["Poster-Name"] as? String ?? ""
                                 let amount = data["Amount"] as? String ?? ""
                                 let loc = data["Location"] as? String ?? ""
-                                let posting = ["name": pName, "amount": amount, "location": loc]
-                                self.postingArray.append(posting)
+                                let title = data["Title"] as? String ?? ""
+                                let desc = data["Description"] as? String ?? ""
+                                var u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc)
+                                self.postingArray.append(u)
                                 print(self.postingArray)
                             }
                             self.tableView.reloadData()

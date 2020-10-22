@@ -19,6 +19,7 @@
 		92604FDA2527CCFA00408A95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD82527CCFA00408A95 /* LaunchScreen.storyboard */; };
 		926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */; };
 		927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */; };
+		92B0995D2541EFE200F57C28 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0995C2541EFE200F57C28 /* Upload.swift */; };
 		FAC51AAE25380A2900F63029 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC51AAD25380A2900F63029 /* InformationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		92604FDB2527CCFA00408A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceViewController.swift; sourceTree = "<group>"; };
 		927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		92B0995C2541EFE200F57C28 /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		D49EC2CC9DED88129E361248 /* Pods_gbc_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gbc_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC51AAD25380A2900F63029 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */,
+				92B0995C2541EFE200F57C28 /* Upload.swift */,
 				9242501525393130000B26CC /* UploadMarketPlaceViewController.swift */,
 				9242501C25393E14000B26CC /* TableViewCell.swift */,
 			);
@@ -248,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B0995D2541EFE200F57C28 /* Upload.swift in Sources */,
 				92604FD22527CCF700408A95 /* ViewController.swift in Sources */,
 				9242501D25393E14000B26CC /* TableViewCell.swift in Sources */,
 				9242501625393130000B26CC /* UploadMarketPlaceViewController.swift in Sources */,

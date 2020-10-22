@@ -209,8 +209,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imagePosting" destination="mlP-cB-R9g" id="XlE-vk-8uP"/>
+                                            <outlet property="jobTitle" destination="1A4-dU-zPE" id="ajW-DK-UYq"/>
                                             <outlet property="location" destination="egn-wC-GXQ" id="6Vn-er-AvX"/>
-                                            <outlet property="posterName" destination="1A4-dU-zPE" id="2gp-mY-Ezl"/>
                                             <outlet property="salary" destination="UsM-yG-Gm9" id="YHW-7F-6yL"/>
                                         </connections>
                                     </tableViewCell>

@@ -26,6 +26,11 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.imageTapped))
         imageView.addGestureRecognizer(tap)
         imageView.isUserInteractionEnabled = true
+        imageView?.layer.cornerRadius = (imageView?.frame.size.width ?? 0.0) / 2
+        imageView?.clipsToBounds = true
+        imageView?.layer.borderWidth = 3.0
+        imageView?.layer.borderColor = UIColor.white.cgColor
+        imageView.image = UIImage(named: "proPic")
         
         // Do any additional setup after loading the view.
     }

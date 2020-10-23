@@ -126,8 +126,8 @@
             filePath = "gbc-Project/Login and Signup/SignUpViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "uploadProfileImage(_:uid:)"
             landmarkType = "7">
          </BreakpointContent>

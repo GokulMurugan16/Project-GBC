@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class UploadMarketPlaceViewController: UIViewController {
 
@@ -26,8 +27,13 @@ class UploadMarketPlaceViewController: UIViewController {
     var uploadTitle:String = ""
     var db = Firestore.firestore()
     
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let storage = Storage.storage()
         
         
 
@@ -80,5 +86,8 @@ class UploadMarketPlaceViewController: UIViewController {
         }
         
     }
+    
+    
+    
 
 }

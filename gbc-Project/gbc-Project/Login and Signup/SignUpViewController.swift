@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 import Photos
 
 class SignUpViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -30,6 +31,8 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     }
     
     @IBAction func signUpButton(_ sender: Any) {
+        
+        
         if(userName.text == "" || passWord.text == "" || eMail.text == "" || pNumber.text == "")
         {
             var alert = UIAlertController(title: "Invalid Details", message: "Please enter valid credentials", preferredStyle: UIAlertController.Style.alert)
@@ -55,12 +58,13 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                     "userName": self.userName.text!,
                     "eMail": self.eMail.text!,
                     "phone": self.pNumber.text!,
-                    "userId": uId
+                    "userId": uId,
+                    "image" : self.uploadProfileImage(self.imageView.image!, uid: uId)
                 ]) { err in
                     if let err = err {
                         print("Error adding document: \(err)")
                     } else {
-                        print("Document added with ID: \(ref!.documentID)")
+                        print("Data Added Sucessfully")
                     }
                 }
                 
@@ -109,6 +113,29 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
             picker.dismiss(animated: true, completion: nil)
         }
     
+    func uploadProfileImage(_ image:UIImage, uid : String) -> URL?
+    {
+        
+        var downURL:URL!
+        let storageRef = Storage.storage().reference().child("user/\(uid)")
+
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {return downURL}
+
+
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+
+                storageRef.downloadURL { url, error in
+                    print(url)
+                    downURL = url!
+                }
+            }
+        }
+        return downURL
+    }
     
     
 }

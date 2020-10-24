@@ -8,7 +8,10 @@
 import UIKit
 import Firebase
 
+
+
 class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     
     var db = Firestore.firestore()
 
@@ -28,6 +31,8 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         loadFireBaseData()
     }
     
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "marketplace.jpg")!)
         
@@ -35,6 +40,8 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         
         loadFireBaseData()
     }
+    
+    
     
     
 
@@ -52,7 +59,13 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TableViewCell = tableView.dequeueReusableCell(withIdentifier: "myCell") as! TableViewCell
+        
+        
         cell.jobTitle.text = postingArray[indexPath.row].title
+        UIImage.loadFrom(url: URL(string: postingArray[indexPath.row].Uimage)!) { i in
+            cell.imagePosting.image = i
+        }
+        
         if(postingArray[indexPath.row].title == "Job")
         {
         cell.salary.text = "\(postingArray[indexPath.row].amount) $/hr"
@@ -85,7 +98,8 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                                 let loc = data["Location"] as? String ?? ""
                                 let title = data["Title"] as? String ?? ""
                                 let desc = data["Description"] as? String ?? ""
-                                var u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc)
+                                let uImage = data["Image"] as? String ?? ""
+                                var u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage)
                                 self.postingArray.append(u)
                                 print(self.postingArray)
                             }
@@ -95,4 +109,23 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                 }
     }
     
+}
+
+
+extension UIImage {
+
+    public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> ()) {
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    completion(UIImage(data: data))
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            }
+        }
+    }
+
 }

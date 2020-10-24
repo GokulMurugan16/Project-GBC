@@ -95,18 +95,14 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
                 "Title": self.uploadTitle,
                 "Location": self.location.text!,
                 "Amount" : self.amount.text!,
-                "Description" : self.uploadDesc.text!,
-                "Image" : uploadImage(imageView.image!, uid: Auth.auth().currentUser!.uid)
-                
+                "Description" : self.uploadDesc.text!
                 
             ]) { err in
                 if let err = err {
                     print("Error adding document: \(err)")
                 } else {
+                    self.uploadImage(self.imageView.image!, refId: ref!.documentID)
                     print("Document added with ID: \(ref!.documentID)")
-                    var alert = UIAlertController(title: "Upload Sucessfull", message:nil, preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
                     
                 }
             }
@@ -114,13 +110,11 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
         
     }
     
-    func uploadImage(_ image:UIImage, uid : String) -> URL?
+    func uploadImage(_ image:UIImage, refId : String)
     {
-        
-        var downURL:URL!
-        let storageRef = Storage.storage().reference().child("Uploads/").child("\(uid)/")
+        let storageRef = Storage.storage().reference().child("Uploads/\(refId)")
 
-        guard let imageData = image.jpegData(compressionQuality: 0.5) else {return downURL}
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {return}
 
 
         let metaData = StorageMetadata()
@@ -130,12 +124,18 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
             if error == nil, metaData != nil {
 
                 storageRef.downloadURL { url, error in
-                    print(url)
-                    downURL = url!
+                    
+                    // Fire base Code goes here
+                    
+                    self.db.collection("Upload").document(refId).setData(["Image" : "\(url!)"], merge: true)
+                    
+                    var alert = UIAlertController(title: "Upload Sucessfull", message:nil, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    
                 }
             }
         }
-        return downURL
     }
     
 

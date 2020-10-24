@@ -14,13 +14,15 @@ public class Upload{
     var title:String = ""
     var pName:String = ""
     var desc:String = ""
+    var Uimage:String = ""
     
-    init(amount:String,loc:String,title:String,pName:String,desc:String) {
+    init(amount:String,loc:String,title:String,pName:String,desc:String,Uimage:String) {
         self.amount = amount
         self.loc = loc
         self.title = title
         self.pName = pName
         self.desc = desc
+        self.Uimage = Uimage
     }
     
     

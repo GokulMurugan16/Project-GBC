@@ -9,23 +9,19 @@ import UIKit
 import Firebase
 import FirebaseStorage
 
-class UploadMarketPlaceViewController: UIViewController {
+class UploadMarketPlaceViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var segment: UISegmentedControl!
-    
     @IBOutlet weak var posterName: UITextField!
-    
     @IBOutlet weak var location: UITextField!
-    
     @IBOutlet weak var amount: UITextField!
-    
-    
     @IBOutlet weak var uploadDesc: UITextField!
     
     var uploadTitle:String = ""
     var db = Firestore.firestore()
+    var imagePicker = UIImagePickerController()
+
     
 
     
@@ -34,11 +30,40 @@ class UploadMarketPlaceViewController: UIViewController {
         super.viewDidLoad()
         
         let storage = Storage.storage()
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UploadMarketPlaceViewController.imageTapped))
+        imageView.addGestureRecognizer(tap)
         
 
         // Do any additional setup after loading the view.
     }
+    
+    @objc func imageTapped(){
+        if UIImagePickerController.isSourceTypeAvailable( .photoLibrary) {
+
+                    let imagePickerController = UIImagePickerController()
+                    imagePickerController.delegate = self
+                    imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
+                    self.present(imagePickerController, animated: true, completion: nil)
+                }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+            self.dismiss(animated: true) { [weak self] in
+
+                guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+                
+                self?.imageView.image = image
+            }
+        }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            picker.dismiss(animated: true, completion: nil)
+        }
+    
+    
+    
+    
     
 
     @IBAction func uploadButton(_ sender: Any) {
@@ -70,7 +95,9 @@ class UploadMarketPlaceViewController: UIViewController {
                 "Title": self.uploadTitle,
                 "Location": self.location.text!,
                 "Amount" : self.amount.text!,
-                "Description" : self.uploadDesc.text!
+                "Description" : self.uploadDesc.text!,
+                "Image" : uploadImage(imageView.image!, uid: Auth.auth().currentUser!.uid)
+                
                 
             ]) { err in
                 if let err = err {
@@ -87,7 +114,29 @@ class UploadMarketPlaceViewController: UIViewController {
         
     }
     
-    
+    func uploadImage(_ image:UIImage, uid : String) -> URL?
+    {
+        
+        var downURL:URL!
+        let storageRef = Storage.storage().reference().child("Uploads/").child("\(uid)/")
+
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {return downURL}
+
+
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+
+                storageRef.downloadURL { url, error in
+                    print(url)
+                    downURL = url!
+                }
+            }
+        }
+        return downURL
+    }
     
 
 }

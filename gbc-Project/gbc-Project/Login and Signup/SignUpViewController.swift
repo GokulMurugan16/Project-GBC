@@ -18,8 +18,8 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var eMail: UITextField!
     @IBOutlet weak var passWord: UITextField!
-    
     @IBOutlet weak var pNumber: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +30,6 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         imageView?.clipsToBounds = true
         imageView?.layer.borderWidth = 3.0
         imageView?.layer.borderColor = UIColor.white.cgColor
-        imageView.image = UIImage(named: "proPic")
         
         // Do any additional setup after loading the view.
     }
@@ -58,28 +57,31 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                 }))
                 self.present(alert, animated: true, completion: nil)
                 var uId = Auth.auth().currentUser!.uid
-                var ref: DocumentReference? = nil
-                ref = self.db.collection("users").addDocument(data: [
-                    "userName": self.userName.text!,
-                    "eMail": self.eMail.text!,
-                    "phone": self.pNumber.text!,
-                    "userId": uId,
-                    "image" : self.uploadProfileImage(self.imageView.image!, uid: uId)
-                ]) { err in
-                    if let err = err {
-                        print("Error adding document: \(err)")
-                    } else {
-                        print("Data Added Sucessfully")
-                    }
-                }
                 
-                self.userName.text = ""
-                self.passWord.text = ""
-                self.eMail.text = ""
+                self.uploadProfileImage(self.imageView.image!, uid: uId)
                 
             }
             else{
-                print(error)
+                
+                let errCd = AuthErrorCode(rawValue: error!._code)
+                var errorAlert:String = ""
+                
+                switch errCd
+                {
+                case .emailAlreadyInUse:
+                    errorAlert = "Email - Already in Use"
+                case .invalidEmail:
+                    errorAlert = "Email - Already Invalid"
+                case .weakPassword:
+                    errorAlert = "Password must be atleast 6 characters"
+                default:
+                    errorAlert = "Sign Up Unsucessfull"
+                }
+                
+                var alert = UIAlertController(title: "\(errorAlert)", message: nil, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
                 
             }
         }
@@ -89,9 +91,6 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     
     
     @objc func imageTapped(){
-        
-        
-        
         if UIImagePickerController.isSourceTypeAvailable( .photoLibrary) {
 
                     let imagePickerController = UIImagePickerController()
@@ -103,7 +102,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         
         
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
             self.dismiss(animated: true) { [weak self] in
@@ -118,28 +117,47 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
             picker.dismiss(animated: true, completion: nil)
         }
     
-    func uploadProfileImage(_ image:UIImage, uid : String) -> URL?
+    func uploadProfileImage(_ image:UIImage, uid : String)
     {
-        
-        var downURL:URL!
         let storageRef = Storage.storage().reference().child("user/\(uid)")
 
-        guard let imageData = image.jpegData(compressionQuality: 0.5) else {return downURL}
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {return}
 
 
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpg"
+        metaData.contentType = "image/png"
 
         storageRef.putData(imageData, metadata: metaData) { metaData, error in
             if error == nil, metaData != nil {
 
                 storageRef.downloadURL { url, error in
-                    print(url)
-                    downURL = url!
+                    print(url!)
+                    
+                    self.db.collection("users").addDocument(data: [
+                        "userName": self.userName.text!,
+                        "eMail": self.eMail.text!,
+                        "phone": self.pNumber.text!,
+                        "userId": uid,
+                        "image" : "\(url!)"
+                    ])
+                    { err in
+                        if let err = err {
+                            print("Error adding document: \(err)")
+                        } else {
+                            print("Data Added Sucessfully")
+                        }
+                    }
+                    
+                    self.userName.text = ""
+                    self.passWord.text = ""
+                    self.eMail.text = ""
+                    self.pNumber.text = ""
+                    self.imageView.image = UIImage(named: "person.fill")
+                    
                 }
             }
         }
-        return downURL
     }
     
     

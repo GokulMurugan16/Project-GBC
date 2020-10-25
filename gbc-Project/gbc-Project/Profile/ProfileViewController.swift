@@ -9,7 +9,8 @@ import UIKit
 import Firebase
 
 
-class ProfileViewController: UIViewController {
+
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Variables
     
@@ -20,6 +21,8 @@ class ProfileViewController: UIViewController {
     var imageUrl:String?
     var email:String?
     var db:Firestore!
+    let storage = Storage.storage().reference()
+    
     
     // MARK: Outlets
     
@@ -27,6 +30,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var phoneTF: UITextField!
+    @IBOutlet weak var profileImageView: UIImageView!
     
     // MARK: Default Functions
 
@@ -34,7 +38,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         db = Firestore.firestore()
-        
+        profileImageView.contentMode = .scaleAspectFit
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +61,75 @@ class ProfileViewController: UIViewController {
         print("Unwind to Root View Controller")
     }
     
+    // MARK: Photo Functions
+    
+    @IBAction func updatePhotoPressed(_ sender: UIButton) {
+        
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        guard let imageData = image.pngData() else {
+            return
+        }
+        
+            storage.child("user/\(userId).png").putData(imageData, metadata: nil) { (_, error) in
+            guard error == nil else {
+                print("Failed to upload the image.")
+                return
+            }
+                
+                self.storage.child("user/\(self.userId).png").downloadURL { (url, error) in
+                    guard let url = url , error == nil else {
+                        return
+                    }
+                    
+                    let urlString = url.absoluteString
+                    print("Download URL: \(urlString)")
+                    self.imageUrl = urlString
+                    
+                    DispatchQueue.main.async {
+                        self.profileImageView.image = image
+                    }
+                }
+            
+        }
+        dismiss(animated: true, completion: nil)
+    }
+
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func downloadImage(urlString:String) {
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, _, error) in
+            guard let data = data, error == nil else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                self.profileImageView.image = image
+            }
+        }
+        
+        task.resume()
+    }
+    
     // MARK: User Information Functions
     
     func getUserData() {
@@ -70,20 +143,54 @@ class ProfileViewController: UIViewController {
                         print("\(document.documentID) => \(document.data()) ")
                         let data = document.data()
                         
-                        self.userName = data["userName"] as! String?
-                        self.phone = data["phone"] as! String?
-                        self.imageUrl = data["image"] as! String?
-                        self.email = data["eMail"] as! String?
+                        self.userName = (data["userName"] as! String?)!
+                        self.phone = (data["phone"] as! String?)!
+                        self.imageUrl = (data["image"] as! String?)!
+                        self.email = (data["eMail"] as! String?)!
                         
                         self.emailLabel.text = self.email
                         self.userNameTF.text = self.userName
                         self.phoneTF.text = self.phone
                         
                         print("\(self.userName!) \(self.phone!)")
+                        self.downloadImage(urlString: self.imageUrl!)
                         
                     }
                 }
             }
     }
+    
+    @IBAction func updateUserData(_ sender: UIButton) {
+        
+        db.collection("users").document("\(userId!)").setData([
+            "eMail" : "\(email!)",
+            "phone" : "\(phoneTF.text!)",
+            "userId": "\(userId!)",
+            "userName": "\(userNameTF.text!)",
+            "image" : "\(imageUrl!)"
+            
+        ]) { err in
+            if let err = err {
+                print("Error writing document : \(err)")
+                self.displayAlert(title: "Error", message: "Cannot update your profile.")
+            }
+            else {
+                print("Document successfully written")
+                self.displayAlert(title: "Success", message: "Your profile is updated.")
+            }
+        }
+    }
+    
+    // MARK: Display Alert Function
+    
+    func displayAlert(title:String, message:String) {
+        
+        let alert = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 
 }

@@ -7,24 +7,42 @@
 // API KEY - 5f96277317af4c929a9e43ae1c5b8cd2
 
 import UIKit
-import FirebaseAuth
+import Firebase
 
 class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     //MARK: - Global Variables
     
     var articles = [Article]()
+    var handle: AuthStateDidChangeListenerHandle?
+    var userId:String?
+    var userName:String?
+    var db:Firestore!
     
     // MARK: - Outlets
     
     @IBOutlet weak var newsTableViewOutlet: UITableView!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     // MARK: - Default Functions
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            let user = Auth.auth().currentUser
+            if let user = user {
+                self.userId = user.uid
+                self.getUserData()
+            }
+        })
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.newsTableViewOutlet.dataSource = self
         self.newsTableViewOutlet.delegate = self
+        db = Firestore.firestore()
 
         //downloadData()
         if let localData = self.readLocalFile(forName: "data") {
@@ -111,16 +129,32 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
-            performSegue(withIdentifier: "unwindToLogin", sender: self)
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
-        
-        
-      
     }
     
+    // MARK: User Data Functions
     
+    func getUserData() {
+        let docRef: Void = db.collection("users").whereField("userId", isEqualTo: userId)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error Getting Documents \(err)")
+                }
+                else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data()) ")
+                        let data = document.data()
+                        
+                        self.userName = (data["userName"] as! String?)!
+                        self.welcomeLabel.text = "Welcome, \(self.userName!)"
+                    }
+                }
+            }
+    }
 
    
     

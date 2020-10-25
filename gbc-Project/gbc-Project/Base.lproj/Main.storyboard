@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogIn" id="BYZ-38-t0r" customClass="ViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
                         <outlet property="appTitle" destination="Hvy-4R-KDO" id="Mlb-sC-Soz"/>
                         <outlet property="passWord" destination="JV1-6E-hUa" id="8R2-Uv-RLK"/>
                         <outlet property="userName" destination="p2v-7F-BLB" id="TBE-aA-CIh"/>
-                        <segue destination="CCZ-ja-g5H" kind="show" identifier="sucessLogin" id="1MQ-Il-Whh"/>
+                        <segue destination="CCZ-ja-g5H" kind="showDetail" identifier="sucessLogin" id="1MQ-Il-Whh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -334,7 +334,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJK-2a-RZq">
-                                <rect key="frame" x="20" y="55" width="227" height="46"/>
+                                <rect key="frame" x="20" y="55" width="293" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
@@ -381,13 +381,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VER-gn-aHB">
-                                <rect key="frame" x="305" y="63" width="89" height="30"/>
+                                <rect key="frame" x="321" y="63" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOutPressed:" destination="6T7-KW-OhP" eventType="touchUpInside" id="5cx-pp-bfN"/>
-                                    <segue destination="ocM-0D-CYS" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToRootViewControllerWithSegue:" id="PSO-B1-hFF"/>
+                                    <segue destination="ocM-0D-CYS" kind="unwind" identifier="unwindToLogin" unwindAction="unwindToRootViewControllerWithSegue:" id="C1n-x9-txi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1B-g6-3MN">
@@ -408,6 +408,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="6hD-8n-4Lr"/>
                     <connections>
                         <outlet property="newsTableViewOutlet" destination="tdB-hT-pBx" id="gXq-qy-79N"/>
+                        <outlet property="welcomeLabel" destination="CJK-2a-RZq" id="2fC-IH-f2g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvI-MB-Ku9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -454,6 +455,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWu-gj-9Go">
+                                <rect key="frame" x="148" y="300" width="121" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Update Photo">
+                                    <color key="titleColor" systemColor="linkColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="updatePhotoPressed:" destination="jn7-sn-u4k" eventType="touchUpInside" id="dob-3A-B0e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZY-HD-9RX">
+                                <rect key="frame" x="176" y="598" width="65" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateUserData:" destination="jn7-sn-u4k" eventType="touchUpInside" id="7jo-yv-hfV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Q5c-Zx-Mg0"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -462,6 +487,7 @@
                     <connections>
                         <outlet property="emailLabel" destination="81b-9J-1rM" id="1LV-2J-bqV"/>
                         <outlet property="phoneTF" destination="vXz-GK-vrj" id="fyr-6g-jnu"/>
+                        <outlet property="profileImageView" destination="oau-Ol-dq7" id="77w-Rj-ML5"/>
                         <outlet property="userNameTF" destination="8iR-yh-A6t" id="hBO-Cy-d9j"/>
                     </connections>
                 </viewController>

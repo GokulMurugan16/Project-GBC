@@ -111,9 +111,12 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
+            performSegue(withIdentifier: "unwindToLogin", sender: self)
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
+        
+        
       
     }
     

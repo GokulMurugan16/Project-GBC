@@ -48,7 +48,13 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Lifecycle
 
 + (void)load {
+<<<<<<< HEAD
   [FIRApp registerInternalLibrary:(Class<FIRLibrary>)self withName:@"fire-str"];
+=======
+  [FIRApp registerInternalLibrary:(Class<FIRLibrary>)self
+                         withName:@"fire-str"
+                      withVersion:[NSString stringWithUTF8String:FIRStorageVersionString]];
+>>>>>>> main
 }
 
 #pragma mark - FIRComponentRegistrant

@@ -252,8 +252,12 @@ NS_SWIFT_NAME(putData(_:metadata:));
  */
 - (void)listWithMaxResults:(int64_t)maxResults
                 completion:
+<<<<<<< HEAD
                     (void (^)(FIRStorageListResult *result, NSError *_Nullable error))completion
     NS_SWIFT_NAME(list(maxResults:completion:));
+=======
+                    (void (^)(FIRStorageListResult *result, NSError *_Nullable error))completion;
+>>>>>>> main
 
 /**
  * Resumes a previous call to list(maxResults:completion:)`, starting after a pagination token.
@@ -275,8 +279,12 @@ NS_SWIFT_NAME(putData(_:metadata:));
 - (void)listWithMaxResults:(int64_t)maxResults
                  pageToken:(NSString *)pageToken
                 completion:
+<<<<<<< HEAD
                     (void (^)(FIRStorageListResult *result, NSError *_Nullable error))completion
     NS_SWIFT_NAME(list(maxResults:pageToken:completion:));
+=======
+                    (void (^)(FIRStorageListResult *result, NSError *_Nullable error))completion;
+>>>>>>> main
 
 #pragma mark - Metadata Operations
 

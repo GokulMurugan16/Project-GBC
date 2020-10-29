@@ -101,12 +101,15 @@ NSString *const kGCSObjectAllowedCharacterSet =
     [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:queryParams[key]]];
   }
   [components setQueryItems:queryItems];
+<<<<<<< HEAD
   // NSURLComponents does not encode "+" as "%2B". This is however required by our backend, as
   // it treats "+" as a shorthand encoding for spaces. See also
   // https://stackoverflow.com/questions/31577188/how-to-encode-into-2b-with-nsurlcomponents
   [components setPercentEncodedQuery:[[components percentEncodedQuery]
                                          stringByReplacingOccurrencesOfString:@"+"
                                                                    withString:@"%2B"]];
+=======
+>>>>>>> main
 
   NSString *encodedPath = [self encodedURLForPath:path];
   [components setPercentEncodedPath:encodedPath];

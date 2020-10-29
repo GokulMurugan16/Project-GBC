@@ -15,11 +15,14 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     var db = Firestore.firestore()
 
-    @IBOutlet weak var keyWord: UITextField!
+
+    @IBOutlet weak var filterSegment: UISegmentedControl!
     
     @IBOutlet weak var tableView: UITableView!
     
     var postingArray:[Upload] = [Upload]()
+    var uploadArray:[Upload] = [Upload]()
+    var i:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,7 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.rowHeight = 150
         
         loadFireBaseData()
+        
     }
     
     
@@ -47,7 +51,24 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBAction func keyWordSearchButton(_ sender: Any) {
         
-        print("Button tapped")
+        if filterSegment.selectedSegmentIndex == 0
+        {
+            postingArray = [Upload]()
+            postingArray = filterArray(name: "Job")
+            self.tableView.reloadData()
+        }
+        else if filterSegment.selectedSegmentIndex == 1
+        {
+            postingArray = [Upload]()
+            postingArray = filterArray(name: "Rental")
+            self.tableView.reloadData()
+        }
+        else
+        {
+            postingArray = [Upload]()
+            postingArray = uploadArray
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -79,6 +100,9 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You have selected cell at index \(indexPath)")
+        
+        performSegue(withIdentifier: "detailView", sender: self)
+        self.i = indexPath.row
     }
 
     func loadFireBaseData() {
@@ -87,7 +111,7 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                         print(error.localizedDescription)
                     } else {
                         
-                        self.postingArray = [Upload]()
+                        self.uploadArray = [Upload]()
                         if let snapshot = snapshot {
 
                             for document in snapshot.documents {
@@ -99,15 +123,44 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                                 let title = data["Title"] as? String ?? ""
                                 let desc = data["Description"] as? String ?? ""
                                 let uImage = data["Image"] as? String ?? ""
-                                var u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage)
-                                self.postingArray.append(u)
+                                let mobNum = data["Mobile-Number"] as? String ?? ""
+                                let u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage, mNumber: mobNum)
+                                self.uploadArray.append(u)
                                 print(self.postingArray)
                             }
+                            self.postingArray = self.uploadArray
                             self.tableView.reloadData()
                         }
                     }
                 }
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailView" {
+            
+            let vc = segue.destination as! DetailViewController
+            vc.array = postingArray
+            vc.index = i
+            
+        }
+    }
+    
+    
+    func filterArray(name:String) -> [Upload]{
+        var array:[Upload] = [Upload]()
+        for a in self.uploadArray{
+            if a.title == name{
+                array.append(a)
+            }
+        }
+        return array
+    }
+    
+    
+    
+    
+    
     
 }
 

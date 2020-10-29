@@ -16,6 +16,7 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
     @IBOutlet weak var posterName: UITextField!
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var amount: UITextField!
+    @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var uploadDesc: UITextField!
     
     var uploadTitle:String = ""
@@ -68,7 +69,7 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
 
     @IBAction func uploadButton(_ sender: Any) {
         
-        if (segment.selectedSegmentIndex == -1 || posterName.text == "" || location.text == "" || amount.text == "" || uploadDesc.text == "")
+        if (segment.selectedSegmentIndex == -1 || posterName.text == "" || location.text == "" || amount.text == "" || uploadDesc.text == "" || mobileNumber.text == "")
         {
             
             var alert = UIAlertController(title: "Invalid Details", message: "Please enter all the details and try again! ", preferredStyle: UIAlertController.Style.alert)
@@ -95,7 +96,8 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
                 "Title": self.uploadTitle,
                 "Location": self.location.text!,
                 "Amount" : self.amount.text!,
-                "Description" : self.uploadDesc.text!
+                "Description" : self.uploadDesc.text!,
+                "Mobile-Number" : self.mobileNumber.text!
                 
             ]) { err in
                 if let err = err {

@@ -20,6 +20,7 @@
 		926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */; };
 		927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */; };
 		92B0995D2541EFE200F57C28 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0995C2541EFE200F57C28 /* Upload.swift */; };
+		92CDEE46254A6E8500672AC0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDEE45254A6E8500672AC0 /* DetailViewController.swift */; };
 		FAC51AAE25380A2900F63029 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC51AAD25380A2900F63029 /* InformationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceViewController.swift; sourceTree = "<group>"; };
 		927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		92B0995C2541EFE200F57C28 /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		92CDEE45254A6E8500672AC0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D49EC2CC9DED88129E361248 /* Pods_gbc_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gbc_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC51AAD25380A2900F63029 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				92B0995C2541EFE200F57C28 /* Upload.swift */,
 				9242501525393130000B26CC /* UploadMarketPlaceViewController.swift */,
 				9242501C25393E14000B26CC /* TableViewCell.swift */,
+				92CDEE45254A6E8500672AC0 /* DetailViewController.swift */,
 			);
 			path = "Market Place";
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				92604FCE2527CCF700408A95 /* AppDelegate.swift in Sources */,
 				926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */,
 				927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */,
+				92CDEE46254A6E8500672AC0 /* DetailViewController.swift in Sources */,
 				92604FD02527CCF700408A95 /* SceneDelegate.swift in Sources */,
 				FAC51AAE25380A2900F63029 /* InformationViewController.swift in Sources */,
 			);

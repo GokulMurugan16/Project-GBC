@@ -17,6 +17,9 @@
 		92604FDA2527CCFA00408A95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD82527CCFA00408A95 /* LaunchScreen.storyboard */; };
 		926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */; };
 		927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */; };
+		FA7788FC2548977800B8A1CF /* addInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7788FB2548977800B8A1CF /* addInfoViewController.swift */; };
+		FA778928254A71E400B8A1CF /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA778927254A71E400B8A1CF /* Info.swift */; };
+		FA77892B254A794F00B8A1CF /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77892A254A794F00B8A1CF /* InfoTableViewCell.swift */; };
 		FAC51AAE25380A2900F63029 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC51AAD25380A2900F63029 /* InformationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceViewController.swift; sourceTree = "<group>"; };
 		927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D49EC2CC9DED88129E361248 /* Pods_gbc_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gbc_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA7788FB2548977800B8A1CF /* addInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addInfoViewController.swift; sourceTree = "<group>"; };
+		FA778927254A71E400B8A1CF /* Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		FA77892A254A794F00B8A1CF /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		FAC51AAD25380A2900F63029 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,9 +104,20 @@
 				92604FD62527CCFA00408A95 /* Assets.xcassets */,
 				92604FD82527CCFA00408A95 /* LaunchScreen.storyboard */,
 				92604FDB2527CCFA00408A95 /* Info.plist */,
-				FAC51AAD25380A2900F63029 /* InformationViewController.swift */,
+				FA7788FA2548973E00B8A1CF /* Information  */,
 			);
 			path = "gbc-Project";
+			sourceTree = "<group>";
+		};
+		FA7788FA2548973E00B8A1CF /* Information  */ = {
+			isa = PBXGroup;
+			children = (
+				FAC51AAD25380A2900F63029 /* InformationViewController.swift */,
+				FA7788FB2548977800B8A1CF /* addInfoViewController.swift */,
+				FA778927254A71E400B8A1CF /* Info.swift */,
+				FA77892A254A794F00B8A1CF /* InfoTableViewCell.swift */,
+			);
+			path = "Information ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,11 +236,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				92604FD22527CCF700408A95 /* ViewController.swift in Sources */,
+				FA778928254A71E400B8A1CF /* Info.swift in Sources */,
 				92604FCE2527CCF700408A95 /* AppDelegate.swift in Sources */,
+				FA77892B254A794F00B8A1CF /* InfoTableViewCell.swift in Sources */,
 				926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */,
 				927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */,
 				92604FD02527CCF700408A95 /* SceneDelegate.swift in Sources */,
 				FAC51AAE25380A2900F63029 /* InformationViewController.swift in Sources */,
+				FA7788FC2548977800B8A1CF /* addInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

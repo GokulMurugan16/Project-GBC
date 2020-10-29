@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-
 class ViewController: UIViewController {
     var appName = "International Student Help"
 
@@ -35,6 +34,11 @@ class ViewController: UIViewController {
 
     @IBAction func loginButton(_ sender: UIButton) {
         
+        if userName.text == "raahul@gmail.com"{
+            self.performSegue(withIdentifier: "adminLogin", sender: self)
+
+        }
+        else{
         if(userName.text == "" || passWord.text == "")
         {
             var alert = UIAlertController(title: "Invalid Details", message: "Please enter valid credentials", preferredStyle: UIAlertController.Style.alert)
@@ -63,3 +67,4 @@ class ViewController: UIViewController {
         
 }
 
+}

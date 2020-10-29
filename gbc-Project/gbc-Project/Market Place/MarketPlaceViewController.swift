@@ -100,9 +100,9 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("You have selected cell at index \(indexPath)")
-        
-        performSegue(withIdentifier: "detailView", sender: self)
         self.i = indexPath.row
+        performSegue(withIdentifier: "detailView", sender: self)
+        
     }
 
     func loadFireBaseData() {

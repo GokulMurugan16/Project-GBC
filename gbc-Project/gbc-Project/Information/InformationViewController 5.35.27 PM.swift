@@ -11,9 +11,9 @@ import Firebase
 
 class InformationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var webArray = ["For information on Colleges","For information on Covid","For information on Cerb"]
+    var webArray = ["For Checklist before travel","For information on Covid","For information on Cerb"]
     var rowSelected = 0
-    var webLinks = ["https://www.ontariocolleges.ca/en/colleges","https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html","https://www.canada.ca/en/services/benefits/ei/cerb-application.html"]
+    var webLinks = ["https://moving2canada.com/essential-list/","https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html","https://www.canada.ca/en/services/benefits/ei/cerb-application.html"]
     
     @IBOutlet weak var webTableView: UITableView!
     @IBOutlet weak var adminInfoTableView: UITableView!
@@ -55,7 +55,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
             let cell:InfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "customInfoCell") as! InfoTableViewCell
             
                cell.infoTextView.text = infoArray[indexPath.row].title
-            cell.titleTextField.text =  infoArray[indexPath.row].Info
+              cell.titleTextField.text =  infoArray[indexPath.row].Info
                UIImage.loadFrom(url: URL(string: infoArray[indexPath.row].UImage)!) { i in
                   cell.infoImageView.image = i
             }
@@ -63,10 +63,13 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == self.webTableView{
+
         rowSelected = indexPath.row
         print(webArray[rowSelected])
         let vc = SFSafariViewController(url: URL(string: "\(webLinks[rowSelected])")!)
         present(vc,animated: true)
+    }
     }
     
     func loadFireBaseData() {
@@ -94,21 +97,3 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
                     }
         }}}
     
-//    extension UIImage {
-//
-//        public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> ()) {
-//            DispatchQueue.global().async {
-//                if let data = try? Data(contentsOf: url) {
-//                    DispatchQueue.main.async {
-//                        completion(UIImage(data: data))
-//                    }
-//                } else {
-//                    DispatchQueue.main.async {
-//                        completion(nil)
-//                    }
-//                }
-//            }
-//        }
-//
-//}
-//

@@ -34,8 +34,12 @@ class ViewController: UIViewController {
         }}
 
     @IBAction func loginButton(_ sender: UIButton) {
+        if(userName.text == "jonsnow@gmail.com"){
+            self.performSegue(withIdentifier: "adminLogin", sender: self)
+
+        }
         
-        if(userName.text == "" || passWord.text == "")
+       else if(userName.text == "" || passWord.text == "")
         {
             var alert = UIAlertController(title: "Invalid Details", message: "Please enter valid credentials", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))

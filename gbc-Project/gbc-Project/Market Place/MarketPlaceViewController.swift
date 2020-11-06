@@ -23,9 +23,14 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     var postingArray:[Upload] = [Upload]()
     var uploadArray:[Upload] = [Upload]()
     var i:Int = 0
+    var indicator:UIActivityIndicatorView = UIActivityIndicatorView()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "marketplace.jpg")!)
         
@@ -33,14 +38,13 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         
         loadFireBaseData()
         
+        startIndicator()
+        
     }
     
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "marketplace.jpg")!)
-        
-        self.tableView.rowHeight = 150
         
         loadFireBaseData()
     }
@@ -104,6 +108,13 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         performSegue(withIdentifier: "detailView", sender: self)
         
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if(indexPath.row == (postingArray.count-1)){
+            
+            self.indicator.stopAnimating()
+        }
+    }
 
     func loadFireBaseData() {
         db.collection("Upload").getDocuments { (snapshot, error) in
@@ -157,7 +168,13 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         return array
     }
     
-    
+    func startIndicator(){
+        self.indicator.center = self.view.center
+        self.indicator.hidesWhenStopped = true
+        self.indicator.style = UIActivityIndicatorView.Style.medium
+        self.view.addSubview(self.indicator)
+        self.indicator.startAnimating()
+    }
     
     
     

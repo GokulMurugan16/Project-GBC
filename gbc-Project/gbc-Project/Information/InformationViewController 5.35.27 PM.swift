@@ -86,8 +86,8 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
                                 let data = document.data()
                                 let info = data["Title-Info"] as? String ?? ""
                                 let title = data["Description"] as? String ?? ""
-                                var uImage = data["Image"] as? String ?? ""
-                                var i:Info = Info(Info: info, title: title, UImage: uImage)
+                                let uImage = data["Image"] as? String ?? ""
+                                let i:Info = Info(Info: info, title: title, UImage: uImage)
                                
                                 self.infoArray.append(i)
                                 print(self.infoArray)

@@ -29,15 +29,9 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "marketplace.jpg")!)
-        
+//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "marketplace.jpg")!)
         self.tableView.rowHeight = 150
-        
         loadFireBaseData()
-        
         startIndicator()
         
     }
@@ -48,10 +42,6 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         
         loadFireBaseData()
     }
-    
-    
-    
-    
 
     @IBAction func keyWordSearchButton(_ sender: Any) {
         
@@ -135,7 +125,8 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                                 let desc = data["Description"] as? String ?? ""
                                 let uImage = data["Image"] as? String ?? ""
                                 let mobNum = data["Mobile-Number"] as? String ?? ""
-                                let u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage, mNumber: mobNum)
+                                let user = data["User"] as? String ?? ""
+                                let u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage, mNumber: mobNum, user: user)
                                 self.uploadArray.append(u)
                                 print(self.postingArray)
                             }

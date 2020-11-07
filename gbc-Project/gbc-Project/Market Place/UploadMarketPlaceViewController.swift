@@ -97,7 +97,8 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
                 "Location": self.location.text!,
                 "Amount" : self.amount.text!,
                 "Description" : self.uploadDesc.text!,
-                "Mobile-Number" : self.mobileNumber.text!
+                "Mobile-Number" : self.mobileNumber.text!,
+                "User" : "\(Auth.auth().currentUser!.uid)"
                 
             ]) { err in
                 if let err = err {

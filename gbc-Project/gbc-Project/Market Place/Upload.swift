@@ -16,8 +16,9 @@ public class Upload{
     var desc:String = ""
     var Uimage:String = ""
     var mNumber:String = ""
+    var user:String = ""
     
-    init(amount:String,loc:String,title:String,pName:String,desc:String,Uimage:String,mNumber:String) {
+    init(amount:String,loc:String,title:String,pName:String,desc:String,Uimage:String,mNumber:String,user:String) {
         self.amount = amount
         self.loc = loc
         self.title = title
@@ -25,6 +26,7 @@ public class Upload{
         self.desc = desc
         self.Uimage = Uimage
         self.mNumber = mNumber
+        self.user = user
     }
     
     

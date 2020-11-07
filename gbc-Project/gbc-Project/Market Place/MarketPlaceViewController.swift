@@ -126,7 +126,8 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                                 let uImage = data["Image"] as? String ?? ""
                                 let mobNum = data["Mobile-Number"] as? String ?? ""
                                 let user = data["User"] as? String ?? ""
-                                let u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage, mNumber: mobNum, user: user)
+                                let refNo = data["Ref"] as? String ?? ""
+                                let u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage, mNumber: mobNum, user: user, refNo: refNo)
                                 self.uploadArray.append(u)
                                 print(self.postingArray)
                             }

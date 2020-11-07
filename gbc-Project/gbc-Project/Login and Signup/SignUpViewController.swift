@@ -39,7 +39,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         
         if(userName.text == "" || passWord.text == "" || eMail.text == "" || pNumber.text == "")
         {
-            var alert = UIAlertController(title: "Invalid Details", message: "Please enter valid credentials", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Invalid Details", message: "Please enter valid credentials", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
@@ -50,13 +50,14 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         Auth.auth().createUser(withEmail: eMail.text!, password: passWord.text!) {authResult, error in
             if(authResult != nil)
             {
-                print(authResult)
-                var alert = UIAlertController(title: "Sign Up Sucessfull!", message: nil, preferredStyle: UIAlertController.Style.alert)
+                print(authResult!)
+                let alert = UIAlertController(title: "Sign Up Sucessfull!", message: nil, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
                     self.performSegue(withIdentifier: "login", sender: self)
                 }))
                 self.present(alert, animated: true, completion: nil)
-                var uId = Auth.auth().currentUser!.uid
+                
+                let uId = authResult!.user.uid
                 
                 self.uploadProfileImage(self.imageView.image!, uid: uId)
                 
@@ -78,7 +79,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                     errorAlert = "Sign Up Unsucessfull"
                 }
                 
-                var alert = UIAlertController(title: "\(errorAlert)", message: nil, preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "\(errorAlert)", message: nil, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 

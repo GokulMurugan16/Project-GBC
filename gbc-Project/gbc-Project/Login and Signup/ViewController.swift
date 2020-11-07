@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         
        else if(userName.text == "" || passWord.text == "")
         {
-            var alert = UIAlertController(title: "Invalid Details", message: "Please enter valid credentials", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Invalid Details", message: "Please enter valid credentials", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
                 }
                 else{
                     print("User Not Found")
-                    var alert = UIAlertController(title: "User Not Found", message: "Please check your E-mail id or Password and try again! ", preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "User Not Found", message: "Please check your E-mail id or Password and try again! ", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                     

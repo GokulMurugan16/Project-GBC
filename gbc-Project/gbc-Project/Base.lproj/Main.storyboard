@@ -1154,9 +1154,8 @@
                                     <action selector="logOutPressed:" destination="6T7-KW-OhP" eventType="touchUpInside" id="b48-0H-kSb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x63-kR-Ptw">
-                                <rect key="frame" x="339" y="41" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x63-kR-Ptw">
+                                <rect key="frame" x="339" y="60" width="55" height="30"/>
                                 <state key="normal" title="Manage"/>
                                 <connections>
                                     <segue destination="1Of-5a-XMv" kind="show" id="lVG-9A-Qsp"/>
@@ -1169,6 +1168,7 @@
                             <constraint firstItem="5Ak-Wf-VZZ" firstAttribute="leading" secondItem="p9Y-j1-e0g" secondAttribute="trailing" constant="70" id="2zv-og-BT7"/>
                             <constraint firstItem="cyr-Tj-BQR" firstAttribute="trailing" secondItem="Gsy-VP-Ltp" secondAttribute="trailing" constant="20" id="8EE-g8-Tnx"/>
                             <constraint firstItem="cyr-Tj-BQR" firstAttribute="trailing" secondItem="5Ak-Wf-VZZ" secondAttribute="trailing" constant="20" id="8Xy-wL-HIP"/>
+                            <constraint firstItem="cyr-Tj-BQR" firstAttribute="trailing" secondItem="x63-kR-Ptw" secondAttribute="trailing" constant="20" id="EMJ-s3-5Zj"/>
                             <constraint firstItem="yqR-ng-TW4" firstAttribute="top" secondItem="Gsy-VP-Ltp" secondAttribute="bottom" constant="25" id="FFN-PS-A8D"/>
                             <constraint firstItem="TyM-JV-rjR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TKa-xq-xZJ" secondAttribute="trailing" constant="8" symbolic="YES" id="IB0-tb-In5"/>
                             <constraint firstItem="TKa-xq-xZJ" firstAttribute="top" secondItem="cyr-Tj-BQR" secondAttribute="top" constant="40" id="KfD-gG-SzB"/>
@@ -1176,6 +1176,7 @@
                             <constraint firstItem="cyr-Tj-BQR" firstAttribute="bottom" secondItem="5Ak-Wf-VZZ" secondAttribute="bottom" constant="25" id="Pag-hY-rH8"/>
                             <constraint firstItem="TyM-JV-rjR" firstAttribute="top" secondItem="cyr-Tj-BQR" secondAttribute="top" constant="20" id="SeY-bx-kEH"/>
                             <constraint firstItem="GDb-Lu-kIw" firstAttribute="leading" secondItem="cyr-Tj-BQR" secondAttribute="leading" constant="20" id="UlC-hr-zfN"/>
+                            <constraint firstItem="x63-kR-Ptw" firstAttribute="top" secondItem="TyM-JV-rjR" secondAttribute="bottom" constant="10" id="Y56-sl-E7b"/>
                             <constraint firstItem="Gsy-VP-Ltp" firstAttribute="leading" secondItem="cyr-Tj-BQR" secondAttribute="leading" constant="20" id="bCN-WD-Y42"/>
                             <constraint firstItem="p9Y-j1-e0g" firstAttribute="top" secondItem="yqR-ng-TW4" secondAttribute="bottom" constant="25" id="e0B-pa-8sc"/>
                             <constraint firstItem="p9Y-j1-e0g" firstAttribute="leading" secondItem="cyr-Tj-BQR" secondAttribute="leading" constant="20" id="eeN-VX-lan"/>

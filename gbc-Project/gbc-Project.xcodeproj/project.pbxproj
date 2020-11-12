@@ -15,6 +15,7 @@
 		6A93F90D254B20A0003AB132 /* CurrencyRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93F90C254B20A0003AB132 /* CurrencyRates.swift */; };
 		6A93F911254B20CB003AB132 /* CurrencyConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93F910254B20CB003AB132 /* CurrencyConverterViewController.swift */; };
 		6A93F915254B242D003AB132 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A93F914254B242D003AB132 /* ProfileViewController.swift */; };
+		6AE00D66255DA8B2009AA87B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AE00D65255DA8B2009AA87B /* GoogleService-Info.plist */; };
 		92300DAE2556376400277E6E /* ManagePostingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92300DAD2556376400277E6E /* ManagePostingsViewController.swift */; };
 		92300DB1255640AD00277E6E /* ManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92300DB0255640AD00277E6E /* ManageTableViewCell.swift */; };
 		9242501625393130000B26CC /* UploadMarketPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242501525393130000B26CC /* UploadMarketPlaceViewController.swift */; };
@@ -27,7 +28,6 @@
 		92604FDA2527CCFA00408A95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD82527CCFA00408A95 /* LaunchScreen.storyboard */; };
 		926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */; };
 		927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */; };
-		927E6AD625531CD800F6046C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 927E6AD525531CD800F6046C /* GoogleService-Info.plist */; };
 		92B0995D2541EFE200F57C28 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0995C2541EFE200F57C28 /* Upload.swift */; };
 		92CDEE46254A6E8500672AC0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CDEE45254A6E8500672AC0 /* DetailViewController.swift */; };
 		FA77894B2552135300B8A1CF /* addInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7789472552135200B8A1CF /* addInfoViewController.swift */; };
@@ -45,6 +45,7 @@
 		6A93F90C254B20A0003AB132 /* CurrencyRates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRates.swift; sourceTree = "<group>"; };
 		6A93F910254B20CB003AB132 /* CurrencyConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterViewController.swift; sourceTree = "<group>"; };
 		6A93F914254B242D003AB132 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		6AE00D65255DA8B2009AA87B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D2E5F593103718B7A706EC0 /* Pods-gbc-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gbc-Project.debug.xcconfig"; path = "Target Support Files/Pods-gbc-Project/Pods-gbc-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		920D825E25532026001CA9E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92300DAD2556376400277E6E /* ManagePostingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostingsViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		92604FDB2527CCFA00408A95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceViewController.swift; sourceTree = "<group>"; };
 		927D1BBE252FDF1D00C5C706 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		927E6AD525531CD800F6046C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92B0995C2541EFE200F57C28 /* Upload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		92CDEE45254A6E8500672AC0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D49EC2CC9DED88129E361248 /* Pods_gbc_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gbc_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,7 +182,7 @@
 		92604FCC2527CCF700408A95 /* gbc-Project */ = {
 			isa = PBXGroup;
 			children = (
-				927E6AD525531CD800F6046C /* GoogleService-Info.plist */,
+				6AE00D65255DA8B2009AA87B /* GoogleService-Info.plist */,
 				FA7789462552123300B8A1CF /* Information */,
 				6A93F913254B2417003AB132 /* Profile */,
 				6A93F90B254B2062003AB132 /* CurrencyConverter */,
@@ -270,7 +270,7 @@
 			files = (
 				92604FDA2527CCFA00408A95 /* LaunchScreen.storyboard in Resources */,
 				92604FD72527CCFA00408A95 /* Assets.xcassets in Resources */,
-				927E6AD625531CD800F6046C /* GoogleService-Info.plist in Resources */,
+				6AE00D66255DA8B2009AA87B /* GoogleService-Info.plist in Resources */,
 				6A93F909254B2038003AB132 /* data.json in Resources */,
 				92604FD52527CCF700408A95 /* Main.storyboard in Resources */,
 			);

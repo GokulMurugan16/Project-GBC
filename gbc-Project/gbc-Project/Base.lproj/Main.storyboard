@@ -1275,16 +1275,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyM-JV-rjR">
-                                <rect key="frame" x="339" y="20" width="55" height="30"/>
+                                <rect key="frame" x="339" y="20" width="55" height="11"/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOutPressed:" destination="6T7-KW-OhP" eventType="touchUpInside" id="b48-0H-kSb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x63-kR-Ptw">
-
-                                <rect key="frame" x="339" y="60" width="55" height="30"/>
-                              <constraints>
+                                <rect key="frame" x="20" y="41" width="374" height="30"/>
+                                <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bb8-QW-whS"/>
                                 </constraints>
                                 <state key="normal" title="Manage"/>

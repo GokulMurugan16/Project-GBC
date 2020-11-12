@@ -18,6 +18,7 @@
 		6AE00D66255DA8B2009AA87B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6AE00D65255DA8B2009AA87B /* GoogleService-Info.plist */; };
 		92300DAE2556376400277E6E /* ManagePostingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92300DAD2556376400277E6E /* ManagePostingsViewController.swift */; };
 		92300DB1255640AD00277E6E /* ManageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92300DB0255640AD00277E6E /* ManageTableViewCell.swift */; };
+		92300DC725566BA900277E6E /* UpdatePostingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92300DC625566BA900277E6E /* UpdatePostingsViewController.swift */; };
 		9242501625393130000B26CC /* UploadMarketPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242501525393130000B26CC /* UploadMarketPlaceViewController.swift */; };
 		9242501D25393E14000B26CC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242501C25393E14000B26CC /* TableViewCell.swift */; };
 		92604FCE2527CCF700408A95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92604FCD2527CCF700408A95 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		920D825E25532026001CA9E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92300DAD2556376400277E6E /* ManagePostingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostingsViewController.swift; sourceTree = "<group>"; };
 		92300DB0255640AD00277E6E /* ManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewCell.swift; sourceTree = "<group>"; };
+		92300DC625566BA900277E6E /* UpdatePostingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePostingsViewController.swift; sourceTree = "<group>"; };
 		9242501525393130000B26CC /* UploadMarketPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMarketPlaceViewController.swift; sourceTree = "<group>"; };
 		9242501C25393E14000B26CC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		92604FCA2527CCF700408A95 /* gbc-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gbc-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 		9242500F25392D1C000B26CC /* Market Place */ = {
 			isa = PBXGroup;
 			children = (
+				92300DC625566BA900277E6E /* UpdatePostingsViewController.swift */,
 				926C70942538CD280011DEC7 /* MarketPlaceViewController.swift */,
 				92B0995C2541EFE200F57C28 /* Upload.swift */,
 				9242501525393130000B26CC /* UploadMarketPlaceViewController.swift */,
@@ -337,6 +340,7 @@
 				6A93F915254B242D003AB132 /* ProfileViewController.swift in Sources */,
 				92604FCE2527CCF700408A95 /* AppDelegate.swift in Sources */,
 				92300DB1255640AD00277E6E /* ManageTableViewCell.swift in Sources */,
+				92300DC725566BA900277E6E /* UpdatePostingsViewController.swift in Sources */,
 				926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */,
 				92300DAE2556376400277E6E /* ManagePostingsViewController.swift in Sources */,
 				927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */,

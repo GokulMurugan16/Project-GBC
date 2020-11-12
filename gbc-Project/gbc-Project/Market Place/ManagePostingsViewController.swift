@@ -14,11 +14,12 @@ class ManagePostingsViewController: UIViewController, UITableViewDelegate, UITab
     let currentUser = Auth.auth().currentUser!.uid
     var db = Firestore.firestore()
     var manaageArray:[Upload] = [Upload]()
+    var documentID:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        manageTableView.rowHeight = 150
+        manageTableView.rowHeight = 125
         loadFireBaseData()
     }
     
@@ -47,7 +48,8 @@ class ManagePostingsViewController: UIViewController, UITableViewDelegate, UITab
    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        self.documentID = manaageArray[indexPath.row].refNo
+        performSegue(withIdentifier: "manageDetails", sender: self)
     }
     
     
@@ -74,7 +76,8 @@ class ManagePostingsViewController: UIViewController, UITableViewDelegate, UITab
                                 let uImage = data["Image"] as? String ?? ""
                                 let mobNum = data["Mobile-Number"] as? String ?? ""
                                 let user = data["User"] as? String ?? ""
-                                let u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage, mNumber: mobNum, user: user)
+                                let refNo = data["Ref"] as? String ?? ""
+                                let u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage, mNumber: mobNum, user: user, refNo: refNo)
                                 if(self.currentUser == user)
                                 {
                                     self.manaageArray.append(u)
@@ -91,14 +94,9 @@ class ManagePostingsViewController: UIViewController, UITableViewDelegate, UITab
     
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let vc = segue.destination as! UpdatePostingsViewController
+        vc.DocPath = self.documentID
     }
-    */
 
 }

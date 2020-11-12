@@ -30,7 +30,6 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let storage = Storage.storage()
         let tap = UITapGestureRecognizer(target: self, action: #selector(UploadMarketPlaceViewController.imageTapped))
         imageView.addGestureRecognizer(tap)
         
@@ -72,7 +71,7 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
         if (segment.selectedSegmentIndex == -1 || posterName.text == "" || location.text == "" || amount.text == "" || uploadDesc.text == "" || mobileNumber.text == "")
         {
             
-            var alert = UIAlertController(title: "Invalid Details", message: "Please enter all the details and try again! ", preferredStyle: UIAlertController.Style.alert)
+            let alert = UIAlertController(title: "Invalid Details", message: "Please enter all the details and try again! ", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             return
@@ -105,6 +104,9 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
                     print("Error adding document: \(err)")
                 } else {
                     self.uploadImage(self.imageView.image!, refId: ref!.documentID)
+                    self.db.collection("Upload").document(ref!.documentID).setData(["Ref" : ref!.documentID], merge: true)
+                    
+                    
                     print("Document added with ID: \(ref!.documentID)")
                     
                 }
@@ -132,7 +134,7 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
                     
                     self.db.collection("Upload").document(refId).setData(["Image" : "\(url!)"], merge: true)
                     
-                    var alert = UIAlertController(title: "Upload Sucessfull", message:nil, preferredStyle: UIAlertController.Style.alert)
+                    let alert = UIAlertController(title: "Upload Sucessfull", message:nil, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                     

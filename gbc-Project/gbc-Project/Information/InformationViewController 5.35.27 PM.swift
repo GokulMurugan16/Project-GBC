@@ -17,6 +17,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var webTableView: UITableView!
     @IBOutlet weak var adminInfoTableView: UITableView!
+    var detailInfo = ""
     
     var webURL: String = ""
     var db = Firestore.firestore()
@@ -56,6 +57,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
             
                cell.infoTextView.text = infoArray[indexPath.row].title
               cell.titleTextField.text =  infoArray[indexPath.row].Info
+               detailInfo = infoArray[indexPath.row].title
                UIImage.loadFrom(url: URL(string: infoArray[indexPath.row].UImage)!) { i in
                   cell.infoImageView.image = i
             }
@@ -70,8 +72,17 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         let vc = SFSafariViewController(url: URL(string: "\(webLinks[rowSelected])")!)
         present(vc,animated: true)
     }
+        else{
+            print("hello \(detailInfo)")
+            self.performSegue(withIdentifier: "detailedInfoSegue", sender: self)
+
+        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let pNumber = segue.destination as! detailedInfoViewController
+        pNumber.info = self.detailInfo
+    }
     func loadFireBaseData() {
         db.collection("infoUpload").getDocuments { (snapshot, error) in
                     if let error = error {

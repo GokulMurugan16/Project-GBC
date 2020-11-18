@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1104,11 +1104,51 @@
                     <connections>
                         <outlet property="adminInfoTableView" destination="an5-ZF-oaW" id="Lcr-cn-jwl"/>
                         <outlet property="webTableView" destination="pMg-6o-OZx" id="ePf-1N-wqG"/>
+                        <segue destination="L79-Bp-be0" kind="show" identifier="detailedInfoSegue" id="BXD-xw-wNr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-fY-TEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478.2608695652175" y="778.79464285714278"/>
+            <point key="canvasLocation" x="1674" y="779"/>
+        </scene>
+        <!--Detailed Info View Controller-->
+        <scene sceneID="qy1-a7-DRJ">
+            <objects>
+                <viewController id="L79-Bp-be0" customClass="detailedInfoViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cS-az-GQ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Detailed View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1i-if-fO5">
+                                <rect key="frame" x="0.0" y="79" width="394" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Kh-Z6-RZ6">
+                                <rect key="frame" x="0.0" y="149" width="414" height="713"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p6B-l1-E8o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7Kh-Z6-RZ6" firstAttribute="leading" secondItem="p6B-l1-E8o" secondAttribute="leading" id="4ah-FF-6Ef"/>
+                            <constraint firstItem="p6B-l1-E8o" firstAttribute="trailing" secondItem="7Kh-Z6-RZ6" secondAttribute="trailing" id="NJY-Wp-LnB"/>
+                            <constraint firstItem="7Kh-Z6-RZ6" firstAttribute="top" secondItem="n1i-if-fO5" secondAttribute="bottom" id="VxE-vu-Ziq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="f3C-EZ-C1Y"/>
+                    <connections>
+                        <outlet property="detailTextView" destination="7Kh-Z6-RZ6" id="LBs-KD-FYr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4j-M9-xkO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2529" y="788"/>
         </scene>
         <!--Manage Postings View Controller-->
         <scene sceneID="h6q-1O-l3j">
@@ -1282,11 +1322,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x63-kR-Ptw">
-
-                                <rect key="frame" x="20" y="41" width="374" height="30"/>
-
                                 <rect key="frame" x="339" y="41" width="55" height="30"/>
- 8445821d7a3be3d2ad8ccefef0416debe7b05e67
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bb8-QW-whS"/>
                                 </constraints>

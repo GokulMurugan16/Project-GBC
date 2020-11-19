@@ -26,4 +26,8 @@ class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func layoutSubviews() {
+        imagePosting.layer.cornerRadius = imagePosting.bounds.height/2
+        imagePosting.clipsToBounds = true
+    }
 }

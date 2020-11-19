@@ -24,6 +24,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         super.viewDidLoad()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.imageTapped))
+        
         imageView.addGestureRecognizer(tap)
         imageView.isUserInteractionEnabled = true
         imageView?.layer.cornerRadius = (imageView?.frame.size.width ?? 0.0) / 2

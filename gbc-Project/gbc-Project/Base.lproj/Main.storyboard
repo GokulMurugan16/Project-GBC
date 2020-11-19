@@ -1420,6 +1420,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="3F6-m2-PTf"/>
         <segue reference="P8D-BP-71B"/>
         <segue reference="7Mv-Fc-oQJ"/>
         <segue reference="5Ur-o3-R55"/>

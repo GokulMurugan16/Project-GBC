@@ -29,6 +29,10 @@ class UpdatePostingsViewController: UIViewController,UIImagePickerControllerDele
         loadFireBaseData()
         let tap = UITapGestureRecognizer(target: self, action: #selector(UpdatePostingsViewController.imageTapped))
         imageView.addGestureRecognizer(tap)
+        
+        imageView.layer.cornerRadius = imageView.bounds.height/2
+        imageView.clipsToBounds = true
+        
         // Do any additional setup after loading the view.
     }
     

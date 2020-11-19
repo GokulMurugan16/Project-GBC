@@ -76,7 +76,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="p2v-7F-BLB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0tU-ox-dL0"/>
                             <constraint firstItem="val-vi-Imf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1v0-yS-8g9"/>
+                            <constraint firstItem="JV1-6E-hUa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Bx-kb-0Jb"/>
                             <constraint firstItem="EGu-Al-T5w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AIj-Jt-5EJ"/>
                             <constraint firstItem="p2v-7F-BLB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="I1q-pZ-1uZ"/>
                             <constraint firstItem="Hvy-4R-KDO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MDj-pu-bPs"/>
@@ -98,8 +100,14 @@
                     <navigationItem key="navigationItem" id="4D4-5a-8SR"/>
                     <connections>
                         <outlet property="appTitle" destination="Hvy-4R-KDO" id="Mlb-sC-Soz"/>
+                        <outlet property="loginButtonCenterConstraint" destination="rtz-Ls-J8B" id="TYi-6V-d0X"/>
+                        <outlet property="loginToAccessLabelCenterConstraint" destination="q9m-dg-pQj" id="GWa-mP-YCm"/>
+                        <outlet property="notRegisteredLabelCenterConstraint" destination="YCz-eX-24u" id="71X-A5-F0F"/>
                         <outlet property="passWord" destination="JV1-6E-hUa" id="8R2-Uv-RLK"/>
+                        <outlet property="passwordTFCenterConstraint" destination="5Bx-kb-0Jb" id="ebD-gy-XrN"/>
+                        <outlet property="signupButtonCenterConstraint" destination="AIj-Jt-5EJ" id="rmr-cX-tox"/>
                         <outlet property="userName" destination="p2v-7F-BLB" id="TBE-aA-CIh"/>
+                        <outlet property="usernameTFCenterConstraint" destination="0tU-ox-dL0" id="hFo-Dj-rZ7"/>
                         <segue destination="CCZ-ja-g5H" kind="show" identifier="sucessLogin" id="1MQ-Il-Whh"/>
                         <segue destination="RGg-4G-hXS" kind="show" identifier="adminLogin" id="1oR-hO-2Li"/>
                     </connections>
@@ -710,6 +718,8 @@
                             <constraint firstItem="8Mp-4V-fJx" firstAttribute="top" secondItem="IC3-aB-YLy" secondAttribute="top" constant="20" id="QdJ-WZ-gq2"/>
                             <constraint firstItem="dF3-zG-Qa1" firstAttribute="top" secondItem="Q31-3z-Z3f" secondAttribute="bottom" constant="30" id="Qms-fo-LDy"/>
                             <constraint firstItem="Q31-3z-Z3f" firstAttribute="top" secondItem="nLd-fs-2d9" secondAttribute="bottom" constant="20" id="WdP-uY-sc2"/>
+                            <constraint firstItem="Uqe-Sc-J0V" firstAttribute="centerX" secondItem="90u-nu-4e0" secondAttribute="centerX" id="Wn4-lZ-gRe"/>
+                            <constraint firstItem="KZ8-ag-aZO" firstAttribute="centerX" secondItem="90u-nu-4e0" secondAttribute="centerX" id="WpO-Q5-b6X"/>
                             <constraint firstItem="dF3-zG-Qa1" firstAttribute="centerX" secondItem="90u-nu-4e0" secondAttribute="centerX" id="XmA-iK-Ue4"/>
                             <constraint firstItem="IC3-aB-YLy" firstAttribute="trailing" secondItem="nLd-fs-2d9" secondAttribute="trailing" constant="30" id="a16-kY-zua"/>
                             <constraint firstItem="nLd-fs-2d9" firstAttribute="centerX" secondItem="90u-nu-4e0" secondAttribute="centerX" id="bSP-CL-kja"/>
@@ -731,12 +741,14 @@
                         <outlet property="emailLabel" destination="dF3-zG-Qa1" id="bco-nL-1k7"/>
                         <outlet property="emailLabelCenterConstraint" destination="XmA-iK-Ue4" id="r9j-6p-U0A"/>
                         <outlet property="phoneTF" destination="Uqe-Sc-J0V" id="4Hr-jX-HIP"/>
+                        <outlet property="phoneTFCenterConstraint" destination="Wn4-lZ-gRe" id="FsH-cb-QSn"/>
                         <outlet property="profileImageCenterConstraint" destination="bSP-CL-kja" id="oU7-ag-5fX"/>
                         <outlet property="profileImageView" destination="nLd-fs-2d9" id="rjF-Qn-RHk"/>
                         <outlet property="profileLabelCenterConstraint" destination="4DN-j3-2EE" id="GqT-g7-Ch5"/>
                         <outlet property="updateButtonCenterConstraint" destination="lfY-yJ-4Ww" id="mkC-ql-iv3"/>
                         <outlet property="uploadPhotoCenterConstraint" destination="fBz-s1-zlL" id="Cdh-zu-7wX"/>
                         <outlet property="userNameTF" destination="KZ8-ag-aZO" id="PwR-a5-bpX"/>
+                        <outlet property="usernameTFCenterConstraint" destination="WpO-Q5-b6X" id="tcf-mb-LJy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="run-Tg-gMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1430,7 +1442,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="P8D-BP-71B"/>
+        <segue reference="1MQ-Il-Whh"/>
         <segue reference="7Mv-Fc-oQJ"/>
         <segue reference="5Ur-o3-R55"/>
     </inferredMetricsTieBreakers>

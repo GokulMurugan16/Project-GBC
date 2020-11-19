@@ -9,10 +9,83 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    
+    // MARK: Outlets
 
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var passWord: UITextField!
     @IBOutlet weak var appTitle: UILabel!
+    
+    //MARK: Constraints
+    
+    @IBOutlet weak var loginToAccessLabelCenterConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var usernameTFCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var passwordTFCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loginButtonCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var notRegisteredLabelCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var signupButtonCenterConstraint: NSLayoutConstraint!
+    
+    //MARK: Default Functions
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loginToAccessLabelCenterConstraint.constant -= view.bounds.width
+        usernameTFCenterConstraint.constant -= view.bounds.width
+        passwordTFCenterConstraint.constant -= view.bounds.width
+        loginButtonCenterConstraint.constant -= view.bounds.width
+        notRegisteredLabelCenterConstraint.constant -= view.bounds.width
+        signupButtonCenterConstraint.constant -= view.bounds.width
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        loginToAccessLabelCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.2,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        usernameTFCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        passwordTFCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        loginButtonCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        notRegisteredLabelCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        signupButtonCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -35,6 +35,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var uploadPhotoCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailLabelCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var updateButtonCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var usernameTFCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var phoneTFCenterConstraint: NSLayoutConstraint!
     
     
     // MARK: Default Functions
@@ -62,6 +64,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         uploadPhotoCenterConstraint.constant -= view.bounds.width
         emailLabelCenterConstraint.constant -= view.bounds.width
         updateButtonCenterConstraint.constant -= view.bounds.width
+        usernameTFCenterConstraint.constant -= view.bounds.width
+        phoneTFCenterConstraint.constant -= view.bounds.width
         
     }
     
@@ -92,6 +96,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
           }, completion: nil)
         
         emailLabelCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        usernameTFCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        phoneTFCenterConstraint.constant = 0
         UIView.animate(withDuration: 0.5,
                        delay: 0.3,
                        options:.curveEaseInOut,

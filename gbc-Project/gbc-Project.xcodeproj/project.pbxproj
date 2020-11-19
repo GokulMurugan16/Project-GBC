@@ -35,6 +35,7 @@
 		FA77894C2552135300B8A1CF /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7789482552135200B8A1CF /* InfoTableViewCell.swift */; };
 		FA77894D2552135300B8A1CF /* InformationViewController 5.35.27 PM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7789492552135200B8A1CF /* InformationViewController 5.35.27 PM.swift */; };
 		FA77894E2552135300B8A1CF /* Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA77894A2552135200B8A1CF /* Info.swift */; };
+		FA778A502564285000B8A1CF /* detailedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA778A4F2564285000B8A1CF /* detailedInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		FA7789482552135200B8A1CF /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		FA7789492552135200B8A1CF /* InformationViewController 5.35.27 PM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InformationViewController 5.35.27 PM.swift"; sourceTree = "<group>"; };
 		FA77894A2552135200B8A1CF /* Info.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info.swift; sourceTree = "<group>"; };
+		FA778A4F2564285000B8A1CF /* detailedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				FA77894A2552135200B8A1CF /* Info.swift */,
 				FA7789492552135200B8A1CF /* InformationViewController 5.35.27 PM.swift */,
 				FA7789482552135200B8A1CF /* InfoTableViewCell.swift */,
+				FA778A4F2564285000B8A1CF /* detailedInfoViewController.swift */,
 			);
 			path = Information;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				92300DC725566BA900277E6E /* UpdatePostingsViewController.swift in Sources */,
 				926C70952538CD280011DEC7 /* MarketPlaceViewController.swift in Sources */,
 				92300DAE2556376400277E6E /* ManagePostingsViewController.swift in Sources */,
+				FA778A502564285000B8A1CF /* detailedInfoViewController.swift in Sources */,
 				927D1BBF252FDF1D00C5C706 /* SignUpViewController.swift in Sources */,
 				FA77894E2552135300B8A1CF /* Info.swift in Sources */,
 				6A93F8FF254B1DB4003AB132 /* HomeTabViewController.swift in Sources */,

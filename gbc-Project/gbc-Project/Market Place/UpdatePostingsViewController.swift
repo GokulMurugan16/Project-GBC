@@ -20,8 +20,7 @@ class UpdatePostingsViewController: UIViewController {
     
     var DocPath:String = ""
     var Array:[Upload] = [Upload]()
-    
-    
+    var titleUpdate:String = ""
     let db = Firestore.firestore()
     
     
@@ -33,24 +32,38 @@ class UpdatePostingsViewController: UIViewController {
     
     @IBAction func updateButton(_ sender: Any) {
         
-        
-        
-        
-        
-        
-        
+        if (segmentControl.selectedSegmentIndex == -1 || pName.text == "" || pLocation.text == "" || pAmount.text == "" || pDesc.text == "" || pNumber.text == "")
+        {
+            let alert = UIAlertController(title: "Invalid Details", message: "Please enter all the details and try again! ", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        else {
+            if(segmentControl.selectedSegmentIndex == 0)
+            {
+                titleUpdate = "Job"
+            }
+            else if(segmentControl.selectedSegmentIndex == 1) {
+                titleUpdate = "Rental"
+            }
+            db.collection("Upload").document(DocPath).setData([
+                "Poster-Name": self.pName.text!,
+                "Title": self.titleUpdate,
+                "Location": self.pLocation.text!,
+                "Amount" : self.pAmount.text!,
+                "Description" : self.pDesc.text!,
+                "Mobile-Number" : self.pNumber.text!,
+            ], merge: true)
+            
+            let alert = UIAlertController(title: "Update Sucessful", message: nil, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @IBAction func deleteButton(_ sender: Any) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        db.collection("Upload").document(DocPath).delete()
     }
     
     
@@ -81,11 +94,13 @@ class UpdatePostingsViewController: UIViewController {
                                     let selectedSegmentIndex = data["Title"] as? String ?? ""
                                     if(selectedSegmentIndex == "Job")
                                     {
-                                        self.segmentControl.selectedSegmentIndex == 0
+                                        self.segmentControl.selectedSegmentIndex = 0
+                                        
                                         
                                     }
                                     else{
-                                        self.segmentControl.selectedSegmentIndex == 1
+                                        self.segmentControl.selectedSegmentIndex = 1
+                                        
                                     }
                                     
                                 }

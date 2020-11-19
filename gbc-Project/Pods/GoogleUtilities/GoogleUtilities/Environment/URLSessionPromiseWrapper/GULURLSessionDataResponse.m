@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,28 +14,17 @@
  * limitations under the License.
  */
 
-#include "Firestore/core/src/auth/user.h"
+#import "GoogleUtilities/Environment/URLSessionPromiseWrapper/GULURLSessionDataResponse.h"
 
-#include <utility>
+@implementation GULURLSessionDataResponse
 
-#include "Firestore/core/src/util/hard_assert.h"
-
-namespace firebase {
-namespace firestore {
-namespace auth {
-
-User::User() : is_authenticated_{false} {
+- (instancetype)initWithResponse:(NSHTTPURLResponse *)response HTTPBody:(NSData *)body {
+  self = [super init];
+  if (self) {
+    _HTTPResponse = response;
+    _HTTPBody = body;
+  }
+  return self;
 }
 
-User::User(std::string uid) : uid_{std::move(uid)}, is_authenticated_{true} {
-  HARD_ASSERT(!uid_.empty());
-}
-
-const User& User::Unauthenticated() {
-  static const User* kUnauthenticated = new User();
-  return *kUnauthenticated;
-}
-
-}  // namespace auth
-}  // namespace firestore
-}  // namespace firebase
+@end

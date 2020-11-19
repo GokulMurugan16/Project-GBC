@@ -23,6 +23,7 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     var postingArray:[Upload] = [Upload]()
     var uploadArray:[Upload] = [Upload]()
     var i:Int = 0
+    
     var indicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
     
@@ -129,7 +130,7 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
                                 let refNo = data["Ref"] as? String ?? ""
                                 let u:Upload = Upload(amount: amount, loc: loc, title: title, pName: pName, desc: desc,Uimage: uImage, mNumber: mobNum, user: user, refNo: refNo)
                                 self.uploadArray.append(u)
-                                print(self.postingArray)
+//                                print(self.postingArray)
                             }
                             self.postingArray = self.uploadArray
                             self.tableView.reloadData()

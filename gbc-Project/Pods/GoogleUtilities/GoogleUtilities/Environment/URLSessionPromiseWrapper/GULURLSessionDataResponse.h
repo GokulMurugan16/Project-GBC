@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google
+ * Copyright 2020 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,28 +14,18 @@
  * limitations under the License.
  */
 
-#include "Firestore/core/src/auth/user.h"
+#import <Foundation/Foundation.h>
 
-#include <utility>
+NS_ASSUME_NONNULL_BEGIN
 
-#include "Firestore/core/src/util/hard_assert.h"
+/** The class represents HTTP response received from `NSURLSession`. */
+@interface GULURLSessionDataResponse : NSObject
 
-namespace firebase {
-namespace firestore {
-namespace auth {
+@property(nonatomic, readonly) NSHTTPURLResponse *HTTPResponse;
+@property(nonatomic, nullable, readonly) NSData *HTTPBody;
 
-User::User() : is_authenticated_{false} {
-}
+- (instancetype)initWithResponse:(NSHTTPURLResponse *)response HTTPBody:(nullable NSData *)body;
 
-User::User(std::string uid) : uid_{std::move(uid)}, is_authenticated_{true} {
-  HARD_ASSERT(!uid_.empty());
-}
+@end
 
-const User& User::Unauthenticated() {
-  static const User* kUnauthenticated = new User();
-  return *kUnauthenticated;
-}
-
-}  // namespace auth
-}  // namespace firestore
-}  // namespace firebase
+NS_ASSUME_NONNULL_END

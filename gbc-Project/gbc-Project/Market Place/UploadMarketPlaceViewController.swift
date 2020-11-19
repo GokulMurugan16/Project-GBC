@@ -22,7 +22,7 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
     var uploadTitle:String = ""
     var db = Firestore.firestore()
     var imagePicker = UIImagePickerController()
-
+    var indicator:UIActivityIndicatorView = UIActivityIndicatorView()
     
 
     
@@ -38,27 +38,29 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
     }
     
     @objc func imageTapped(){
+        startIndicator()
         if UIImagePickerController.isSourceTypeAvailable( .photoLibrary) {
 
                     let imagePickerController = UIImagePickerController()
                     imagePickerController.delegate = self
                     imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
                     self.present(imagePickerController, animated: true, completion: nil)
+                    indicator.stopAnimating()
                 }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
             self.dismiss(animated: true) { [weak self] in
-
                 guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
-                
                 self?.imageView.image = image
             }
+        
         }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             picker.dismiss(animated: true, completion: nil)
+            indicator.stopAnimating()
         }
     
     
@@ -80,7 +82,7 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
         
         else {
             
-            
+            startIndicator()
             if(segment.selectedSegmentIndex == 0)
             {
                 uploadTitle = "Job"
@@ -105,8 +107,6 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
                 } else {
                     self.uploadImage(self.imageView.image!, refId: ref!.documentID)
                     self.db.collection("Upload").document(ref!.documentID).setData(["Ref" : ref!.documentID], merge: true)
-                    
-                    
                     print("Document added with ID: \(ref!.documentID)")
                     
                 }
@@ -133,9 +133,11 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
                     // Fire base Code goes here
                     
                     self.db.collection("Upload").document(refId).setData(["Image" : "\(url!)"], merge: true)
-                    
+                    self.indicator.stopAnimating()
                     let alert = UIAlertController(title: "Upload Sucessfull", message:nil, preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+                        self.performSegue(withIdentifier: "return", sender: self)
+                    }))
                     self.present(alert, animated: true, completion: nil)
                     
                 }
@@ -143,5 +145,13 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
         }
     }
     
-
+    func startIndicator(){
+        self.indicator.center = self.view.center
+        self.indicator.hidesWhenStopped = true
+        self.indicator.style = UIActivityIndicatorView.Style.medium
+        DispatchQueue.main.async {
+            self.view.addSubview(self.indicator)
+            self.indicator.startAnimating()
+        }
+    }
 }

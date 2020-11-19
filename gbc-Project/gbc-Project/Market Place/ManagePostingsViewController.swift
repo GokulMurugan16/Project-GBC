@@ -95,8 +95,12 @@ class ManagePostingsViewController: UIViewController, UITableViewDelegate, UITab
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "manageDetails")
+        {
         let vc = segue.destination as! UpdatePostingsViewController
         vc.DocPath = self.documentID
+        }
     }
 
 }

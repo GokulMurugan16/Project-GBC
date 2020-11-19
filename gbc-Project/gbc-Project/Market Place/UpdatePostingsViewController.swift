@@ -94,11 +94,13 @@ class UpdatePostingsViewController: UIViewController {
                                     let selectedSegmentIndex = data["Title"] as? String ?? ""
                                     if(selectedSegmentIndex == "Job")
                                     {
-                                        self.segmentControl.selectedSegmentIndex == 0
+                                        self.segmentControl.selectedSegmentIndex = 0
+                                        
                                         
                                     }
                                     else{
-                                        self.segmentControl.selectedSegmentIndex == 1
+                                        self.segmentControl.selectedSegmentIndex = 1
+                                        
                                     }
                                     
                                 }

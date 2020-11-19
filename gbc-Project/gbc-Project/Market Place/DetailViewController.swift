@@ -25,6 +25,9 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        imageDisplay.layer.cornerRadius = imageDisplay.bounds.height/2
+        imageDisplay.clipsToBounds = true
         UIImage.loadFrom(url: URL(string: array[index].Uimage)!)
         { imageToDisplay in
             self.imageDisplay.image = imageToDisplay
@@ -35,10 +38,7 @@ class DetailViewController: UIViewController {
         amount.text = array[index].amount
         detailsDesc.text = array[index].desc
         contactNumber.text = array[index].mNumber
-        
-        
     }
     
-
 
 }

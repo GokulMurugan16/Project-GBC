@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class UpdatePostingsViewController: UIViewController {
+class UpdatePostingsViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var segmentControl: UISegmentedControl!
@@ -27,8 +27,65 @@ class UpdatePostingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadFireBaseData()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UpdatePostingsViewController.imageTapped))
+        imageView.addGestureRecognizer(tap)
+        
+        imageView.layer.cornerRadius = imageView.bounds.height/2
+        imageView.clipsToBounds = true
+        
         // Do any additional setup after loading the view.
     }
+    
+    @objc func imageTapped(){
+        if UIImagePickerController.isSourceTypeAvailable( .photoLibrary) {
+                    let imagePickerController = UIImagePickerController()
+                    imagePickerController.delegate = self
+                    imagePickerController.sourceType = UIImagePickerController.SourceType.photoLibrary
+                    self.present(imagePickerController, animated: true, completion: nil)
+                }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.dismiss(animated: true) { [weak self] in
+                guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+                self?.imageView.image = image
+            }
+        
+        }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            picker.dismiss(animated: true, completion: nil)
+        }
+    
+    func uploadImage(_ image:UIImage, refId : String)
+    {
+        let storageRef = Storage.storage().reference().child("Uploads/\(refId)")
+
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else {return}
+
+
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpg"
+
+        storageRef.putData(imageData, metadata: metaData) { metaData, error in
+            if error == nil, metaData != nil {
+
+                storageRef.downloadURL { url, error in
+                    self.db.collection("Upload").document(refId).setData(["Image" : "\(url!)"], merge: true)
+                    let alert = UIAlertController(title: "Update Successfull", message:nil, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+                        self.performSegue(withIdentifier: "managePostings", sender: self)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                }
+            }
+        }
+    }
+    
+    
+    
+    
     
     @IBAction func updateButton(_ sender: Any) {
         
@@ -56,14 +113,31 @@ class UpdatePostingsViewController: UIViewController {
                 "Mobile-Number" : self.pNumber.text!,
             ], merge: true)
             
+            uploadImage(imageView.image!, refId: self.DocPath)
+            
             let alert = UIAlertController(title: "Update Sucessful", message: nil, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: {(UIAlertAction) in
+                self.performSegue(withIdentifier: "managePostings", sender: self)
+                
+            }))
             self.present(alert, animated: true, completion: nil)
         }
     }
     
     @IBAction func deleteButton(_ sender: Any) {
-        db.collection("Upload").document(DocPath).delete()
+        
+        let alert = UIAlertController(title: "Delete?", message: "This data will be no longer displayed. Are you sure you want to delete?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertAction.Style.destructive, handler: { alert in
+            self.db.collection("Upload").document(self.DocPath).delete()
+            let alert2 = UIAlertController(title: "Delete Sucessfull", message: nil, preferredStyle: UIAlertController.Style.alert)
+                alert2.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {a in
+                    self.performSegue(withIdentifier: "managePostings", sender: self)
+                }))
+            self.present(alert2, animated: true, completion: nil)
+            
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     

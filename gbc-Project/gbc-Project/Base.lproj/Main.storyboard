@@ -622,10 +622,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="aCt-wG-k2w"/>
                     <connections>
+                        <outlet property="convertButtonCenterConstraint" destination="OTa-ym-WS1" id="47i-NB-j3f"/>
+                        <outlet property="currencyConvLabelCenterConstraint" destination="4YM-E4-Kca" id="O6w-40-zzF"/>
                         <outlet property="currencySegmentControl" destination="YD2-KE-y21" id="siE-eL-m8t"/>
                         <outlet property="exchangeRateLabel" destination="cDt-le-8Zk" id="9EN-Y7-Pov"/>
                         <outlet property="inputAmount" destination="2lx-0i-nqQ" id="oP0-ww-Z8Z"/>
+                        <outlet property="inputAmountCenterConstraint" destination="7Uq-lD-uuu" id="pIZ-aL-HWh"/>
                         <outlet property="outputAmountLabel" destination="hhx-nj-Pak" id="ypu-af-8JB"/>
+                        <outlet property="outputLabelCenterConstraint" destination="Hb6-dP-57D" id="cJo-GH-YqU"/>
+                        <outlet property="segmentCtrlCenterConstraint" destination="zNG-NV-OWs" id="9Hq-5e-lDm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgx-hB-WUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -724,8 +729,13 @@
                     <navigationItem key="navigationItem" id="XNb-gF-T2J"/>
                     <connections>
                         <outlet property="emailLabel" destination="dF3-zG-Qa1" id="bco-nL-1k7"/>
+                        <outlet property="emailLabelCenterConstraint" destination="XmA-iK-Ue4" id="r9j-6p-U0A"/>
                         <outlet property="phoneTF" destination="Uqe-Sc-J0V" id="4Hr-jX-HIP"/>
+                        <outlet property="profileImageCenterConstraint" destination="bSP-CL-kja" id="oU7-ag-5fX"/>
                         <outlet property="profileImageView" destination="nLd-fs-2d9" id="rjF-Qn-RHk"/>
+                        <outlet property="profileLabelCenterConstraint" destination="4DN-j3-2EE" id="GqT-g7-Ch5"/>
+                        <outlet property="updateButtonCenterConstraint" destination="lfY-yJ-4Ww" id="mkC-ql-iv3"/>
+                        <outlet property="uploadPhotoCenterConstraint" destination="fBz-s1-zlL" id="Cdh-zu-7wX"/>
                         <outlet property="userNameTF" destination="KZ8-ag-aZO" id="PwR-a5-bpX"/>
                     </connections>
                 </viewController>

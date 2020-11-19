@@ -15,6 +15,14 @@ class CurrencyConverterViewController: UIViewController {
     private var currencyDict : [String:Double] = [:]
     private var activeCurrency: Double = 0.0
     
+    // MARK: Constraints
+    
+    @IBOutlet weak var currencyConvLabelCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var segmentCtrlCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var inputAmountCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var convertButtonCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var outputLabelCenterConstraint: NSLayoutConstraint!
+    
     // MARK: Outlets
     
     @IBOutlet weak var currencySegmentControl: UISegmentedControl!
@@ -23,6 +31,63 @@ class CurrencyConverterViewController: UIViewController {
     @IBOutlet weak var outputAmountLabel: UILabel!
     
     // MARK: DEFAULT FUNCTIONS
+    
+    override func viewWillAppear(_ animated: Bool) {
+        currencyConvLabelCenterConstraint.constant -= view.bounds.width
+        segmentCtrlCenterConstraint.constant -= view.bounds.width
+        inputAmountCenterConstraint.constant -= view.bounds.width
+        convertButtonCenterConstraint.constant -= view.bounds.width
+        outputLabelCenterConstraint.constant -= view.bounds.width
+    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        // Currency Converter Label Animation
+        currencyConvLabelCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        // Segment Control Animation
+        segmentCtrlCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        // Input Amount Animation
+        inputAmountCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        // Convert Button Animation
+        convertButtonCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.5,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        // Output Label Animation
+        outputLabelCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.5,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

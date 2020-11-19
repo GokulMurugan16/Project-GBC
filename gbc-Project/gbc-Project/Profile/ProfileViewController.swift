@@ -29,6 +29,14 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var phoneTF: UITextField!
     
+    // MARK: Constraints
+    @IBOutlet weak var profileLabelCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var profileImageCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var uploadPhotoCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var emailLabelCenterConstraint: NSLayoutConstraint!
+    @IBOutlet weak var updateButtonCenterConstraint: NSLayoutConstraint!
+    
+    
     // MARK: Default Functions
     
     override func viewDidLoad() {
@@ -47,6 +55,57 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.getUserData()
             }
         })
+        
+        // Setting all the items outside of safeAreaView
+        profileLabelCenterConstraint.constant -= view.bounds.width
+        profileImageCenterConstraint.constant -= view.bounds.width
+        uploadPhotoCenterConstraint.constant -= view.bounds.width
+        emailLabelCenterConstraint.constant -= view.bounds.width
+        updateButtonCenterConstraint.constant -= view.bounds.width
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        profileLabelCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.0,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        profileImageCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        uploadPhotoCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        emailLabelCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.3,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
+        
+        updateButtonCenterConstraint.constant = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.5,
+                       options:.curveEaseInOut,
+                       animations: { [weak self] in
+                        self?.view.layoutIfNeeded()
+          }, completion: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -84,10 +84,10 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         
         if(postingArray[indexPath.row].title == "Job")
         {
-        cell.salary.text = "\(postingArray[indexPath.row].amount) $/hr"
+        cell.salary.text = "\(postingArray[indexPath.row].amount) $/Hour"
         }
         else{
-            cell.salary.text = "\(postingArray[indexPath.row].amount) $/month"
+            cell.salary.text = "\(postingArray[indexPath.row].amount) $/Month"
         }
         cell.location.text = "Location : \(postingArray[indexPath.row].loc)"
         return cell

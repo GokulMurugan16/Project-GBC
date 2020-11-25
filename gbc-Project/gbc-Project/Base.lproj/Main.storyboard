@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -20,18 +20,20 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p2v-7F-BLB">
                                 <rect key="frame" x="20" y="318" width="374" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JV1-6E-hUa">
                                 <rect key="frame" x="20" y="362" width="374" height="34"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-Al-T5w">
                                 <rect key="frame" x="180" y="477" width="54" height="30"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
@@ -43,7 +45,7 @@
                                 <rect key="frame" x="145.5" y="286" width="123.5" height="21"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvy-4R-KDO">
@@ -52,19 +54,19 @@
                                     <constraint firstAttribute="height" constant="43" id="sJF-os-A7G"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not registered? SIgn up below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CK-gw-gtS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not registered? Sign up below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CK-gw-gtS">
                                 <rect key="frame" x="92.5" y="446" width="229" height="20.5"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="val-vi-Imf">
                                 <rect key="frame" x="188" y="406" width="38" height="30"/>
-                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
@@ -74,7 +76,8 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="p2v-7F-BLB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0tU-ox-dL0"/>
                             <constraint firstItem="val-vi-Imf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1v0-yS-8g9"/>
@@ -1062,8 +1065,8 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-Xf-zXy">
-                                                    <rect key="frame" x="20" y="56" width="195" height="113"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-Xf-zXy">
+                                                    <rect key="frame" x="20" y="56" width="195" height="38"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="195" id="Mb0-Gh-3r1"/>
@@ -1110,6 +1113,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04m-0d-OgD">
+                                <rect key="frame" x="334" y="53" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tip 💡">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tipButtonPressed:" destination="rkl-EP-ScW" eventType="touchUpInside" id="G96-SY-Gid"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gMb-cK-69K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1168,12 +1181,24 @@
                         <viewLayoutGuide key="safeArea" id="p6B-l1-E8o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="45T-A6-yTM" firstAttribute="centerX" secondItem="6cS-az-GQ2" secondAttribute="centerX" id="0VD-ou-FZq"/>
+                            <constraint firstItem="45T-A6-yTM" firstAttribute="centerY" secondItem="6cS-az-GQ2" secondAttribute="centerY" id="6dQ-JY-GPS"/>
+                            <constraint firstItem="45T-A6-yTM" firstAttribute="centerY" secondItem="6cS-az-GQ2" secondAttribute="centerY" id="8N8-Mt-AYo"/>
+                            <constraint firstItem="45T-A6-yTM" firstAttribute="centerY" secondItem="6cS-az-GQ2" secondAttribute="centerY" id="DcY-VU-dXf"/>
+                            <constraint firstItem="45T-A6-yTM" firstAttribute="centerX" secondItem="6cS-az-GQ2" secondAttribute="centerX" id="FPH-3z-fBJ"/>
                             <constraint firstItem="p6B-l1-E8o" firstAttribute="bottom" secondItem="45T-A6-yTM" secondAttribute="bottom" constant="20" id="H26-kU-HNS"/>
+                            <constraint firstItem="n1i-if-fO5" firstAttribute="centerY" secondItem="6cS-az-GQ2" secondAttribute="centerY" id="LMl-Ty-ioU"/>
+                            <constraint firstItem="n1i-if-fO5" firstAttribute="centerX" secondItem="6cS-az-GQ2" secondAttribute="centerX" id="NdQ-TM-tgn"/>
+                            <constraint firstItem="n1i-if-fO5" firstAttribute="centerY" secondItem="6cS-az-GQ2" secondAttribute="centerY" id="OPL-Ob-6M9"/>
                             <constraint firstItem="45T-A6-yTM" firstAttribute="top" secondItem="n1i-if-fO5" secondAttribute="bottom" constant="37" id="PF2-aw-zWM"/>
+                            <constraint firstItem="n1i-if-fO5" firstAttribute="centerX" secondItem="6cS-az-GQ2" secondAttribute="centerX" id="Xwy-Ek-bhx"/>
+                            <constraint firstItem="45T-A6-yTM" firstAttribute="centerX" secondItem="6cS-az-GQ2" secondAttribute="centerX" id="aRK-jb-YAY"/>
                             <constraint firstItem="n1i-if-fO5" firstAttribute="leading" secondItem="p6B-l1-E8o" secondAttribute="leading" constant="10" id="dAb-B2-rML"/>
                             <constraint firstItem="n1i-if-fO5" firstAttribute="top" secondItem="p6B-l1-E8o" secondAttribute="top" constant="44" id="fV5-NO-q1U"/>
+                            <constraint firstItem="n1i-if-fO5" firstAttribute="centerX" secondItem="6cS-az-GQ2" secondAttribute="centerX" id="lFa-53-rrT"/>
                             <constraint firstItem="p6B-l1-E8o" firstAttribute="trailing" secondItem="45T-A6-yTM" secondAttribute="trailing" constant="20" id="pSH-sV-eU6"/>
                             <constraint firstItem="p6B-l1-E8o" firstAttribute="trailing" secondItem="n1i-if-fO5" secondAttribute="trailing" constant="10" id="sjl-Uw-MfO"/>
+                            <constraint firstItem="n1i-if-fO5" firstAttribute="centerY" secondItem="6cS-az-GQ2" secondAttribute="centerY" id="ubf-wD-eOE"/>
                             <constraint firstItem="45T-A6-yTM" firstAttribute="leading" secondItem="p6B-l1-E8o" secondAttribute="leading" constant="20" id="xYt-z9-fba"/>
                         </constraints>
                     </view>

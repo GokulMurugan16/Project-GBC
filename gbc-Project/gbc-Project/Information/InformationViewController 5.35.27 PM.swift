@@ -12,6 +12,8 @@ import Firebase
 class InformationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var webArray = ["For Checklist before travel","For information on Covid","For information on Cerb"]
+    var tipArray = ["Never share your sin number","Always Quarantine when you arrive","Never take off your mask in public","Collect your work/study permit at the Airport","Submit your ArriveCan form before hand"]
+
     var rowSelected = 0
     var webLinks = ["https://moving2canada.com/essential-list/","https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html","https://www.canada.ca/en/services/benefits/ei/cerb-application.html"]
     
@@ -36,7 +38,13 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func tipButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Tip of the Day", message: tipArray.randomElement(), preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Thanks", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == self.webTableView{
             return webArray.count

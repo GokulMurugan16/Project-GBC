@@ -62,11 +62,18 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let cell = newsTableViewOutlet.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! newsCell
         let article = self.articles[indexPath.row]
         cell.newsDescription.text = article.title
-        cell.newsImage.loadImageUsingUrlString(urlString: article.urlToImage)
+        cell.newsDescription.numberOfLines = 0
+        print("\(article.urlToImage)")
+        
+        let url = URL(string: article.urlToImage)
+        UIImage.loadFrom(url: url!) { (i) in
+            cell.newsImage.image = i
+        }
         
         return cell
     }
-    
+   
+    /*
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 30, 0)
         cell.layer.transform = rotationTransform
@@ -77,6 +84,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
             cell.alpha = 1.0
         }
     }
+ */
     
     
     // MARK: - Data Download Functions

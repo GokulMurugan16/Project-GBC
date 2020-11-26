@@ -233,58 +233,63 @@
             <objects>
                 <viewController id="cps-Lp-n2G" customClass="UpdatePostingsViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1x0-Q9-7EF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tray.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="4Xw-Qg-eJl">
-                                <rect key="frame" x="82" y="131.5" width="250" height="251.5"/>
+                                <rect key="frame" x="82" y="158.5" width="250" height="251.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="GBP-gz-sGD"/>
                                     <constraint firstAttribute="width" constant="250" id="zj4-HI-Ipa"/>
                                 </constraints>
                             </imageView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="GGf-hn-VV3">
-                                <rect key="frame" x="148.5" y="405.5" width="117" height="32"/>
+                                <rect key="frame" x="148.5" y="432.5" width="117" height="32"/>
                                 <segments>
                                     <segment title="Job"/>
                                     <segment title="Rental"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" red="0.87325123549999994" green="0.42765778360000001" blue="0.64855985589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Agd-Bf-Kc8">
-                                <rect key="frame" x="20" y="447" width="374" height="34"/>
+                                <rect key="frame" x="20" y="474" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" smartInsertDeleteType="yes"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QR5-S7-o1e">
-                                <rect key="frame" x="20" y="489" width="374" height="34"/>
+                                <rect key="frame" x="20" y="516" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vvI-xk-3Er">
-                                <rect key="frame" x="20" y="573" width="374" height="34"/>
+                                <rect key="frame" x="20" y="600" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next" smartInsertDeleteType="yes" textContentType="tel"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iyC-d9-Vab">
-                                <rect key="frame" x="20" y="615" width="374" height="34"/>
+                                <rect key="frame" x="20" y="642" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Upn-Qb-Mf0">
-                                <rect key="frame" x="20" y="531" width="374" height="34"/>
+                                <rect key="frame" x="20" y="558" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3V8-mJ-wd6">
-                                <rect key="frame" x="82" y="657" width="51" height="30"/>
-                                <state key="normal" title="Update"/>
+                                <rect key="frame" x="82" y="684" width="51" height="30"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="updateButton:" destination="cps-Lp-n2G" eventType="touchUpInside" id="Xgn-bp-4kS"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecG-uG-YtR">
-                                <rect key="frame" x="284" y="657" width="45" height="30"/>
-                                <state key="normal" title="Delete"/>
+                                <rect key="frame" x="284" y="684" width="45" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="deleteButton:" destination="cps-Lp-n2G" eventType="touchUpInside" id="i47-MX-3t5"/>
                                 </connections>
@@ -332,7 +337,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJl-5r-X8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2946" y="1851"/>
+            <point key="canvasLocation" x="-2946" y="1061"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="pHQ-t4-EKg">
@@ -495,41 +500,60 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XS4-Cl-cw6">
-                                <rect key="frame" x="20" y="108" width="374" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Click here to Post Items"/>
+                                <rect key="frame" x="20" y="108" width="174" height="30"/>
+                                <color key="backgroundColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add Posting">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="R1z-Cq-b4e" kind="show" id="KQc-SO-8pl"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="bGm-Zk-73P">
-                                <rect key="frame" x="20" y="158" width="316" height="32"/>
+                                <rect key="frame" x="20" y="158" width="329" height="32"/>
                                 <segments>
                                     <segment title="Job"/>
                                     <segment title="Rental"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" red="0.87325123549999994" green="0.42765778360000001" blue="0.64855985589999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keI-IB-CUN">
-                                <rect key="frame" x="346" y="159" width="48" height="30"/>
+                                <rect key="frame" x="359" y="159" width="35" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Search"/>
+                                <state key="normal" title="Filter">
+                                    <color key="titleColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="keyWordSearchButton:" destination="cC5-5i-p6N" eventType="touchUpInside" id="au3-b8-M7Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJn-vO-cJA">
+                                <rect key="frame" x="220" y="108" width="174" height="30"/>
+                                <color key="backgroundColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Manage Posting">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1Of-5a-XMv" kind="show" id="fhs-sI-HJP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cUJ-pv-agK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="XS4-Cl-cw6" firstAttribute="width" secondItem="YlR-Kq-CGs" secondAttribute="width" multiplier="0.42" id="4UD-Jn-5z5"/>
+                            <constraint firstItem="XS4-Cl-cw6" firstAttribute="leading" secondItem="cUJ-pv-agK" secondAttribute="leading" constant="20" id="5Wz-uD-Net"/>
+                            <constraint firstItem="bGm-Zk-73P" firstAttribute="top" secondItem="dJn-vO-cJA" secondAttribute="bottom" constant="20" id="7An-zA-Kuj"/>
+                            <constraint firstItem="dJn-vO-cJA" firstAttribute="top" secondItem="cUJ-pv-agK" secondAttribute="top" constant="20" id="8Jp-cf-imy"/>
                             <constraint firstItem="bGm-Zk-73P" firstAttribute="top" secondItem="XS4-Cl-cw6" secondAttribute="bottom" constant="20" id="HgA-JL-o3T"/>
-                            <constraint firstItem="cUJ-pv-agK" firstAttribute="trailing" secondItem="XS4-Cl-cw6" secondAttribute="trailing" constant="20" id="Hks-Hb-RLU"/>
+                            <constraint firstItem="cUJ-pv-agK" firstAttribute="trailing" secondItem="dJn-vO-cJA" secondAttribute="trailing" constant="20" id="Hu2-NR-LxF"/>
                             <constraint firstItem="XS4-Cl-cw6" firstAttribute="top" secondItem="cUJ-pv-agK" secondAttribute="top" constant="20" id="LLk-EM-mDI"/>
                             <constraint firstItem="cUJ-pv-agK" firstAttribute="trailing" secondItem="keI-IB-CUN" secondAttribute="trailing" constant="20" id="M9M-wN-zlO"/>
                             <constraint firstItem="7bZ-o9-0Nh" firstAttribute="bottom" secondItem="cUJ-pv-agK" secondAttribute="bottom" id="MEF-3F-LgP"/>
                             <constraint firstItem="keI-IB-CUN" firstAttribute="leading" secondItem="bGm-Zk-73P" secondAttribute="trailing" constant="10" id="N7c-qP-DCL"/>
                             <constraint firstItem="7bZ-o9-0Nh" firstAttribute="leading" secondItem="cUJ-pv-agK" secondAttribute="leading" constant="20" id="TOI-Yh-70e"/>
                             <constraint firstItem="bGm-Zk-73P" firstAttribute="leading" secondItem="cUJ-pv-agK" secondAttribute="leading" constant="20" id="U4N-JK-q9h"/>
-                            <constraint firstItem="XS4-Cl-cw6" firstAttribute="leading" secondItem="cUJ-pv-agK" secondAttribute="leading" constant="20" id="fNd-wO-pHm"/>
+                            <constraint firstItem="dJn-vO-cJA" firstAttribute="width" secondItem="YlR-Kq-CGs" secondAttribute="width" multiplier="0.42" id="XHM-vx-pBB"/>
                             <constraint firstItem="cUJ-pv-agK" firstAttribute="trailing" secondItem="7bZ-o9-0Nh" secondAttribute="trailing" constant="20" id="jZr-8y-lrn"/>
                             <constraint firstItem="7bZ-o9-0Nh" firstAttribute="top" secondItem="keI-IB-CUN" secondAttribute="bottom" constant="10" id="ool-DM-au0"/>
                             <constraint firstItem="7bZ-o9-0Nh" firstAttribute="top" secondItem="bGm-Zk-73P" secondAttribute="bottom" constant="10" id="t8J-S5-XUH"/>
@@ -545,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZfF-1d-uYL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-149" y="-575"/>
+            <point key="canvasLocation" x="-149.27536231884059" y="-575.22321428571422"/>
         </scene>
         <!--Currency Converter View Controller-->
         <scene sceneID="0x1-bf-Bkq">
@@ -568,6 +592,8 @@
                                     <segment title="USD"/>
                                     <segment title="GBP"/>
                                 </segments>
+                                <color key="tintColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedSegmentTintColor" red="0.87325123553419692" green="0.42765778364199053" blue="0.64855985586246412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="currencyChanged:" destination="YCk-qq-mbo" eventType="valueChanged" id="aA0-Tm-zjZ"/>
                                 </connections>
@@ -585,7 +611,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vyr-0j-kco">
                                 <rect key="frame" x="175" y="400" width="64" height="34"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Convert">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -657,7 +683,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q31-3z-Z3f">
                                 <rect key="frame" x="160" y="424" width="94" height="30"/>
-                                <state key="normal" title="Upload Photo"/>
+                                <state key="normal" title="Upload Photo">
+                                    <color key="titleColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="uploadPhotoPressed:" destination="rTS-ly-Fx8" eventType="touchUpInside" id="3bn-7I-amu"/>
                                 </connections>
@@ -678,9 +706,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-a7-GjT">
-                                <rect key="frame" x="181.5" y="643" width="51" height="30"/>
-                                <color key="backgroundColor" name="AccentColor"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVN-a7-GjT">
+                                <rect key="frame" x="166" y="643" width="83" height="30"/>
+                                <color key="backgroundColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Update">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -739,7 +768,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="run-Tg-gMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2020" y="1061"/>
+            <point key="canvasLocation" x="-2020.289855072464" y="1060.7142857142858"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="CT5-io-E9R">
@@ -1153,7 +1182,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r2L-zu-OXR">
-                                <rect key="frame" x="20" y="138" width="374" height="724"/>
+                                <rect key="frame" x="20" y="182" width="374" height="680"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="manageCell" rowHeight="125" id="dp6-Gl-vlD" customClass="ManageTableViewCell" customModule="gbc_Project" customModuleProvider="target">
@@ -1219,7 +1248,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Postings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmG-cQ-aGj">
-                                <rect key="frame" x="20" y="84" width="374" height="29"/>
+                                <rect key="frame" x="20" y="128" width="374" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1245,7 +1274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fwC-2F-1mr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2945" y="1061"/>
+            <point key="canvasLocation" x="-2946" y="196"/>
         </scene>
         <!--Home-->
         <scene sceneID="7e5-hh-9HY">

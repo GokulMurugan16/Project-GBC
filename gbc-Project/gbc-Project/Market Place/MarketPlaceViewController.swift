@@ -30,7 +30,7 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "marketplace.jpg")!)
+        
         self.tableView.rowHeight = 150
         loadFireBaseData()
         startIndicator()
@@ -40,7 +40,6 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     override func viewWillAppear(_ animated: Bool) {
-        
         loadFireBaseData()
     }
 

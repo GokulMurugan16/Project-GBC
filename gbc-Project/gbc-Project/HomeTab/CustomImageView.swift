@@ -13,17 +13,22 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 
 class CustomImageView: UIImageView {
     
-    var imageUrlString: String?
+    var task: URLSessionTask!
     
-    func loadImageUsingUrlString(urlString: String) {
+    func loadImageUsingUrlString(url: URL) {
         
         image = nil
         
-        imageUrlString = urlString
+        if let task = task {
+            task.cancel()
+        }
         
-        let url = URL(string: urlString)
+        if let imageFromCache = imageCache.object(forKey: url.absoluteString as AnyObject) as? UIImage {
+            self.image = imageFromCache
+            return
+        }
         
-        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+        task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             guard
                 let data = data,
@@ -32,6 +37,8 @@ class CustomImageView: UIImageView {
                 print("Couldn't load image")
                 return
             }
+            
+            imageCache.setObject(newImage, forKey: url.absoluteString as AnyObject)
             
             DispatchQueue.main.async {
                 self.image = newImage

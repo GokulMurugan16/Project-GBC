@@ -38,6 +38,8 @@ class CurrencyConverterViewController: UIViewController {
         inputAmountCenterConstraint.constant -= view.bounds.width
         convertButtonCenterConstraint.constant -= view.bounds.width
         outputLabelCenterConstraint.constant -= view.bounds.width
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
     
     }
     

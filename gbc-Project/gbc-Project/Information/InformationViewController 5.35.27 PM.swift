@@ -26,6 +26,10 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     
     var infoArray:[Info] = [Info]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         webTableView.delegate = self

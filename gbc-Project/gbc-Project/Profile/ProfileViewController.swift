@@ -57,7 +57,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.getUserData()
             }
         })
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Setting all the items outside of safeAreaView
         profileLabelCenterConstraint.constant -= view.bounds.width
         profileImageCenterConstraint.constant -= view.bounds.width

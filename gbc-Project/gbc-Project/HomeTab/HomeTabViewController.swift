@@ -36,6 +36,9 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
                 self.getUserData()
             }
         })
+        
+    self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
     }
 
     

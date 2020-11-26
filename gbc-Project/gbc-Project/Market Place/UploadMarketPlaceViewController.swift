@@ -37,6 +37,11 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    
     @objc func imageTapped(){
         startIndicator()
         if UIImagePickerController.isSourceTypeAvailable( .photoLibrary) {

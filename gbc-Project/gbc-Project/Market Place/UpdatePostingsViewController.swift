@@ -36,6 +36,10 @@ class UpdatePostingsViewController: UIViewController,UIImagePickerControllerDele
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     @objc func imageTapped(){
         if UIImagePickerController.isSourceTypeAvailable( .photoLibrary) {
                     let imagePickerController = UIImagePickerController()

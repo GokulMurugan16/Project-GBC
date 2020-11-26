@@ -30,7 +30,6 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.rowHeight = 150
         loadFireBaseData()
         startIndicator()
@@ -40,9 +39,10 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         loadFireBaseData()
     }
-
+    
     @IBAction func keyWordSearchButton(_ sender: Any) {
         
         if filterSegment.selectedSegmentIndex == 0

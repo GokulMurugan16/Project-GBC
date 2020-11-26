@@ -24,6 +24,10 @@ class ManagePostingsViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return manaageArray.count
     }

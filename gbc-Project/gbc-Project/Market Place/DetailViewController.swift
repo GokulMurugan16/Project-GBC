@@ -21,6 +21,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var contactNumber: UILabel!
     @IBOutlet weak var detailsDesc: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

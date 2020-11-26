@@ -49,9 +49,11 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         db = Firestore.firestore()
 
         //downloadData()
+        
         if let localData = self.readLocalFile(forName: "data") {
             self.parse(json: localData)
         }
+       
     }
     
     // MARK: - TableView Functions
@@ -98,11 +100,13 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         let urlString = "https://newsapi.org/v2/top-headlines?country=ca&sortBy=publishedAt&apiKey=5f96277317af4c929a9e43ae1c5b8cd2"
         
+        
         if let url = URL(string: urlString) {
             if let data = try? Data(contentsOf: url){
                 parse(json: data)
             }
         }
+        
     }
     
     // Function to parse JSON

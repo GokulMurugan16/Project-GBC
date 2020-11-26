@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ymw-X8-NvX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ymw-X8-NvX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1273,24 +1273,24 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X0G-MS-s7d">
-                                                    <rect key="frame" x="250" y="19" width="112" height="129"/>
+                                                    <rect key="frame" x="280.5" y="0.0" width="93.5" height="167"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-qy-sVu">
-                                                    <rect key="frame" x="20" y="19" width="232" height="129"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hw-qy-sVu">
+                                                    <rect key="frame" x="20" y="11" width="262" height="145"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="4hw-qy-sVu" firstAttribute="width" secondItem="Qod-8c-4rh" secondAttribute="width" multiplier="0.65" id="AcI-1V-Sc9"/>
-                                                <constraint firstItem="X0G-MS-s7d" firstAttribute="top" secondItem="Qod-8c-4rh" secondAttribute="topMargin" constant="8" id="MnE-Mg-brp"/>
-                                                <constraint firstItem="4hw-qy-sVu" firstAttribute="top" secondItem="Qod-8c-4rh" secondAttribute="topMargin" constant="8" id="OKe-AC-D60"/>
-                                                <constraint firstItem="X0G-MS-s7d" firstAttribute="trailing" secondItem="Qod-8c-4rh" secondAttribute="trailingMargin" constant="8" id="Rlg-Do-XkN"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="X0G-MS-s7d" secondAttribute="bottom" constant="8" id="Sty-gG-116"/>
-                                                <constraint firstItem="4hw-qy-sVu" firstAttribute="leading" secondItem="Qod-8c-4rh" secondAttribute="leadingMargin" constant="8" id="VIa-GO-mQI"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="4hw-qy-sVu" secondAttribute="bottom" constant="8" id="gjG-K7-Uge"/>
-                                                <constraint firstItem="X0G-MS-s7d" firstAttribute="width" secondItem="Qod-8c-4rh" secondAttribute="width" multiplier="0.3" id="vDu-z9-iEg"/>
+                                                <constraint firstItem="4hw-qy-sVu" firstAttribute="width" secondItem="Qod-8c-4rh" secondAttribute="width" multiplier="0.7" id="GQ6-91-xU7"/>
+                                                <constraint firstAttribute="trailing" secondItem="X0G-MS-s7d" secondAttribute="trailing" id="MPM-Aj-eUa"/>
+                                                <constraint firstItem="X0G-MS-s7d" firstAttribute="width" secondItem="Qod-8c-4rh" secondAttribute="width" multiplier="0.25" id="T1H-8E-Wmv"/>
+                                                <constraint firstItem="4hw-qy-sVu" firstAttribute="top" secondItem="Qod-8c-4rh" secondAttribute="topMargin" id="TUs-Q8-hF9"/>
+                                                <constraint firstItem="X0G-MS-s7d" firstAttribute="top" secondItem="Qod-8c-4rh" secondAttribute="top" id="hSf-dp-KzM"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4hw-qy-sVu" secondAttribute="bottom" id="hWL-Nl-1Wj"/>
+                                                <constraint firstAttribute="bottom" secondItem="X0G-MS-s7d" secondAttribute="bottom" id="q6m-hi-0Ir"/>
+                                                <constraint firstItem="4hw-qy-sVu" firstAttribute="leading" secondItem="Qod-8c-4rh" secondAttribute="leadingMargin" id="wZA-QF-VZ1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1385,7 +1385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvI-MB-Ku9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2020" y="196"/>
+            <point key="canvasLocation" x="-2020.289855072464" y="195.53571428571428"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ku9-Yx-t8l">

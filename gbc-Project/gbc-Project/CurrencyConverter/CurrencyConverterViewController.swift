@@ -43,6 +43,11 @@ class CurrencyConverterViewController: UIViewController {
     
     }
     
+    @IBAction func tap(_ sender: Any) {
+        
+        view.endEditing(true)
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         
         // Currency Converter Label Animation

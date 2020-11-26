@@ -35,6 +35,12 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func tap(_ sender: Any) {
+        
+        view.endEditing(true)
+    }
+    
     @IBAction func signUpButton(_ sender: Any) {
         
         

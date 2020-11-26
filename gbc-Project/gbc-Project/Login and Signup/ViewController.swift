@@ -37,6 +37,13 @@ class ViewController: UIViewController {
         signupButtonCenterConstraint.constant -= view.bounds.width
     }
     
+    
+    @IBAction func tap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         loginToAccessLabelCenterConstraint.constant = 0
         UIView.animate(withDuration: 0.5,

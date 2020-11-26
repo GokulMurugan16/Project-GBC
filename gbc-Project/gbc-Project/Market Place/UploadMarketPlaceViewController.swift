@@ -41,9 +41,14 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
+    @IBAction func tap(_ sender: Any) {
+        
+        view.endEditing(true)
+        
+    }
     
     @objc func imageTapped(){
-        startIndicator()
+        //startIndicator()
         if UIImagePickerController.isSourceTypeAvailable( .photoLibrary) {
 
                     let imagePickerController = UIImagePickerController()

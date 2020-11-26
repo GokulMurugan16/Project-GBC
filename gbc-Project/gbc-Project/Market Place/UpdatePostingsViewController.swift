@@ -76,9 +76,10 @@ class UpdatePostingsViewController: UIViewController,UIImagePickerControllerDele
 
                 storageRef.downloadURL { url, error in
                     self.db.collection("Upload").document(refId).setData(["Image" : "\(url!)"], merge: true)
-                    let alert = UIAlertController(title: "Update Successfull", message:nil, preferredStyle: UIAlertController.Style.alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
-                        self.performSegue(withIdentifier: "managePostings", sender: self)
+                    let alert = UIAlertController(title: "Update Sucessful", message: nil, preferredStyle: UIAlertController.Style.alert)
+                    alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: {(UIAlertAction) in
+                        _ = self.navigationController?.popViewController(animated: true)
+                        
                     }))
                     self.present(alert, animated: true, completion: nil)
                     
@@ -118,14 +119,14 @@ class UpdatePostingsViewController: UIViewController,UIImagePickerControllerDele
             ], merge: true)
             
             uploadImage(imageView.image!, refId: self.DocPath)
-            
-            let alert = UIAlertController(title: "Update Sucessful", message: nil, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: {(UIAlertAction) in
-                _ = self.navigationController?.popViewController(animated: true)
-                
-            }))
-            self.present(alert, animated: true, completion: nil)
         }
+    }
+    @IBAction func tap(_ sender: Any) {
+        
+        
+        view.endEditing(true)
+        
+        
     }
     
     @IBAction func deleteButton(_ sender: Any) {

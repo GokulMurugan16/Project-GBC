@@ -259,6 +259,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // MARK: Display Alert Function
     
+    @IBAction func tap(_ sender: Any) {
+        view.endEditing(true)
+        
+        
+    }
     func displayAlert(title:String, message:String) {
         
         let alert = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: UIAlertController.Style.alert)

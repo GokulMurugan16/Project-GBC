@@ -35,7 +35,6 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         startIndicator()
         filterSegment.addTarget(self, action: #selector(MarketPlaceViewController.segmentChanged), for: .valueChanged)
         
-        
     }
     
     
@@ -70,8 +69,6 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
             postingArray = filterArray(name: "Rental")
             self.tableView.reloadData()
         }
-        
-        
         
     }
     

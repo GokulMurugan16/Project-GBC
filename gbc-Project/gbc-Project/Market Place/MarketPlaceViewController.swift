@@ -33,6 +33,8 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.rowHeight = 150
         loadFireBaseData()
         startIndicator()
+        filterSegment.addTarget(self, action: #selector(MarketPlaceViewController.segmentChanged), for: .valueChanged)
+        
         
     }
     
@@ -43,25 +45,52 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
         loadFireBaseData()
     }
     
-    @IBAction func keyWordSearchButton(_ sender: Any) {
+    @objc func segmentChanged()
+    {
         
-        if filterSegment.selectedSegmentIndex == 0
+        if (filterSegment.selectedSegmentIndex == 2)
         {
+            print(filterSegment.selectedSegmentIndex)
+            postingArray = [Upload]()
+            postingArray = uploadArray
+            self.tableView.reloadData()
+        }
+        else if (filterSegment.selectedSegmentIndex == 0)
+        {
+            print(filterSegment.selectedSegmentIndex)
             postingArray = [Upload]()
             postingArray = filterArray(name: "Job")
             self.tableView.reloadData()
         }
-        else if filterSegment.selectedSegmentIndex == 1
+        
+        else if (filterSegment.selectedSegmentIndex == 1)
         {
+            print(filterSegment.selectedSegmentIndex)
             postingArray = [Upload]()
             postingArray = filterArray(name: "Rental")
             self.tableView.reloadData()
         }
+        
+        
+        
+    }
+    
+    
+    
+    
+    @IBAction func keyWordSearchButton(_ sender: Any) {
+        
+        if filterSegment.selectedSegmentIndex == 0
+        {
+            
+        }
+        else if filterSegment.selectedSegmentIndex == 1
+        {
+            
+        }
         else
         {
-            postingArray = [Upload]()
-            postingArray = uploadArray
-            self.tableView.reloadData()
+           
         }
     }
     

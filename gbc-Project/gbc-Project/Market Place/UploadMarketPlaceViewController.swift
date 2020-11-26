@@ -141,7 +141,7 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
                     self.indicator.stopAnimating()
                     let alert = UIAlertController(title: "Upload Sucessfull", message:nil, preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
-                        self.performSegue(withIdentifier: "return", sender: self)
+                        _ = self.navigationController?.popViewController(animated: true)
                     }))
                     self.present(alert, animated: true, completion: nil)
                     

@@ -128,9 +128,50 @@ class ViewController: UIViewController {
                     self.passWord.text = ""
                 }
                 else{
-                    print("User Not Found")
-                    let alert = UIAlertController(title: "User Not Found", message: "Please check your E-mail id or Password and try again! ", preferredStyle: UIAlertController.Style.alert)
+                    
+                    
+                    let errCd = AuthErrorCode(rawValue: error!._code)
+                    var errorAlert:String = ""
+                    
+                    switch errCd
+                    {
+                    case .wrongPassword:
+                        errorAlert = "Worng Password"
+                    case .invalidEmail:
+                        errorAlert = "Email - Already Invalid"
+                    default:
+                        errorAlert = "Sign Up Unsucessfull"
+                    }
+                    
+                    let alert = UIAlertController(title: "\(errorAlert)", message: "Please check your E-mail id or Password and try again! ", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Forgot Password", style: UIAlertAction.Style.destructive, handler: { ar in
+                        if(self.userName.text != nil)
+                        {
+                            Auth.auth().sendPasswordReset(withEmail: self.userName.text!) { error in
+                                 if(error==nil)
+                                 {
+                                    let alert3 = UIAlertController(title: "Reset Link Sent", message: "Please check your email to reset your password. After resetting try again.", preferredStyle: UIAlertController.Style.alert)
+                                        alert3.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                                    self.present(alert3, animated: true, completion: nil)
+                                 }
+                                    
+                                 else{
+                                    
+                                    print(error!)
+                                 }
+                            }
+                        }
+                        else
+                        {
+                            let alert2 = UIAlertController(title: "E-Mail Id Not found", message: nil, preferredStyle: UIAlertController.Style.alert)
+                                alert2.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                            self.present(alert2, animated: true, completion: nil)
+                        }
+                        
+                        
+                        
+                    }))
                     self.present(alert, animated: true, completion: nil)
                     
                 }

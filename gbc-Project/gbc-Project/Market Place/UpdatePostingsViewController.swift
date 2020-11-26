@@ -121,7 +121,7 @@ class UpdatePostingsViewController: UIViewController,UIImagePickerControllerDele
             
             let alert = UIAlertController(title: "Update Sucessful", message: nil, preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Return", style: UIAlertAction.Style.default, handler: {(UIAlertAction) in
-                self.performSegue(withIdentifier: "managePostings", sender: self)
+                _ = self.navigationController?.popViewController(animated: true)
                 
             }))
             self.present(alert, animated: true, completion: nil)
@@ -135,7 +135,7 @@ class UpdatePostingsViewController: UIViewController,UIImagePickerControllerDele
             self.db.collection("Upload").document(self.DocPath).delete()
             let alert2 = UIAlertController(title: "Delete Sucessfull", message: nil, preferredStyle: UIAlertController.Style.alert)
                 alert2.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {a in
-                    self.performSegue(withIdentifier: "managePostings", sender: self)
+                    _ = self.navigationController?.popViewController(animated: true)
                 }))
             self.present(alert2, animated: true, completion: nil)
             

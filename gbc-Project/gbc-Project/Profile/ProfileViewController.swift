@@ -263,7 +263,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         let alert = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: UIAlertController.Style.alert)
 
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+            _ = self.navigationController?.popViewController(animated: true)
+        }))
 
         self.present(alert, animated: true, completion: nil)
     }

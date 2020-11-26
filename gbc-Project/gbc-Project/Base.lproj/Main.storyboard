@@ -1244,7 +1244,7 @@
         <!--Home-->
         <scene sceneID="7e5-hh-9HY">
             <objects>
-                <viewController id="6T7-KW-OhP" customClass="HomeTabViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="6T7-KW-OhP" customClass="HomeTabViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rqW-gW-ldw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -62,7 +62,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let cell = newsTableViewOutlet.dequeueReusableCell(withIdentifier: "newsCell", for: indexPath) as! newsCell
         let article = self.articles[indexPath.row]
         cell.newsDescription.text = article.title
-        cell.newsImage.loadImageUsingUrlString(urlString: article.urlToImage)
+     //   cell.newsImage.loadImageUsingUrlString(urlString: article.urlToImage)
         
         return cell
     }

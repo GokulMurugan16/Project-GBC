@@ -68,8 +68,6 @@ class MarketPlaceViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
         return postingArray.count
     }
     

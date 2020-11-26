@@ -54,7 +54,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                 print(authResult!)
                 let alert = UIAlertController(title: "Sign Up Sucessfull!", message: nil, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
-                    self.performSegue(withIdentifier: "login", sender: self)
+                    _ = self.navigationController?.popViewController(animated: true)
                 }))
                 self.present(alert, animated: true, completion: nil)
                 

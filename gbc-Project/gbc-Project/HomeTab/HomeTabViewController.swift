@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 import Firebase
 
 
@@ -62,8 +63,11 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         return 100
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        let article = self.articles[indexPath.row]
+        let vc = SFSafariViewController(url: URL(string: article.url)!)
+        present(vc,animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

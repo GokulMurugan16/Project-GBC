@@ -49,8 +49,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-Al-T5w">
-                                <rect key="frame" x="20" y="504" width="374" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGu-Al-T5w">
+                                <rect key="frame" x="20" y="509" width="374" height="30"/>
                                 <color key="backgroundColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
@@ -71,8 +71,8 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not registered? Sign up below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CK-gw-gtS">
-                                <rect key="frame" x="92.5" y="473" width="229" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Not registered? Sign up below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0CK-gw-gtS">
+                                <rect key="frame" x="93" y="473" width="229" height="28"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,6 +93,9 @@
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6zK-ch-GpU"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch screen" translatesAutoresizingMaskIntoConstraints="NO" id="OwQ-bR-FzX">
+                                <rect key="frame" x="92" y="152" width="240" height="146"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hvy-4R-KDO">
                                 <rect key="frame" x="29" y="101" width="357" height="43"/>
                                 <constraints>
@@ -109,10 +112,12 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="p2v-7F-BLB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0tU-ox-dL0"/>
+                            <constraint firstItem="OwQ-bR-FzX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="92" id="1QP-mS-Iue"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="val-vi-Imf" secondAttribute="trailing" constant="20" id="2IJ-bj-1cB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EGu-Al-T5w" secondAttribute="bottom" constant="328" id="3jX-sh-FVo"/>
                             <constraint firstItem="JV1-6E-hUa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Bx-kb-0Jb"/>
                             <constraint firstItem="EGu-Al-T5w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AIj-Jt-5EJ"/>
+                            <constraint firstItem="Lti-Bc-FH8" firstAttribute="top" secondItem="OwQ-bR-FzX" secondAttribute="bottom" constant="15" id="BEK-2y-mu9"/>
                             <constraint firstItem="val-vi-Imf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BQc-bp-KVo"/>
                             <constraint firstItem="EGu-Al-T5w" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Cb3-0c-qYX"/>
                             <constraint firstItem="Hvy-4R-KDO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="D8V-p0-I7D"/>
@@ -120,8 +125,10 @@
                             <constraint firstItem="Hvy-4R-KDO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="29" id="MDj-pu-bPs"/>
                             <constraint firstItem="JV1-6E-hUa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UJn-N2-3e8"/>
                             <constraint firstItem="0CK-gw-gtS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YCz-eX-24u"/>
+                            <constraint firstItem="OwQ-bR-FzX" firstAttribute="top" secondItem="Hvy-4R-KDO" secondAttribute="bottom" constant="8" symbolic="YES" id="bTy-a5-sDu"/>
                             <constraint firstItem="JV1-6E-hUa" firstAttribute="top" secondItem="p2v-7F-BLB" secondAttribute="bottom" constant="10" id="fES-z9-9za"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EGu-Al-T5w" secondAttribute="trailing" constant="20" id="fJh-sT-MRZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OwQ-bR-FzX" secondAttribute="trailing" constant="82" id="g5u-mn-rAn"/>
                             <constraint firstItem="Lti-Bc-FH8" firstAttribute="top" secondItem="Hvy-4R-KDO" secondAttribute="bottom" constant="169" id="gPp-ud-fwe"/>
                             <constraint firstItem="0CK-gw-gtS" firstAttribute="top" secondItem="val-vi-Imf" secondAttribute="bottom" constant="10" id="lPv-0f-8Gh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hvy-4R-KDO" secondAttribute="trailing" constant="28" id="mUh-3j-oNg"/>
@@ -1519,6 +1526,7 @@
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="info" catalog="system" width="93" height="128"/>
+        <image name="launch screen" width="512" height="512"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="shift.fill" catalog="system" width="128" height="106"/>
         <image name="tray.and.arrow.up" catalog="system" width="128" height="114"/>

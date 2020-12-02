@@ -18,8 +18,6 @@ class ViewController: UIViewController {
     
     //MARK: Constraints
     
-    @IBOutlet weak var loginToAccessLabelCenterConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var usernameTFCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var passwordTFCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var loginButtonCenterConstraint: NSLayoutConstraint!
@@ -29,7 +27,6 @@ class ViewController: UIViewController {
     //MARK: Default Functions
     
     override func viewWillAppear(_ animated: Bool) {
-        loginToAccessLabelCenterConstraint.constant -= view.bounds.width
         usernameTFCenterConstraint.constant -= view.bounds.width
         passwordTFCenterConstraint.constant -= view.bounds.width
         loginButtonCenterConstraint.constant -= view.bounds.width
@@ -45,14 +42,7 @@ class ViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        loginToAccessLabelCenterConstraint.constant = 0
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.2,
-                       options:.curveEaseInOut,
-                       animations: { [weak self] in
-                        self?.view.layoutIfNeeded()
-          }, completion: nil)
-        
+    
         usernameTFCenterConstraint.constant = 0
         UIView.animate(withDuration: 0.5,
                        delay: 0.3,

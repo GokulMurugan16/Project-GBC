@@ -1347,7 +1347,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKa-xq-xZJ">
-                                <rect key="frame" x="20" y="128" width="109" height="32"/>
+                                <rect key="frame" x="20" y="128" width="269" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1359,7 +1359,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gsy-VP-Ltp">
-                                <rect key="frame" x="20" y="204" width="374" height="477"/>
+                                <rect key="frame" x="20" y="204" width="374" height="529"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="167" id="uIC-7m-jSV" customClass="newsCell" customModule="gbc_Project" customModuleProvider="target">
@@ -1398,14 +1398,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Links" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqR-ng-TW4">
-                                <rect key="frame" x="20" y="706" width="110" height="27"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9Y-j1-e0g">
-                                <rect key="frame" x="20" y="756" width="163" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9Y-j1-e0g">
+                                <rect key="frame" x="20" y="763" width="174" height="30"/>
                                 <color key="backgroundColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Currency Converter">
@@ -1421,7 +1415,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ak-Wf-VZZ">
-                                <rect key="frame" x="236" y="756" width="158" height="30"/>
+                                <rect key="frame" x="220" y="763" width="174" height="30"/>
                                 <color key="backgroundColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Profile">
@@ -1437,7 +1431,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyM-JV-rjR">
-                                <rect key="frame" x="339" y="128" width="55" height="31"/>
+                                <rect key="frame" x="311" y="128" width="83" height="31"/>
                                 <color key="backgroundColor" red="0.66978216170000004" green="0.33053788540000001" blue="0.49606496100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Log Out">
@@ -1456,25 +1450,25 @@
                         <viewLayoutGuide key="safeArea" id="cyr-Tj-BQR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5Ak-Wf-VZZ" firstAttribute="trailing" secondItem="Gsy-VP-Ltp" secondAttribute="trailing" id="7BQ-eS-uTK"/>
+                            <constraint firstItem="cyr-Tj-BQR" firstAttribute="bottom" secondItem="p9Y-j1-e0g" secondAttribute="bottom" constant="20" id="2Uu-Ii-qeB"/>
+                            <constraint firstItem="5Ak-Wf-VZZ" firstAttribute="width" secondItem="rqW-gW-ldw" secondAttribute="width" multiplier="0.42" id="2Wn-OH-e71"/>
                             <constraint firstItem="cyr-Tj-BQR" firstAttribute="trailing" secondItem="Gsy-VP-Ltp" secondAttribute="trailing" constant="20" id="8EE-g8-Tnx"/>
-                            <constraint firstItem="yqR-ng-TW4" firstAttribute="top" secondItem="Gsy-VP-Ltp" secondAttribute="bottom" constant="25" id="FFN-PS-A8D"/>
-                            <constraint firstItem="5Ak-Wf-VZZ" firstAttribute="leading" secondItem="p9Y-j1-e0g" secondAttribute="trailing" constant="81" id="Ifh-XF-5XJ"/>
+                            <constraint firstItem="5Ak-Wf-VZZ" firstAttribute="top" secondItem="Gsy-VP-Ltp" secondAttribute="bottom" constant="30" id="FgM-so-gYF"/>
+                            <constraint firstItem="TyM-JV-rjR" firstAttribute="width" secondItem="rqW-gW-ldw" secondAttribute="width" multiplier="0.2" id="GbM-Qi-60f"/>
+                            <constraint firstItem="TKa-xq-xZJ" firstAttribute="width" secondItem="rqW-gW-ldw" secondAttribute="width" multiplier="0.65" id="He1-or-PfN"/>
+                            <constraint firstItem="p9Y-j1-e0g" firstAttribute="top" secondItem="Gsy-VP-Ltp" secondAttribute="bottom" constant="30" id="IIa-Wm-hpm"/>
                             <constraint firstItem="TKa-xq-xZJ" firstAttribute="top" secondItem="cyr-Tj-BQR" secondAttribute="top" constant="40" id="KfD-gG-SzB"/>
-                            <constraint firstItem="5Ak-Wf-VZZ" firstAttribute="top" secondItem="Gsy-VP-Ltp" secondAttribute="bottom" constant="75" id="Koq-B1-Uca"/>
-                            <constraint firstItem="cyr-Tj-BQR" firstAttribute="bottom" secondItem="5Ak-Wf-VZZ" secondAttribute="bottom" constant="27" id="MO5-di-lhN"/>
+                            <constraint firstItem="cyr-Tj-BQR" firstAttribute="bottom" secondItem="5Ak-Wf-VZZ" secondAttribute="bottom" constant="20" id="Nnq-HC-hcG"/>
                             <constraint firstItem="GDb-Lu-kIw" firstAttribute="leading" secondItem="cyr-Tj-BQR" secondAttribute="leading" constant="20" id="UlC-hr-zfN"/>
-                            <constraint firstItem="p9Y-j1-e0g" firstAttribute="top" secondItem="Gsy-VP-Ltp" secondAttribute="bottom" constant="75" id="Y9O-f9-h5l"/>
+                            <constraint firstItem="p9Y-j1-e0g" firstAttribute="width" secondItem="rqW-gW-ldw" secondAttribute="width" multiplier="0.42" id="aXa-iE-9pU"/>
                             <constraint firstItem="Gsy-VP-Ltp" firstAttribute="top" secondItem="TyM-JV-rjR" secondAttribute="bottom" constant="45" id="alN-Wz-TU2"/>
                             <constraint firstItem="Gsy-VP-Ltp" firstAttribute="leading" secondItem="cyr-Tj-BQR" secondAttribute="leading" constant="20" id="bCN-WD-Y42"/>
                             <constraint firstItem="TyM-JV-rjR" firstAttribute="top" secondItem="cyr-Tj-BQR" secondAttribute="top" constant="40" id="cGp-EL-pTO"/>
                             <constraint firstItem="p9Y-j1-e0g" firstAttribute="leading" secondItem="cyr-Tj-BQR" secondAttribute="leading" constant="20" id="eeN-VX-lan"/>
-                            <constraint firstItem="cyr-Tj-BQR" firstAttribute="bottom" secondItem="p9Y-j1-e0g" secondAttribute="bottom" constant="27" id="i7L-ob-TML"/>
+                            <constraint firstItem="cyr-Tj-BQR" firstAttribute="trailing" secondItem="5Ak-Wf-VZZ" secondAttribute="trailing" constant="20" id="hvp-lH-d4B"/>
                             <constraint firstItem="GDb-Lu-kIw" firstAttribute="top" secondItem="TKa-xq-xZJ" secondAttribute="bottom" constant="10" id="lCl-Bu-ow8"/>
-                            <constraint firstItem="yqR-ng-TW4" firstAttribute="leading" secondItem="cyr-Tj-BQR" secondAttribute="leading" constant="20" id="lRU-qE-cPS"/>
                             <constraint firstItem="cyr-Tj-BQR" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GDb-Lu-kIw" secondAttribute="trailing" symbolic="YES" id="o2w-eX-ovM"/>
                             <constraint firstItem="TKa-xq-xZJ" firstAttribute="leading" secondItem="cyr-Tj-BQR" secondAttribute="leading" constant="20" id="qxC-b8-toP"/>
-                            <constraint firstItem="cyr-Tj-BQR" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yqR-ng-TW4" secondAttribute="trailing" symbolic="YES" id="rNQ-YX-ZQg"/>
                             <constraint firstItem="cyr-Tj-BQR" firstAttribute="trailing" secondItem="TyM-JV-rjR" secondAttribute="trailing" constant="20" id="v8J-x1-GcU"/>
                             <constraint firstItem="Gsy-VP-Ltp" firstAttribute="top" secondItem="GDb-Lu-kIw" secondAttribute="bottom" constant="10" id="yTk-ls-Kop"/>
                         </constraints>

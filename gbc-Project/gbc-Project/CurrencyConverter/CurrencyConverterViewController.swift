@@ -7,40 +7,45 @@
 
 import UIKit
 
-class CurrencyConverterViewController: UIViewController {
+class CurrencyConverterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource{
     
     // MARK: Variables
     
     private var results: CurrencyRates?
     private var currencyDict : [String:Double] = [:]
-    private var activeCurrency: Double = 0.0
+    private var baseRate: Double = 1.0
+    private var selectedCurrency: String = "CAD"
+    private var country : [(code: String, name: String)] = [
+        ("CAD","Canadian Dollar"),
+        ("USD","US Dollar"),
+        ("AUD","Australian Dollar"),
+        ("EUR","Euro"),
+        ("BRL","Brazilian Real"),
+        ("CNY","Yuan Renminbi"),
+        ("NZD","New Zealand Dollar"),
+        ("CUP","Cuban Peso"),
+        ("EGP","Egyptian Pound"),
+        ("GBP","Pound Sterling"),
+        ("HKD","Hong Kong Dollar"),
+        ("INR","Indian Rupee"),
+        ("CHF","Swiss Franc"),
+        ("JPY","Yen"),
+        ("IDR","Indonesian Rupiah")
+    ]
     
     // MARK: Constraints
     
     @IBOutlet weak var currencyConvLabelCenterConstraint: NSLayoutConstraint!
-    @IBOutlet weak var segmentCtrlCenterConstraint: NSLayoutConstraint!
-    @IBOutlet weak var inputAmountCenterConstraint: NSLayoutConstraint!
-    @IBOutlet weak var convertButtonCenterConstraint: NSLayoutConstraint!
-    @IBOutlet weak var outputLabelCenterConstraint: NSLayoutConstraint!
-    
+  
     // MARK: Outlets
     
-    @IBOutlet weak var currencySegmentControl: UISegmentedControl!
-    @IBOutlet weak var exchangeRateLabel: UILabel!
-    @IBOutlet weak var inputAmount: UITextField!
-    @IBOutlet weak var outputAmountLabel: UILabel!
+    @IBOutlet weak var countryPV: UIPickerView!
+    @IBOutlet weak var amountTF: UITextField!
+    @IBOutlet weak var resultTableV: UITableView!
     
     // MARK: DEFAULT FUNCTIONS
     
     override func viewWillAppear(_ animated: Bool) {
-        currencyConvLabelCenterConstraint.constant -= view.bounds.width
-        segmentCtrlCenterConstraint.constant -= view.bounds.width
-        inputAmountCenterConstraint.constant -= view.bounds.width
-        convertButtonCenterConstraint.constant -= view.bounds.width
-        outputLabelCenterConstraint.constant -= view.bounds.width
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-        
-    
     }
     
     @IBAction func tap(_ sender: Any) {
@@ -48,119 +53,61 @@ class CurrencyConverterViewController: UIViewController {
         view.endEditing(true)
         
     }
-    override func viewDidAppear(_ animated: Bool) {
         
-        // Currency Converter Label Animation
-        currencyConvLabelCenterConstraint.constant = 0
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.0,
-                       options:.curveEaseInOut,
-                       animations: { [weak self] in
-                        self?.view.layoutIfNeeded()
-          }, completion: nil)
-        
-        // Segment Control Animation
-        segmentCtrlCenterConstraint.constant = 0
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.3,
-                       options:.curveEaseInOut,
-                       animations: { [weak self] in
-                        self?.view.layoutIfNeeded()
-          }, completion: nil)
-        
-        // Input Amount Animation
-        inputAmountCenterConstraint.constant = 0
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.3,
-                       options:.curveEaseInOut,
-                       animations: { [weak self] in
-                        self?.view.layoutIfNeeded()
-          }, completion: nil)
-        
-        // Convert Button Animation
-        convertButtonCenterConstraint.constant = 0
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.5,
-                       options:.curveEaseInOut,
-                       animations: { [weak self] in
-                        self?.view.layoutIfNeeded()
-          }, completion: nil)
-        
-        // Output Label Animation
-        outputLabelCenterConstraint.constant = 0
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.5,
-                       options:.curveEaseInOut,
-                       animations: { [weak self] in
-                        self?.view.layoutIfNeeded()
-          }, completion: nil)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        exchangeRateLabel.text = ""
-        outputAmountLabel.text = ""
         loadData()
-
+        resultTableV.allowsSelection = false
+        resultTableV.showsVerticalScrollIndicator = false
         // Do any additional setup after loading the view.
     }
     
-    // MARK: Button Function
+    // MARK: TableView Functions
     
-    @IBAction func convertButtonPressed(_ sender: Any) {
-        
-        print("Convert Button Pressed")
-        
-        if (inputAmount.text == "")
-        {
-            let alert = UIAlertController(title: "Error", message: "Enter a valid amount.", preferredStyle: UIAlertController.Style.alert)
-
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-
-            self.present(alert, animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let data = results {
+            return data.rates.count
         }
-        else
-        {
-            outputAmountLabel.text = String((Double(inputAmount.text!)! / activeCurrency).round(to: 2)) + " CAD"
-        }
+        return 0
     }
     
-    // MARK: Segment Functions
-    
-    @IBAction func currencyChanged(_ sender: Any) {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
         
-        switch currencySegmentControl.selectedSegmentIndex
-        {
-        case 0:
-            print ("Indian Rupee selected");
-            exchangeRateLabel.text = "1 CAD = " + String(currencyDict["INR"]!.round(to: 2)) + " Indian Rupees"
-            activeCurrency = currencyDict["INR"]!.round(to: 2)
-            break
-            
-        case 1:
-            print("US Dollar selected")
-            exchangeRateLabel.text = "1 CAD = " + String(currencyDict["USD"]!.round(to: 2)) + " US Dollar"
-            activeCurrency = currencyDict["USD"]!.round(to: 2)
-            break
-
-        case 2:
-            print("British Pound selected")
-            exchangeRateLabel.text = "1 CAD = " + String(currencyDict["GBP"]!.round(to: 2)) + " British Pound"
-            activeCurrency = currencyDict["GBP"]!.round(to: 2)
-            break
-            
-        default:
-            print("None selected")
-            break
+        if let data = results {
+            //let CC = Array(data.rates.keys)[indexPath.row]
+            cell.textLabel?.text = Array(data.rates.keys)[indexPath.row]
+            let selectedRate = baseRate * Array(data.rates.values)[indexPath.row]
+            cell.detailTextLabel?.text = "\(selectedRate.round(to: 2))"
+            return cell
         }
+        return UITableViewCell()
+    }
+    
+    // MARK: PickerView Function
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return country.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "\(country[row].code) - \(country[row].name)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedCurrency = country[row].code
+        print(selectedCurrency)
     }
     
     // MARK: Data Load Functions
     
     func loadData() {
         
-           guard let url = URL(string: "https://api.exchangeratesapi.io/latest?base=CAD&symbols=USD,GBP,INR") else {
+           guard let url = URL(string: "https://api.exchangeratesapi.io/latest?base=\(selectedCurrency)") else {
                print("Invalid URL")
                return
            }
@@ -174,7 +121,7 @@ class CurrencyConverterViewController: UIViewController {
                            
                         self.results = decodedResponse
                         self.currencyDict = self.results!.rates
-                       
+                        self.resultTableV.reloadData()
                        }
                        return
                    }
@@ -184,6 +131,18 @@ class CurrencyConverterViewController: UIViewController {
            }.resume()
 
        }
+    
+    // MARK: Button Functions
+    @IBAction func convertPressed(_ sender: UIButton) {
+        loadData()
+        
+        if let inputValue = amountTF.text {
+            if let amount = Double(inputValue){
+                baseRate = amount
+            }
+        }
+        resultTableV.reloadData()
+    }
     
     
     // MARK: Segue Functions

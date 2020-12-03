@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     //MARK: Default Functions
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         usernameTFCenterConstraint.constant -= view.bounds.width
         passwordTFCenterConstraint.constant -= view.bounds.width
         loginButtonCenterConstraint.constant -= view.bounds.width

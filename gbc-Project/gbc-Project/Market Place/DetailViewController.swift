@@ -48,7 +48,7 @@ class DetailViewController: UIViewController, MFMessageComposeViewControllerDele
             
             let sendVC:MFMessageComposeViewController = MFMessageComposeViewController()
         sendVC.body = "Hi, I would like to know more details about \(titleDisplay.text!) in \(location.text!)"
-            sendVC.recipients = ["\(contactNumber.text!)","4372374124"]
+            sendVC.recipients = ["\(contactNumber.text!)","4379836554"]
             sendVC.messageComposeDelegate = self
             self.present(sendVC, animated: false, completion: nil)
         

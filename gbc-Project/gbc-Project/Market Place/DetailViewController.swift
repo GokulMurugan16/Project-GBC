@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Firebase
+import MessageUI
 
-class DetailViewController: UIViewController {
-    
-    
+class DetailViewController: UIViewController, MFMessageComposeViewControllerDelegate {
+   
     var array:[Upload] = [Upload]()
     var index:Int = 0
 
@@ -42,6 +43,46 @@ class DetailViewController: UIViewController {
         detailsDesc.text = array[index].desc
         contactNumber.text = array[index].mNumber
     }
+    
+    @IBAction func smsButton(_ sender: Any) {
+            
+            let sendVC:MFMessageComposeViewController = MFMessageComposeViewController()
+        sendVC.body = "Hi i am \(Auth.auth().currentUser?.displayName!)I would like to know more details about \(titleDisplay.text!) in \(location.text!)"
+            sendVC.recipients = ["\(contactNumber.text!)","4372374124"]
+            sendVC.messageComposeDelegate = self
+            self.present(sendVC, animated: false, completion: nil)
+        
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        
+        switch result {
+        case MessageComposeResult.cancelled:
+            print("Working fine but cancelled")
+            break
+            
+        case MessageComposeResult.failed:
+            let alert = UIAlertController(title: "Message Failed", message: "Please try again! ", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {alert in}))
+            self.present(alert, animated: true, completion: nil)
+            break
+            
+        case MessageComposeResult.sent:
+            let alert = UIAlertController(title: "Message Sent", message: "Your message sent to recipients successfully ", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            break
+            
+        default:
+            break
+        }
+        
+        self.dismiss(animated: true,completion:nil)
+        
+        
+    }
+    
+    
     
 
 }

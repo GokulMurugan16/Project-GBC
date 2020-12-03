@@ -4,6 +4,110 @@
     "articles": [
         {
         "source": {
+        "id": null,
+        "name": "Montreal Gazette"
+        },
+        "author": "Andy Riga",
+        "title": "Quebec cancels plan to allow Christmas gatherings in red zones - Montreal Gazette",
+        "description": "With an average 1,377 new cases added daily over the past week, Dubé says the situation in the province “continues to be of great concern.”",
+        "url": "https://montrealgazette.com/news/local-news/coronavirus-live-updates-quebec-reports-1470-new-cases-30-deaths",
+        "urlToImage": "https://smartcdn.prod.postmedia.digital/montrealgazette/wp-content/uploads/2020/12/1202-covid-features-1.jpg",
+        "publishedAt": "2020-12-03T18:11:15Z",
+        "content": "Since then, cases and hospitalizations have been on the rise.\r\nThe province over the past week has recorded its three highest one-day case increases since the beginning of the pandemic.\r\nAnd more tha… [+557 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "radionl.com"
+        },
+        "author": "Victor Kaisar",
+        "title": "No plans to make COVID-19 vaccine mandatory in B.C. - radionl.com",
+        "description": "B.C.'s top doctor says she does 'not expect' immunization will be mandatory in the province. \"We have no manda...",
+        "url": "https://www.radionl.com/2020/12/03/70032/",
+        "urlToImage": "https://media.socastsrm.com/wordpress/wp-content/blogs.dir/1605/files/2020/09/Vaccine-Flickr-Pan-American-Health-Organization.jpg",
+        "publishedAt": "2020-12-03T17:45:41Z",
+        "content": "B.C.s top doctor says she does ‘not expect’ immunization will be mandatory in the province.\r\n“We have no mandatory immunizations in this country and in this province, and we do not expect that COVID … [+3005 chars]"
+        },
+        {
+        "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+        },
+        "author": "Jacob Kastrenakes",
+        "title": "Samsung begins rollout of Android 11 and One UI 3.0 to latest phones - The Verge",
+        "description": "Samsung is starting to roll out Android 11 and One UI 3.0 updates to the Galaxy S20 series. The Note 20, Note 10, S10, Z Fold, Z Fold 2, and Z Flip are supposed to get updates in the “coming weeks.”",
+        "url": "https://www.theverge.com/2020/12/3/22150143/samsung-android-11-one-ui-3-update-rollout-announced",
+        "urlToImage": "https://cdn.vox-cdn.com/thumbor/PL0QZeAuMalog1KKaSMI774nmKg=/0x74:2040x1142/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/19784453/bking_200306_3928_0015.jpg",
+        "publishedAt": "2020-12-03T16:32:29Z",
+        "content": "The Galaxy S20 series is first, followed by Note 20 and last years models\r\nPhoto by Brennan King / The Verge\r\nSamsung is starting to roll out updates to Android 11 and One UI 3.0, its customized inte… [+1618 chars]"
+        },
+        {
+        "source": {
+        "id": "cbc-news",
+        "name": "CBC News"
+        },
+        "author": null,
+        "title": "Conservatives push Liberals for details on vaccine rollout plan - CBC.ca",
+        "description": "Public health officials are set to provide more details on Canada's COVID-19 vaccine rollout plan as the Conservatives push the Liberals for more information on how and when they will be distributed.",
+        "url": "https://www.cbc.ca/news/politics/conservatives-vaccine-otoole-rempel-liberal-1.5826494",
+        "urlToImage": "https://i.cbc.ca/1.5804985.1607006191!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/cda-china-20201117.jpg",
+        "publishedAt": "2020-12-03T16:21:00Z",
+        "content": "Public health officials are set to provide more details on Canada's COVID-19 vaccine rollout plan as the Conservatives push the Liberals for more information on how and when they will be distributed.… [+1423 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Ctvnews.ca"
+        },
+        "author": "Miriam Katawazi",
+        "title": "Ontario reports more than 1800 new cases of COVID-19 - CTV Toronto",
+        "description": "Ontario reported a rise in the number of patients battling COVID-19 in the province’s intensive care units Thursday, as it also marked a single-day increase in the number of new cases.",
+        "url": "https://toronto.ctvnews.ca/ontario-reports-more-than-1-800-new-cases-of-covid-19-icu-admissions-continue-to-rise-1.5215431",
+        "urlToImage": "https://www.ctvnews.ca/polopoly_fs/1.5197793.1605889713!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
+        "publishedAt": "2020-12-03T15:15:00Z",
+        "content": "TORONTO -- \r\nOntario reported a rise in the number of patients battling COVID-19 in the provinces intensive care units Thursday, as it also marked a single-day increase in the number of new cases.\r\nH… [+3266 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+        },
+        "author": "Emily McCormick",
+        "title": "Stock market news live updates: Stocks hold near record levels after jobless claims top estimates - Yahoo Canada Finance",
+        "description": "Contracts on the three major indices pushed into positive territory after data showed new weekly jobless claims fell more than expected last week, even as...",
+        "url": "https://ca.yahoo.com/finance/news/stock-market-news-live-updates-december-3-2020-231813961.html",
+        "urlToImage": "https://s.yimg.com/ny/api/res/1.2/jIINPdHQzsNQ80XYBI9Tpg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIwMDA7aD0xMzMz/https://s.yimg.com/os/creatr-uploaded-images/2020-12/e7a91fd0-34f3-11eb-b4df-b33d807f6444",
+        "publishedAt": "2020-12-03T14:33:00Z",
+        "content": "The three major indices rose after data showed new weekly jobless claims fell more than expected last week, even as businesses contended with myriad new stay-in-place measures as COVID-19 cases spike… [+7024 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "TheChronicleHerald.ca"
+        },
+        "author": "Reuters Inc.",
+        "title": "China completes lunar sample collection ahead of schedule - TheChronicleHerald.ca",
+        "description": "BEIJING (Reuters) -     China's Chang'e-5 lunar vehicle has finished collecting samples of lunar rocks and soil more than a day ahead of schedule in the first lunar sample retrieval mission since the 1970s, the country's space agency said on",
+        "url": "https://www.thechronicleherald.ca/news/world/china-completes-lunar-sample-collection-ahead-of-schedule-526936/",
+        "urlToImage": "https://www.thechronicleherald.ca/media/photologue/photos/cache/china-completes-lunar-sample-collection-ahead-of-schedule_medium",
+        "publishedAt": "2020-12-03T13:29:51Z",
+        "content": "BEIJING (Reuters) - China's Chang'e-5 lunar vehicle has finished collecting samples of lunar rocks and soil more than a day ahead of schedule in the first lunar sample retrieval mission since the 197… [+1418 chars]"
+        },
+        {
+        "source": {
+        "id": "cbc-news",
+        "name": "CBC News"
+        },
+        "author": null,
+        "title": "Cyberattacks target COVID-19 vaccine distribution effort - CBC.ca",
+        "description": "IBM is sounding the alarm over hackers targeting companies critical to the distribution of COVID-19 vaccines, a sign that digital spies are turning their attention to the complex logistical work involved in inoculating the world's population against the novel…",
+        "url": "https://www.cbc.ca/news/world/coronavirus-vaccine-distribution-ibm-warns-hackers-1.5826602",
+        "urlToImage": "https://i.cbc.ca/1.5826673.1607009411!/fileImage/httpImage/image.JPG_gen/derivatives/16x9_620/health-coronavirus-belgium-vaccines.JPG",
+        "publishedAt": "2020-12-03T15:57:00Z",
+        "content": "IBM is sounding the alarm over hackers targeting companies critical to the distribution of COVID-19 vaccines, a sign that digital spies are turning their attention to the complex logistical work invo… [+4488 chars]"
+        },
+        {
+        "source": {
         "id": "business-insider",
         "name": "Business Insider"
         },
@@ -47,7 +151,7 @@
         "name": "Toronto Star"
         },
         "author": null,
-        "title": "Locks changed at Adamson Barbecue after owner defied dining ban for two days - Toronto Star",
+        "title": "Locks changed at Adamson Barbecue after owner defied dining ban - Toronto Star",
         "description": "Etobicoke restaurant owner Adam Skelly issued a plea on social media for a locksmith and others to help him in Etobicoke.",
         "url": "https://www.thestar.com/news/gta/2020/11/25/locks-changed-at-adamson-barbecue-after-owner-defied-covid-19-indoor-dining-ban-for-two-days-mayor-tory-says.html",
         "urlToImage": "https://images.thestar.com/afb9bYmcb7euuVuHL2Hb3jKgiJ0=/1200x818/smart/filters:cb(1606408769421)/https://www.thestar.com/content/dam/thestar/news/gta/2020/11/25/locks-changed-at-adamson-barbecue-after-owner-defied-covid-19-indoor-dining-ban-for-two-days-mayor-tory-says/_1_skelly.jpg",
@@ -167,32 +271,6 @@
             "urlToImage": "https://globalnews.ca/wp-content/uploads/2018/02/01172660.jpg?quality=85&strip=all&crop=0px%2C111px%2C3000px%2C1579px&resize=720%2C379",
             "publishedAt": "2020-10-17T19:30:51Z",
             "content": "A group of anti-mask protesters has been banned from BC Ferries for the rest of the day after causing a disturbance on a morning sailing from Nanaimo to Horseshoe Bay.\r\nThe incident happened on the 8… [+2038 chars]"
-        },
-        {
-            "source": {
-                "id": "cbc-news",
-                "name": "CBC News"
-            },
-            "author": null,
-            "title": "Chechen teen killed by police named as suspect in teacher's beheading in France - CBC.ca",
-            "description": "A suspect shot dead by police after the beheading of a history teacher near Paris was an 18-year-old Chechen refugee unknown to intelligence services who posted a grisly claim of responsibility on social media minutes after the attack, officials said Saturday.",
-            "url": "https://www.cbc.ca/news/world/france-teacher-beheading-chechen-1.5766742",
-            "urlToImage": "https://i.cbc.ca/1.5766755.1602956271!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/aptopix-france-teacher-decapitated.jpg",
-            "publishedAt": "2020-10-17T18:43:00Z",
-            "content": "A suspect shot dead by police after the beheading of a history teacher near Paris was an 18-year-old Chechen refugee unknown to intelligence services who posted a grisly claim of responsibility on so… [+5743 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Forbes"
-            },
-            "author": "Gordon Kelly",
-            "title": "2021 iPhone Shock As ‘All-New’ Apple iPhone Revealed - Forbes",
-            "description": "Millions of iPhone 12 upgraders might just change their mind after reading this...",
-            "url": "https://www.forbes.com/sites/gordonkelly/2020/10/17/apple-iphone-13-design-touch-id-pro-motion-iphone-12-pro-max-upgrade/",
-            "urlToImage": "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5da90f94cd594c0006215ac5%2F0x0.jpg%3FcropX1%3D132%26cropX2%3D1532%26cropY1%3D0%26cropY2%3D787",
-            "publishedAt": "2020-10-17T23:35:00Z",
-            "content": "Apples iPhone 12 range is here and, despite some solid upgrades, there are a surprisingly large number of compromises. And now we already know more about an all-new iPhone which will fix them. \r\n2021… [+1969 chars]"
         }
     ]
 }

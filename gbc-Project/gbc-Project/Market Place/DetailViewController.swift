@@ -47,7 +47,7 @@ class DetailViewController: UIViewController, MFMessageComposeViewControllerDele
     @IBAction func smsButton(_ sender: Any) {
             
             let sendVC:MFMessageComposeViewController = MFMessageComposeViewController()
-        sendVC.body = "Hi i am \(Auth.auth().currentUser?.displayName!)I would like to know more details about \(titleDisplay.text!) in \(location.text!)"
+        sendVC.body = "Hi, I would like to know more details about \(titleDisplay.text!) in \(location.text!)"
             sendVC.recipients = ["\(contactNumber.text!)","4372374124"]
             sendVC.messageComposeDelegate = self
             self.present(sendVC, animated: false, completion: nil)

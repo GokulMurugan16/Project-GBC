@@ -46,6 +46,7 @@ class CurrencyConverterViewController: UIViewController, UIPickerViewDelegate, U
     // MARK: DEFAULT FUNCTIONS
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @IBAction func tap(_ sender: Any) {

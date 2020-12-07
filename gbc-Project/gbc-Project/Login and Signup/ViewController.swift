@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 import SystemConfiguration
 
 class ViewController: UIViewController {
@@ -16,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var passWord: UITextField!
     @IBOutlet weak var appTitle: UILabel!
-    
+    @IBOutlet var signInButon: GIDSignInButton!
     //MARK: Constraints
     
     @IBOutlet weak var usernameTFCenterConstraint: NSLayoutConstraint!
@@ -133,7 +134,9 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
         super.viewDidLoad()
+        
         
         if FirebaseApp.app() == nil {
                 FirebaseApp.configure()

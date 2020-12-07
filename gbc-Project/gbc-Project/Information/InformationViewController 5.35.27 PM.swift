@@ -11,11 +11,11 @@ import Firebase
 
 class InformationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var webArray = ["For Checklist before travel","For information on Covid","For information on Cerb"]
+    var webArray = ["For Checklist before travel","For information on Covid","For information on Cerb","Important information for students","Ontario Colleges"]
     var tipArray = ["Never share your sin number","Always Quarantine when you arrive","Never take off your mask in public","Collect your work/study permit at the Airport","Submit your ArriveCan form before hand"]
 
     var rowSelected = 0
-    var webLinks = ["https://moving2canada.com/essential-list/","https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html","https://www.canada.ca/en/services/benefits/ei/cerb-application.html"]
+    var webLinks = ["https://moving2canada.com/essential-list/","https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html","https://www.canada.ca/en/services/benefits/ei/cerb-application.html","https://www.alleducationschools.com/about/important-info/","https://www.ontario.ca/page/study-ontario-international-students"]
     
     @IBOutlet weak var webTableView: UITableView!
     @IBOutlet weak var adminInfoTableView: UITableView!

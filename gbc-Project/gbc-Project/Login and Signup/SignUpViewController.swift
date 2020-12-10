@@ -84,7 +84,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                 case .emailAlreadyInUse:
                     errorAlert = "Email - Already in Use"
                 case .invalidEmail:
-                    errorAlert = "Email - Already Invalid"
+                    errorAlert = "Email ID Invalid"
                 case .weakPassword:
                     errorAlert = "Password must be atleast 6 characters"
                 default:

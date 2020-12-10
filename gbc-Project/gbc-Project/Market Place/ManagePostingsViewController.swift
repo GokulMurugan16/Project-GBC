@@ -18,7 +18,7 @@ class ManagePostingsViewController: UIViewController, UITableViewDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Manage Postings"
         manageTableView.rowHeight = 125
         loadFireBaseData()
     }

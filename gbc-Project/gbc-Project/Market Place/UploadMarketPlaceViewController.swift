@@ -29,7 +29,7 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Add Posting"
         let tap = UITapGestureRecognizer(target: self, action: #selector(UploadMarketPlaceViewController.imageTapped))
         imageView.addGestureRecognizer(tap)
         

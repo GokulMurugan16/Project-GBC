@@ -45,6 +45,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Home"
         self.newsTableViewOutlet.dataSource = self
         self.newsTableViewOutlet.delegate = self
         db = Firestore.firestore()

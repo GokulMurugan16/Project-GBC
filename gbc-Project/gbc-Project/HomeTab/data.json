@@ -5,6 +5,123 @@
         {
         "source": {
         "id": null,
+        "name": "YouTube"
+        },
+        "author": null,
+        "title": "Health check: Navigating motherhood during the COVID-19 pandemic - WFAA",
+        "description": "Becoming a new parent is a beautiful experience and women giving birth during the pandemic are experiencing motherhood like never before.",
+        "url": "https://www.youtube.com/watch?v=BBrVpD6uUH8",
+        "urlToImage": "https://i.ytimg.com/vi/BBrVpD6uUH8/hqdefault.jpg",
+        "publishedAt": "2020-12-10T14:18:31Z",
+        "content": null
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "YouTube"
+        },
+        "author": null,
+        "title": "Let's Play Cyberpunk 2077 - CORPO LIFE PATH CYBERPUNK 2077 PS5 - Eurogamer",
+        "description": "Welcome to Night City, and #Cyberpunk2077 - join Zoe Delahunty-Light, Ian Higton and Aoife Wilson as they embark on a new adventure in Cyberpunk 2077 on PS4/...",
+        "url": "https://www.youtube.com/watch?v=5xRgXJFEb-M",
+        "urlToImage": "https://i.ytimg.com/vi/5xRgXJFEb-M/maxresdefault_live.jpg",
+        "publishedAt": "2020-12-10T12:59:29Z",
+        "content": null
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Forbes"
+        },
+        "author": "Paul Tassi",
+        "title": "A Warning About ‘Cyberpunk 2077’ On PS4 And Xbox One - Forbes",
+        "description": "Even if Cyberpunk 2077 is technically a last gen game, you may want to avoid it on last gen consoles like PS4 and Xbox One for now.",
+        "url": "https://www.forbes.com/sites/paultassi/2020/12/10/a-warning-about-cyberpunk-2077-on-ps4-and-xbox-one/",
+        "urlToImage": "https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5fd214a4d37650d53a9b1b88%2F0x0.jpg",
+        "publishedAt": "2020-12-10T12:58:48Z",
+        "content": "Cyberpunk\r\nTech With Xeexhxn\r\nTechnically, Cyberpunk 2077 is a last-gen game. The console version being sold today was designed for the last generation of hardware, with CDPR promising a free upgrade… [+3264 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Global News"
+        },
+        "author": "Staff",
+        "title": "Kovrig, Spavor have been indicted, tried after 2 years in prison, China says - Global News",
+        "description": "China has Michael Kovrig and Michael Spavor are being held on suspicion of national security crimes but neither it nor Canada has released specifics about their cases.",
+        "url": "https://globalnews.ca/news/7513252/kovrig-spavor-indicted-tried-2-years-prison-china/",
+        "urlToImage": "https://globalnews.ca/wp-content/uploads/2019/07/21493066-e1605856578561.jpg?quality=85&strip=all&w=720&h=379&crop=1",
+        "publishedAt": "2020-12-10T11:25:42Z",
+        "content": "In his darkest moments, Michael Kovrig draws strength from knowing that his fellow Canadians and people around the world are working to free him and Michael Spavor from their respective Chinese priso… [+6624 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "620 CKRM.com"
+        },
+        "author": "Mitchell Blair",
+        "title": "Govt. says it's ready for “undertaking” as COVID-19 vaccinations set to begin - 620 CKRM.com",
+        "description": "We now know what the government's plan is for getting COVID-19 vaccines to Saskatchewan residents. Getting the...",
+        "url": "https://www.620ckrm.com/2020/12/10/province-says-it-is-ready-for-massive-undertaking-as-covid-19-vaccinations-get-set-to-begin/",
+        "urlToImage": "https://media.socastsrm.com/wordpress/wp-content/blogs.dir/343/files/2020/12/vaccination.jpg",
+        "publishedAt": "2020-12-10T11:18:00Z",
+        "content": "We now know what the government’s plan is for getting COVID-19 vaccines to Saskatchewan residents.\r\nGetting the vaccine first will be those at the General and Pasqua Hospital who are providing direct… [+1922 chars]"
+        },
+        {
+        "source": {
+        "id": "the-verge",
+        "name": "The Verge"
+        },
+        "author": "Jon Porter",
+        "title": "Samsung’s Galaxy S21 will reportedly launch on January 14th - The Verge",
+        "description": "Samsung’s next flagship smartphone lineup, the Galaxy S21 series, will reportedly launch globally on January 14th. A release is expected to follow on January 29th, according to employees at the company’s Indian arm.",
+        "url": "https://www.theverge.com/2020/12/10/22167208/samsung-galaxy-s21-january-14th-launch-india-plus-ultra-s-pen",
+        "urlToImage": "https://cdn.vox-cdn.com/thumbor/Myo1w03U_eXxP_VYrQ5OO0nVTl8=/0x95:2200x1247/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22154905/galaxy_s21_leak.jpg",
+        "publishedAt": "2020-12-10T11:09:58Z",
+        "content": "One of the companys India stores revealed the date\r\nTeaser videos of the upcoming phones recently leaked online.\r\nImage: Android Police\r\nSamsungs next flagship smartphone lineup, the Galaxy S21 serie… [+2472 chars]"
+        },
+        {
+        "source": {
+        "id": "cbc-news",
+        "name": "CBC News"
+        },
+        "author": null,
+        "title": "Veterans Affairs was wrong to cancel child care support - CBC.ca",
+        "description": "One day after former veterans minister Seamus O'Regan publicly rebuked outspoken critic Sean Bruyea in 2018, officials in his former department improperly cancelled rehabilitation support for the long-time veterans advocate's child care expenses, a veterans o…",
+        "url": "https://www.cbc.ca/news/politics/veterans-affairs-seamus-oregan-bruyea-1.5835240",
+        "urlToImage": "https://i.cbc.ca/1.4755933.1532121509!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/oreagan-bruyea.jpg",
+        "publishedAt": "2020-12-10T09:00:00Z",
+        "content": "One day after former veterans minister Seamus O'Regan publicly rebuked outspoken department critic Sean Bruyea in 2018, officials in his former department improperly cancelled rehabilitation support … [+4515 chars]"
+        },
+        {
+        "source": {
+        "id": "cbc-news",
+        "name": "CBC News"
+        },
+        "author": null,
+        "title": "DoorDash and Airbnb worth billions of dollars despite not turning a profit - CBC.ca",
+        "description": "The pandemic has been a boon for tech company shares as lockdown measures for millions of people feed record demand for digital services. And two big companies are cashing in by selling their shares to the public this week for billions of dollars despite not …",
+        "url": "https://www.cbc.ca/news/business/airbnb-doordash-ipo-tech-stocks-1.5833944",
+        "urlToImage": "https://i.cbc.ca/1.5834717.1607544158!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/airbnb-doordash.jpg",
+        "publishedAt": "2020-12-10T09:00:00Z",
+        "content": "The COVID-19 pandemic has been a boon for tech company shares as lockdown measures for millions of people feed record demand for digital services. And two big names are cashing in on that trend by se… [+6616 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "CanIndia News"
+        },
+        "author": "CanIndia New Wire Service",
+        "title": "Indian-American Raja Chari Picked By NASA For Artemis Moon Missions - CanIndia News",
+        "description": "NASA has selected an initial team of 18 astronauts, including Indian-American astronaut Raja Chari, to form the Artemis Team and help pave the way for the next lunar missions, including sending the first woman and next man to walk on the lunar surface in 2024…",
+        "url": "https://www.canindia.com/indian-american-raja-chari-picked-by-nasa-for-artemis-moon-missions/",
+        "urlToImage": "https://www.canindia.com/wp-admin/admin-ajax.php?action=rank_math_overlay_thumb&id=906175&type=canindia-news",
+        "publishedAt": "2020-12-10T08:00:00Z",
+        "content": "NASA has selected an initial team of 18 astronauts, including Indian-American astronaut Raja Chari, to form the Artemis Team and help pave the way for the next lunar missions, including sending the f… [+2963 chars]"
+        },
+        {
+        "source": {
+        "id": null,
         "name": "Montreal Gazette"
         },
         "author": "Andy Riga",
@@ -73,7 +190,7 @@
         "name": "Yahoo Entertainment"
         },
         "author": "Emily McCormick",
-        "title": "Stock market news live updates: Stocks hold near record levels after jobless claims top estimates - Yahoo Canada Finance",
+        "title": "Stocks hold near record levels after jobless claims top estimates - Yahoo Canada Finance",
         "description": "Contracts on the three major indices pushed into positive territory after data showed new weekly jobless claims fell more than expected last week, even as...",
         "url": "https://ca.yahoo.com/finance/news/stock-market-news-live-updates-december-3-2020-231813961.html",
         "urlToImage": "https://s.yimg.com/ny/api/res/1.2/jIINPdHQzsNQ80XYBI9Tpg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTIwMDA7aD0xMzMz/https://s.yimg.com/os/creatr-uploaded-images/2020-12/e7a91fd0-34f3-11eb-b4df-b33d807f6444",
@@ -112,7 +229,7 @@
         "name": "Business Insider"
         },
         "author": "Tom Porter",
-        "title": "Trump taking advice from friends and TV hosts on who to pardon: WaPo - Business Insider - Business Insider",
+        "title": "Trump taking advice from friends and TV hosts on who to pardon: WaPo - Business Insider",
         "description": "Presidents usually consider cases presented by government lawyers. Trump seems to rely on the counsel of friends and media allies.",
         "url": "https://www.businessinsider.com/trump-taking-advice-friends-tv-who-to-pardon-wapo-2020-11",
         "urlToImage": "https://i.insider.com/5fbf9f83037cbd001861279a?width=1200&format=jpeg",

@@ -27,7 +27,7 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.title = "Signup"
         let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.imageTapped))
         
         imageView.addGestureRecognizer(tap)

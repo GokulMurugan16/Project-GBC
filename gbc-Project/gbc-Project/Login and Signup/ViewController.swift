@@ -30,11 +30,6 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        usernameTFCenterConstraint.constant -= view.bounds.width
-        passwordTFCenterConstraint.constant -= view.bounds.width
-        loginButtonCenterConstraint.constant -= view.bounds.width
-        notRegisteredLabelCenterConstraint.constant -= view.bounds.width
-        signupButtonCenterConstraint.constant -= view.bounds.width
     }
     
     
@@ -184,9 +179,9 @@ class ViewController: UIViewController {
                     switch errCd
                     {
                     case .wrongPassword:
-                        errorAlert = "Worng Password"
+                        errorAlert = "Wrong Password"
                     case .invalidEmail:
-                        errorAlert = "Email - Already Invalid"
+                        errorAlert = "Invalid Email"
                     default:
                         errorAlert = "Sign Up Unsucessfull"
                     }
@@ -212,7 +207,7 @@ class ViewController: UIViewController {
                         }
                         else
                         {
-                            let alert2 = UIAlertController(title: "E-Mail Id Not found", message: nil, preferredStyle: UIAlertController.Style.alert)
+                            let alert2 = UIAlertController(title: "Email Id Not found", message: nil, preferredStyle: UIAlertController.Style.alert)
                                 alert2.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                             self.present(alert2, animated: true, completion: nil)
                         }

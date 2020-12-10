@@ -26,6 +26,7 @@ class UpdatePostingsViewController: UIViewController,UIImagePickerControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Update Posting"
         loadFireBaseData()
         let tap = UITapGestureRecognizer(target: self, action: #selector(UpdatePostingsViewController.imageTapped))
         imageView.addGestureRecognizer(tap)

@@ -57,6 +57,7 @@ class CurrencyConverterViewController: UIViewController, UIPickerViewDelegate, U
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Currency Converter"
         loadData()
         resultTableV.allowsSelection = false
         resultTableV.showsVerticalScrollIndicator = false

@@ -30,7 +30,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var phoneTF: UITextField!
     
     // MARK: Constraints
-    @IBOutlet weak var profileLabelCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var profileImageCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var uploadPhotoCenterConstraint: NSLayoutConstraint!
     @IBOutlet weak var emailLabelCenterConstraint: NSLayoutConstraint!
@@ -43,7 +42,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Profile"
         db = Firestore.firestore()
         profileImageView.contentMode = .scaleAspectFit
     }
@@ -59,7 +58,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         })
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Setting all the items outside of safeAreaView
-        profileLabelCenterConstraint.constant -= view.bounds.width
         profileImageCenterConstraint.constant -= view.bounds.width
         uploadPhotoCenterConstraint.constant -= view.bounds.width
         emailLabelCenterConstraint.constant -= view.bounds.width
@@ -71,13 +69,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewDidAppear(_ animated: Bool) {
         
-        profileLabelCenterConstraint.constant = 0
-        UIView.animate(withDuration: 0.5,
-                       delay: 0.0,
-                       options:.curveEaseInOut,
-                       animations: { [weak self] in
-                        self?.view.layoutIfNeeded()
-          }, completion: nil)
         
         profileImageCenterConstraint.constant = 0
         UIView.animate(withDuration: 0.5,

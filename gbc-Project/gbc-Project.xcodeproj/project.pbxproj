@@ -24,7 +24,6 @@
 		9242501625393130000B26CC /* UploadMarketPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242501525393130000B26CC /* UploadMarketPlaceViewController.swift */; };
 		9242501D25393E14000B26CC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9242501C25393E14000B26CC /* TableViewCell.swift */; };
 		92604FCE2527CCF700408A95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92604FCD2527CCF700408A95 /* AppDelegate.swift */; };
-		92604FD02527CCF700408A95 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92604FCF2527CCF700408A95 /* SceneDelegate.swift */; };
 		92604FD22527CCF700408A95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92604FD12527CCF700408A95 /* ViewController.swift */; };
 		92604FD52527CCF700408A95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD32527CCF700408A95 /* Main.storyboard */; };
 		92604FD72527CCFA00408A95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92604FD62527CCFA00408A95 /* Assets.xcassets */; };
@@ -61,7 +60,6 @@
 		9242501C25393E14000B26CC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		92604FCA2527CCF700408A95 /* gbc-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gbc-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92604FCD2527CCF700408A95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92604FCF2527CCF700408A95 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		92604FD12527CCF700408A95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		92604FD42527CCF700408A95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92604FD62527CCFA00408A95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			children = (
 				920D825E25532026001CA9E2 /* GoogleService-Info.plist */,
 				92604FCD2527CCF700408A95 /* AppDelegate.swift */,
-				92604FCF2527CCF700408A95 /* SceneDelegate.swift */,
 			);
 			path = "Main File";
 			sourceTree = "<group>";
@@ -378,7 +375,6 @@
 				6A93F903254B1FC2003AB132 /* Article.swift in Sources */,
 				6A93F90D254B20A0003AB132 /* CurrencyRates.swift in Sources */,
 				92CDEE46254A6E8500672AC0 /* DetailViewController.swift in Sources */,
-				92604FD02527CCF700408A95 /* SceneDelegate.swift in Sources */,
 				6A1C3A85256F2A0900A5C0BB /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +526,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3S4UT45X8;
 				INFOPLIST_FILE = "$(SRCROOT)/gbc-Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,6 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T3S4UT45X8;
 				INFOPLIST_FILE = "$(SRCROOT)/gbc-Project/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

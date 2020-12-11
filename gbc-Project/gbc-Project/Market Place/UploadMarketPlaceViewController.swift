@@ -158,7 +158,11 @@ class UploadMarketPlaceViewController: UIViewController, UIImagePickerController
     func startIndicator(){
         self.indicator.center = self.view.center
         self.indicator.hidesWhenStopped = true
-        self.indicator.style = UIActivityIndicatorView.Style.medium
+        if #available(iOS 13.0, *) {
+            self.indicator.style = UIActivityIndicatorView.Style.medium
+        } else {
+            // Fallback on earlier versions
+        }
         DispatchQueue.main.async {
             self.view.addSubview(self.indicator)
             self.indicator.startAnimating()

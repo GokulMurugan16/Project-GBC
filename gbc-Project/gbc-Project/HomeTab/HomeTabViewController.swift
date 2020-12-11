@@ -19,6 +19,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
     var userId:String?
     var userName:String?
     var db:Firestore!
+    var window:UIWindow?
     
     // MARK: - Outlets
     
@@ -160,8 +161,11 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
-            navigationController?.popViewController(animated: true)
-            dismiss(animated: true, completion: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navID") as! UINavigationController
+            window?.rootViewController = vc
+            window?.makeKeyAndVisible()
+            
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }

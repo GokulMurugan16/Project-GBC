@@ -8,6 +8,7 @@
 import UIKit
 import SafariServices
 import Firebase
+import GoogleSignIn
 
 
 class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
@@ -161,17 +162,15 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
-            
             navigationController?.popViewController(animated: true)
-                        dismiss(animated: true, completion: nil)
-            
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navID") as! UINavigationController
-//            window?.rootViewController = vc
-//            window?.makeKeyAndVisible()
-            
+            dismiss(animated: true, completion: nil)
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
+        }
+        do {
+            GIDSignIn.sharedInstance().signOut()
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
         }
     }
     

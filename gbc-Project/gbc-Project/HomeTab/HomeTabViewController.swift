@@ -167,7 +167,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         } catch let signOutError as NSError {
           print ("Error signing out: %@", signOutError)
         }
-        do {
+        if GIDGoogleUser.self != nil {
             GIDSignIn.sharedInstance().signOut()
             navigationController?.popViewController(animated: true)
             dismiss(animated: true, completion: nil)

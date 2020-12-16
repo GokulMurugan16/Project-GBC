@@ -14,6 +14,7 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     var webArray = ["For Checklist before travel","For information on Covid","For information on Cerb","Important information for students","Ontario Colleges"]
     var tipArray = ["Never share your sin number","Always Quarantine when you arrive","Never take off your mask in public","Collect your work/study permit at the Airport","Submit your ArriveCan form before hand"]
     var rowSelected = 0
+    var infoImage: UIImage?
     var webLinks = ["https://moving2canada.com/essential-list/","https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html","https://www.canada.ca/en/services/benefits/ei/cerb-application.html","https://www.alleducationschools.com/about/important-info/","https://www.ontario.ca/page/study-ontario-international-students"]
     var detailInfo = ""
     var detailTitle = ""
@@ -36,10 +37,8 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         webTableView.dataSource = self
         adminInfoTableView.delegate = self
         adminInfoTableView.dataSource = self
-        adminInfoTableView.rowHeight = UITableView.automaticDimension
-        adminInfoTableView.estimatedRowHeight = 600
-
-       // self.adminInfoTableView.rowHeight = 200
+        
+        self.adminInfoTableView.rowHeight = 200
         loadData()
     }
     
@@ -70,10 +69,13 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
             
                cell.infoTextView.text = infoArray[indexPath.row].title
                cell.titleTextField.text =  infoArray[indexPath.row].Info
-               cell.infoTextView.isEditable = false            
+               cell.infoTextView.isEditable = false
                UIImage.loadFrom(url: URL(string: infoArray[indexPath.row].UImage)!) { i in
                   cell.infoImageView.image = i
+                  self.infoImage = i
+                
             }
+            
             return cell
         }
     }
@@ -89,16 +91,21 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
             print("hello \(detailInfo)")
             detailInfo = infoArray[indexPath.row].Info
             detailTitle = infoArray[indexPath.row].title
+           // infoImage = infoArray[indexPath.row].UImage
+          //  print("image path :\(infoImage)")
+            
 
             self.performSegue(withIdentifier: "detailedInfoSegue", sender: self)
 
         }
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let pNumber = segue.destination as! detailedInfoViewController
         pNumber.info = self.detailTitle
         pNumber.title = self.detailInfo
+        pNumber.selectedImage = self.infoImage
     }
     
     func loadData() {

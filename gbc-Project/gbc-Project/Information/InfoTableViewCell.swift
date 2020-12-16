@@ -13,5 +13,8 @@ class InfoTableViewCell: UITableViewCell {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var infoTextView: UITextView!
     
-
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+      let newText = (infoTextView.text as NSString).replacingCharacters(in: range, with: text)
+      return newText.count <= 25
+    }
 }

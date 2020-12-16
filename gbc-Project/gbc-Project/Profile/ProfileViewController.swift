@@ -236,7 +236,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             "userName": "\(userNameTF.text!)",
             "image" : "\(imageUrl!)"
             
-        ]) { err in
+        ], merge: true) { err in
             if let err = err {
                 print("Error writing document : \(err)")
                 self.displayAlert(title: "Error", message: "Cannot update your profile.")

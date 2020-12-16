@@ -14,6 +14,10 @@ class ViewController: UIViewController {
     
     // MARK: Outlets
 
+    static var signedIn:Bool = false
+    let db = Firestore.firestore()
+    var userArray = [String]()
+    
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var passWord: UITextField!
     @IBOutlet weak var appTitle: UILabel!
@@ -30,6 +34,10 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        if(Auth.auth().currentUser != nil)
+        {
+            self.performSegue(withIdentifier: "sucessLogin", sender: self)
+        }
     }
     
     
@@ -37,6 +45,26 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
+    
+    
+    func gsn()
+    {
+        for i in userArray
+        {
+            if i.lowercased() == Auth.auth().currentUser?.email?.lowercased()
+            {
+                return
+            }
+        }
+        self.db.collection("users").addDocument(data: [
+            "userName": Auth.auth().currentUser?.displayName,
+            "eMail": Auth.auth().currentUser?.email,
+            "phone": "",
+            "userId": Auth.auth().currentUser?.uid,
+            "image" : ""
+        ])
+        self.performSegue(withIdentifier: "sucessLogin", sender: self)
+    }
     
     func Connection() -> Bool{
         
@@ -69,7 +97,6 @@ class ViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
-        
         
         if Connection()
         {
@@ -129,13 +156,16 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        GIDSignIn.sharedInstance()?.presentingViewController = self
         super.viewDidLoad()
         
         
-        if FirebaseApp.app() == nil {
-                FirebaseApp.configure()
-        }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+
+        signInButon.addGestureRecognizer(tap)
+
+        signInButon.isUserInteractionEnabled = true
+
+        // function which is triggered when handleTap is called
         
         appTitle.text = ""
         var charIndex = 0.0
@@ -149,7 +179,44 @@ class ViewController: UIViewController {
         
         }}
 
+    
+   
+        
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer) {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
+    }
+     
+    
+    
+    
     @IBAction func loginButton(_ sender: UIButton) {
+        
+        if(ViewController.signedIn == true)
+        {
+            db.collection("users").getDocuments { (snapshot, error) in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        } else {
+                            
+                            self.userArray = [String]()
+                            if let snapshot = snapshot {
+
+                                for document in snapshot.documents {
+
+                                    let data = document.data()
+                                    let email = data["eMail"] as? String ?? ""
+                                    self.userArray.append(email)
+    
+                                }
+                            }
+                        }
+                    }
+            gsn()
+            return
+        }
+        
         if(userName.text == "jonsnow@gmail.com"){
             self.performSegue(withIdentifier: "adminLogin", sender: self)
 

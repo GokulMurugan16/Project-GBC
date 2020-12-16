@@ -160,6 +160,7 @@ class HomeTabViewController: UIViewController,UITableViewDelegate,UITableViewDat
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
+            ViewController.signedIn = false
             navigationController?.popViewController(animated: true)
             dismiss(animated: true, completion: nil)
         } catch let signOutError as NSError {

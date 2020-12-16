@@ -30,7 +30,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="navID" id="BYZ-38-t0r" customClass="ViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-6i-V48" customClass="GIDSignInButton">
-                                <rect key="frame" x="87" y="671" width="240" height="128"/>
+                                <rect key="frame" x="87" y="671" width="240" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
@@ -1474,7 +1474,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ku9-Yx-t8l">
             <objects>
-                <tabBarController id="CCZ-ja-g5H" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabCont" id="CCZ-ja-g5H" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="kFC-dN-0x0"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eT6-cN-QG8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

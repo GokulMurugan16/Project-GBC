@@ -20,6 +20,8 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var webTableView: UITableView!
     @IBOutlet weak var adminInfoTableView: UITableView!
     var detailInfo = ""
+    var detailTitle = ""
+
     
     var webURL: String = ""
     var db = Firestore.firestore()
@@ -36,7 +38,9 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         webTableView.dataSource = self
         adminInfoTableView.delegate = self
         adminInfoTableView.dataSource = self
-        self.adminInfoTableView.rowHeight = 150
+        self.adminInfoTableView.rowHeight = 220
+
+        
 
         loadFireBaseData()
         // Do any additional setup after loading the view.
@@ -68,8 +72,12 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
             let cell:InfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "customInfoCell") as! InfoTableViewCell
             
                cell.infoTextView.text = infoArray[indexPath.row].title
-              cell.titleTextField.text =  infoArray[indexPath.row].Info
-               detailInfo = infoArray[indexPath.row].title
+               cell.titleTextField.text =  infoArray[indexPath.row].Info
+               cell.infoTextView.isEditable = false
+                cell.infoTextView.frame.size.height = 50
+    
+
+
                UIImage.loadFrom(url: URL(string: infoArray[indexPath.row].UImage)!) { i in
                   cell.infoImageView.image = i
             }
@@ -86,6 +94,9 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     }
         else{
             print("hello \(detailInfo)")
+            detailInfo = infoArray[indexPath.row].Info
+            detailTitle = infoArray[indexPath.row].title
+
             self.performSegue(withIdentifier: "detailedInfoSegue", sender: self)
 
         }
@@ -93,7 +104,8 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let pNumber = segue.destination as! detailedInfoViewController
-        pNumber.info = self.detailInfo
+        pNumber.info = self.detailTitle
+        pNumber.title = self.detailInfo
     }
     func loadFireBaseData() {
         db.collection("infoUpload").getDocuments { (snapshot, error) in

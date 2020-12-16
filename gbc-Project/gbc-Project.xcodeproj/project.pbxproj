@@ -52,7 +52,6 @@
 		6A93F914254B242D003AB132 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6AE00D65255DA8B2009AA87B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D2E5F593103718B7A706EC0 /* Pods-gbc-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gbc-Project.debug.xcconfig"; path = "Target Support Files/Pods-gbc-Project/Pods-gbc-Project.debug.xcconfig"; sourceTree = "<group>"; };
-		920D825E25532026001CA9E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		92300DAD2556376400277E6E /* ManagePostingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePostingsViewController.swift; sourceTree = "<group>"; };
 		92300DB0255640AD00277E6E /* ManageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTableViewCell.swift; sourceTree = "<group>"; };
 		92300DC625566BA900277E6E /* UpdatePostingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePostingsViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +153,6 @@
 		9242501225392DAF000B26CC /* Main File */ = {
 			isa = PBXGroup;
 			children = (
-				920D825E25532026001CA9E2 /* GoogleService-Info.plist */,
 				92604FCD2527CCF700408A95 /* AppDelegate.swift */,
 			);
 			path = "Main File";

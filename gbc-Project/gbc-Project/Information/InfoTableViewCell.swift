@@ -12,5 +12,6 @@ class InfoTableViewCell: UITableViewCell {
     @IBOutlet weak var infoImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var infoTextView: UITextView!
+    
 
 }

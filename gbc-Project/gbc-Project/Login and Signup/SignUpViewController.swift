@@ -75,10 +75,10 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                 
             }
             else{
-                
+
                 let errCd = AuthErrorCode(rawValue: error!._code)
                 var errorAlert:String = ""
-                
+
                 switch errCd
                 {
                 case .emailAlreadyInUse:
@@ -90,12 +90,12 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                 default:
                     errorAlert = "Sign Up Unsucessfull"
                 }
-                
+
                 let alert = UIAlertController(title: "\(errorAlert)", message: nil, preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                
-                
+
+
             }
         }
         

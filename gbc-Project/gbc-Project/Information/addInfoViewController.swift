@@ -25,6 +25,9 @@ class addInfoViewController: UIViewController, UIImagePickerControllerDelegate &
         imagePicker.delegate = self
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
     
 
     @IBAction func imagePickerButton(_ sender: Any) {

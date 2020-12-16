@@ -16,7 +16,7 @@ class detailedInfoViewController: UIViewController {
         super.viewDidLoad()
         detailTextView.text = info
         titleLabel.text = detail
-        
+       
         // Do any additional setup after loading the view.
     }
     

@@ -10,23 +10,21 @@ import SafariServices
 import Firebase
 
 class InformationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+    //DATA ARRAY
     var webArray = ["For Checklist before travel","For information on Covid","For information on Cerb","Important information for students","Ontario Colleges"]
     var tipArray = ["Never share your sin number","Always Quarantine when you arrive","Never take off your mask in public","Collect your work/study permit at the Airport","Submit your ArriveCan form before hand"]
-
     var rowSelected = 0
     var webLinks = ["https://moving2canada.com/essential-list/","https://www.canada.ca/en/public-health/services/diseases/coronavirus-disease-covid-19.html","https://www.canada.ca/en/services/benefits/ei/cerb-application.html","https://www.alleducationschools.com/about/important-info/","https://www.ontario.ca/page/study-ontario-international-students"]
-    
-    @IBOutlet weak var webTableView: UITableView!
-    @IBOutlet weak var adminInfoTableView: UITableView!
     var detailInfo = ""
     var detailTitle = ""
-
-    
     var webURL: String = ""
     var db = Firestore.firestore()
-    
     var infoArray:[Info] = [Info]()
+    
+    //OUTLETS
+    @IBOutlet weak var webTableView: UITableView!
+    @IBOutlet weak var adminInfoTableView: UITableView!
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -38,19 +36,17 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         webTableView.dataSource = self
         adminInfoTableView.delegate = self
         adminInfoTableView.dataSource = self
-        self.adminInfoTableView.rowHeight = 220
+        adminInfoTableView.rowHeight = UITableView.automaticDimension
+        adminInfoTableView.estimatedRowHeight = 600
 
-        
-
-        loadFireBaseData()
-        // Do any additional setup after loading the view.
+       // self.adminInfoTableView.rowHeight = 200
+        loadData()
     }
     
     @IBAction func tipButtonPressed(_ sender: UIButton) {
         let alert = UIAlertController(title: "Tip of the Day", message: tipArray.randomElement(), preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "Thanks", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,16 +64,13 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
                 cell.textLabel?.text = webArray[indexPath.row]
             return cell
         }
+        
         else{
-            let cell:InfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "customInfoCell") as! InfoTableViewCell
+              let cell:InfoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "customInfoCell") as! InfoTableViewCell
             
                cell.infoTextView.text = infoArray[indexPath.row].title
                cell.titleTextField.text =  infoArray[indexPath.row].Info
-               cell.infoTextView.isEditable = false
-                cell.infoTextView.frame.size.height = 50
-    
-
-
+               cell.infoTextView.isEditable = false            
                UIImage.loadFrom(url: URL(string: infoArray[indexPath.row].UImage)!) { i in
                   cell.infoImageView.image = i
             }
@@ -107,7 +100,8 @@ class InformationViewController: UIViewController, UITableViewDelegate, UITableV
         pNumber.info = self.detailTitle
         pNumber.title = self.detailInfo
     }
-    func loadFireBaseData() {
+    
+    func loadData() {
         db.collection("infoUpload").getDocuments { (snapshot, error) in
                     if let error = error {
                         print(error.localizedDescription)

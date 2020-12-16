@@ -1088,23 +1088,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bit-pU-OLs">
-                                                    <rect key="frame" x="20" y="16" width="334" height="34"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="bit-pU-OLs">
+                                                    <rect key="frame" x="20" y="16" width="334" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut l" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-Xf-zXy">
-                                                    <rect key="frame" x="20" y="56" width="195" height="113"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisi" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5R-Xf-zXy">
+                                                    <rect key="frame" x="20" y="63" width="195" height="106"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="195" id="Mb0-Gh-3r1"/>
                                                     </constraints>
                                                     <color key="textColor" systemColor="labelColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m8B-HI-NHy">
-                                                    <rect key="frame" x="223" y="57" width="131" height="112"/>
+                                                    <rect key="frame" x="223" y="64" width="131" height="105"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -1175,61 +1175,50 @@
                     <connections>
                         <outlet property="adminInfoTableView" destination="an5-ZF-oaW" id="Lcr-cn-jwl"/>
                         <outlet property="webTableView" destination="pMg-6o-OZx" id="ePf-1N-wqG"/>
-                        <segue destination="L79-Bp-be0" kind="show" identifier="detailedInfoSegue" id="BXD-xw-wNr"/>
+                        <segue destination="fn1-RN-Mzl" kind="show" identifier="detailedInfoSegue" animates="NO" id="R2c-Gt-8ha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DcV-fY-TEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-149" y="196"/>
+            <point key="canvasLocation" x="-183" y="400"/>
         </scene>
         <!--Detailed Info View Controller-->
-        <scene sceneID="qy1-a7-DRJ">
+        <scene sceneID="XZy-tf-A3K">
             <objects>
-                <viewController id="L79-Bp-be0" customClass="detailedInfoViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6cS-az-GQ2">
+                <viewController id="fn1-RN-Mzl" customClass="detailedInfoViewController" customModule="gbc_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ngm-Wg-pCi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TITLE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1i-if-fO5">
-                                <rect key="frame" x="20" y="105" width="374" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="45T-A6-yTM">
-                                <rect key="frame" x="20" y="332" width="374" height="530"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WD4-10-nbz">
+                                <rect key="frame" x="20" y="332" width="374" height="519"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ega-3J-QnL">
-                                <rect key="frame" x="86" y="165" width="243" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="317-rq-4WY">
+                                <rect key="frame" x="59" y="136" width="297" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="p6B-l1-E8o"/>
+                        <viewLayoutGuide key="safeArea" id="PlL-ZL-EPX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="45T-A6-yTM" firstAttribute="bottom" secondItem="p6B-l1-E8o" secondAttribute="bottom" id="6gT-aA-5oy"/>
-                            <constraint firstItem="p6B-l1-E8o" firstAttribute="trailing" secondItem="n1i-if-fO5" secondAttribute="trailing" constant="20" id="9Yh-dO-4OK"/>
-                            <constraint firstItem="45T-A6-yTM" firstAttribute="top" secondItem="n1i-if-fO5" secondAttribute="bottom" constant="13" id="LTX-7M-PCN"/>
-                            <constraint firstItem="n1i-if-fO5" firstAttribute="leading" secondItem="p6B-l1-E8o" secondAttribute="leading" constant="20" id="Osk-r2-dQG"/>
-                            <constraint firstItem="n1i-if-fO5" firstAttribute="top" secondItem="p6B-l1-E8o" secondAttribute="top" constant="19" id="Sdl-pw-tI1"/>
-                            <constraint firstItem="45T-A6-yTM" firstAttribute="leading" secondItem="p6B-l1-E8o" secondAttribute="leading" constant="20" id="aQp-Uz-ysa"/>
-                            <constraint firstItem="p6B-l1-E8o" firstAttribute="trailing" secondItem="45T-A6-yTM" secondAttribute="trailing" constant="20" id="xMV-CN-aiC"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="f3C-EZ-C1Y"/>
+                    <navigationItem key="navigationItem" id="Nzo-l3-Cpc"/>
                     <connections>
-                        <outlet property="detailTextView" destination="45T-A6-yTM" id="jc2-c4-AFY"/>
-                        <outlet property="titleLabel" destination="n1i-if-fO5" id="sZh-6c-PE5"/>
+                        <outlet property="detailTextView" destination="WD4-10-nbz" id="2vo-sZ-t6F"/>
+                        <outlet property="titleLabel" destination="317-rq-4WY" id="qar-a0-Xzq"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w4j-M9-xkO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1C-2z-UN7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="466.66666666666669" y="1038.6160714285713"/>
+            <point key="canvasLocation" x="674" y="400"/>
         </scene>
         <!--Manage Postings View Controller-->
         <scene sceneID="h6q-1O-l3j">

@@ -186,6 +186,16 @@ class ViewController: UIViewController {
     @objc func handleTap(_ sender: UITapGestureRecognizer) {
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
+        ViewController.alert(vc: self)
+    }
+    
+  
+        
+    static func alert (vc:UIViewController)
+    {
+        let alert = UIAlertController(title: "Signup Successfull", message: "Please press Login Button to continue.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        vc.present(alert, animated: true, completion: nil)
     }
      
     

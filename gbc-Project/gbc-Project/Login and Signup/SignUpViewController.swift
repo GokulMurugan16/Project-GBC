@@ -98,7 +98,15 @@ class SignUpViewController: UIViewController, UINavigationControllerDelegate, UI
                 
             }
         }
-        
+        let firebaseAuth = Auth.auth()
+            do {
+              try firebaseAuth.signOut()
+                ViewController.signedIn = false
+                navigationController?.popViewController(animated: true)
+                dismiss(animated: true, completion: nil)
+            } catch let signOutError as NSError {
+              print ("Error signing out: %@", signOutError)
+            }
         }
     }
     

@@ -14,6 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate {
 var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        
+        
+        
+        
+        
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
@@ -38,7 +44,6 @@ var window: UIWindow?
                     {
                         ViewController.signedIn = true
                         print("Signin Sucesssfull")
-                        
                     }
                     
                     

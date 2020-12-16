@@ -50,6 +50,9 @@ class ManagePostingsViewController: UIViewController, UITableViewDelegate, UITab
             mCell.manageSalary.text = "Salary : \(manaageArray[indexPath.row].amount) $/month"
         }
         mCell.manageLocation.text = "Location : \(manaageArray[indexPath.row].loc)"
+        mCell.layer.borderColor = UIColor.systemGray.cgColor
+        mCell.layer.borderWidth = 0.5
+        mCell.layer.cornerRadius = 8
        return mCell
     }
    

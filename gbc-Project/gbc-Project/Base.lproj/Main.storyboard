@@ -99,11 +99,6 @@
                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6zK-ch-GpU"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3dP-6i-V48" customClass="GIDSignInButton">
-                                <rect key="frame" x="87" y="671" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -150,7 +145,6 @@
                         <outlet property="notRegisteredLabelCenterConstraint" destination="YCz-eX-24u" id="71X-A5-F0F"/>
                         <outlet property="passWord" destination="JV1-6E-hUa" id="8R2-Uv-RLK"/>
                         <outlet property="passwordTFCenterConstraint" destination="5Bx-kb-0Jb" id="ebD-gy-XrN"/>
-                        <outlet property="signInButon" destination="3dP-6i-V48" id="I8n-Hr-F4S"/>
                         <outlet property="signupButtonCenterConstraint" destination="AIj-Jt-5EJ" id="rmr-cX-tox"/>
                         <outlet property="userName" destination="p2v-7F-BLB" id="TBE-aA-CIh"/>
                         <outlet property="usernameTFCenterConstraint" destination="0tU-ox-dL0" id="hFo-Dj-rZ7"/>

@@ -5,6 +5,84 @@
         {
         "source": {
         "id": null,
+        "name": "GuelphToday"
+        },
+        "author": "GuelphToday Staff",
+        "title": "COVID outbreak declared at Guelph General Hospital - GuelphToday",
+        "description": "Three patients have tested positive in one of the hospital's units",
+        "url": "https://www.guelphtoday.com/coronavirus-covid-19-local-news/covid-outbreak-declared-at-guelph-general-hospital-3186958",
+        "urlToImage": "https://www.vmcdn.ca/f/files/guelphtoday/images/health/guelph-general-hospital/20181204-guelph-general-hospital-sign-ka.jpg;w=1200;h=800;mode=crop",
+        "publishedAt": "2020-12-15T21:12:00Z",
+        "content": "A COVID-19 outbreak has been declared at Guelph General Hospital after three patients tested positive.\r\nThe hospital said in a news release that the outbreak is on its 4 East unit. No staff associate… [+1431 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "9to5Mac"
+        },
+        "author": null,
+        "title": "Facebook says it hopes new EU legislation will ‘set boundaries’ for Apple - 9to5Mac",
+        "description": "Facebook is once again taking swipes at Apple, this time in regards to new legislation in the European Union that focuses on how Apple runs the App Store and its preinstalled, first-party apps. In a statement to Reuters, a Facebook spokesman said that the com…",
+        "url": "https://9to5mac.com/2020/12/15/facebook-apple-comments-eu/",
+        "urlToImage": "https://i1.wp.com/9to5mac.com/wp-content/uploads/sites/6/2020/08/zuckerberg-cook.png?resize=1200%2C628&quality=82&strip=all&ssl=1",
+        "publishedAt": "2020-12-15T20:39:00Z",
+        "content": "Facebook is once again taking swipes at Apple, this time in regards to new legislation in the European Union that focuses on how Apple runs the App Store and its preinstalled, first-party apps. In a … [+2050 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "Salmon Arm Observer"
+        },
+        "author": "Phil McLachlan",
+        "title": "Big White Ski Resort braces for more COVID-19 cases - Salmon Arm Observer",
+        "description": "<p>120 people tested so far for COVID-19, cases attributed to private residences, gatherings </p>",
+        "url": "https://www.saobserver.net/news/big-white-ski-resort-braces-for-more-covid-19-cases-calls-for-rcmp-enforcement/",
+        "urlToImage": "https://www.saobserver.net/wp-content/uploads/2020/12/23647446_web1_200629-Impress-WCT-BigWhite_3-1024x683.jpg",
+        "publishedAt": "2020-12-15T22:02:00Z",
+        "content": "About 120 people have been tested so far for COVID-19 at Big White Ski Resort, as the company braces for more confirmed cases of the virus.\r\nAn undisclosed number of COVID-19 cases have been identifi… [+3307 chars]"
+        },
+        {
+        "source": {
+        "id": "cbc-news",
+        "name": "CBC News"
+        },
+        "author": null,
+        "title": "Giannis Antetokounmpo agrees to 5-year, $228M US supermax extension with Bucks - CBC.ca",
+        "description": "Giannis Antetokounmpo has reached a five-year, $228-million US supermax contract with the Milwaukee Bucks, the two-time NBA MVP announced on Twitter.",
+        "url": "https://www.cbc.ca/sports/basketball/nba/nba-milwaukee-bucks-giannis-contract-1.5842292",
+        "urlToImage": "https://i.cbc.ca/1.5835121.1608059418!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_620/antetokounmpo-giannis-120920.jpg",
+        "publishedAt": "2020-12-15T21:42:00Z",
+        "content": "Giannis Antetokounmpo says he's staying with the Milwaukee Bucks for at least five more seasons.\r\n\"I'm blessed to be a part of the Milwaukee Bucks for the next 5 years,\" the two-time reigning MVP pos… [+3314 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "CP24 Toronto's Breaking News"
+        },
+        "author": null,
+        "title": "Japan's space agency finds ample soil, gas from asteroid - CP24 Toronto's Breaking News",
+        "description": "Officials from Japan's space agency said Tuesday they have found more than the anticipated amount of soil and gases inside a small capsule the country's Hayabusa2 spacecraft brought back from a distant asteroid this month, a mission they praised as a mileston…",
+        "url": "https://www.cp24.com/world/japan-s-space-agency-finds-ample-soil-gas-from-asteroid-1.5232491",
+        "urlToImage": "https://www.cp24.com/polopoly_fs/1.5232497.1608068149!/httpImage/image.jpg_gen/derivatives/landscape_620/image.jpg",
+        "publishedAt": "2020-12-15T21:36:00Z",
+        "content": "TOKYO - Officials from Japan's space agency said Tuesday they have found more than the anticipated amount of soil and gases inside a small capsule the country's Hayabusa2 spacecraft brought back from… [+3416 chars]"
+        },
+        {
+        "source": {
+        "id": null,
+        "name": "YouTube"
+        },
+        "author": null,
+        "title": "Reacting to LaMelo Ball showing off his passing skills vs. the Raptors | The Jump - ESPN",
+        "description": "Paul Pierce and Amin Elhassan join Rachel Nichols for \"Make or Miss,\" and discuss Zion Williamson putting up 26 points against the Miami Heat, weigh in on Ja...",
+        "url": "https://www.youtube.com/watch?v=fvZVeaWGhIg",
+        "urlToImage": "https://i.ytimg.com/vi/fvZVeaWGhIg/maxresdefault.jpg",
+        "publishedAt": "2020-12-15T21:38:50Z",
+        "content": null
+        },
+        {
+        "source": {
+        "id": null,
         "name": "YouTube"
         },
         "author": null,

@@ -150,9 +150,15 @@ class ViewController: UIViewController {
         }}
 
     @IBAction func loginButton(_ sender: UIButton) {
-        if(userName.text == "jonsnow@gmail.com"){
+        if(userName.text == "jonsnow@gmail.com") && (passWord.text == "hello123"){
             self.performSegue(withIdentifier: "adminLogin", sender: self)
 
+        }
+        else if(userName.text == "jonsnow@gmail.com") && (passWord.text != "hello123"){
+            let alert = UIAlertController(title: " Access Denied", message: "Only admin can login using admin email", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
         }
         
        else if(userName.text == "" || passWord.text == "")
